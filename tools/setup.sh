@@ -26,8 +26,8 @@ if [ ! -f "$TOON" ]; then rm -rf /tmp/_cas; git clone -q --depth 1 https://githu
 node -e "const m=require('node:module'),fs=require('fs');fs.writeFileSync(process.argv[1],m.stripTypeScriptTypes(fs.readFileSync(process.argv[2],'utf8'),{mode:'transform'}))" "$P/web/toonbase.js" "$TOON" 2>/dev/null
 [ -s "$P/web/toonbase.js" ] || { echo "toonbase.js empty: type stripping failed"; exit 1; }
 python3 "$KIT/tools/patch_toon.py" "$P/web/toonbase.js"
-cat "$P/web/toonbase.js" "$P/web/roman.js" "$P/web/nepal.js" > "$P/web/toon.js"
+cat "$P/web/toonbase.js" "$P/web/roman.js" "$P/web/nepal.js" "$P/web/mascot.js" > "$P/web/toon.js"
 # playwright: use a global install if there is one
 mkdir -p "$P/node_modules"; [ -e "$P/node_modules/playwright" ] || ln -sf "$(npm root -g)/playwright" "$P/node_modules/playwright"
 [ -e "$P/node_modules/playwright/package.json" ] || echo "WARN: playwright not found globally (npm i -g playwright && npx playwright install chromium)"
-echo "ready: $P   (after editing cast code run: cat web/toonbase.js web/roman.js web/nepal.js > web/toon.js)"
+echo "ready: $P   (after editing cast code run: cat web/toonbase.js web/roman.js web/nepal.js web/mascot.js > web/toon.js)"

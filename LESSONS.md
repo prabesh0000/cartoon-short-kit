@@ -2,6 +2,13 @@
 
 Newest first. Each entry says what happened and what to do next time.
 
+## 2026-11 — Channel brand: "The Curious Manche"
+- Channel name: **The Curious Manche** (मान्छे = person). It covers international stories, trending news and facts, voiced in Nepali for now.
+- Mascot: `engine/mascot.js` → `drawManche` (bean-head in a dhaka topi, one eyebrow raised, eyes looking up-right, small "o" mouth) + `drawQ` question mark.
+  Profile photo: orange sunburst, navy jacket, white "?" (blue and yellow variants too). No text: it must read at about 110 px.
+- Faces drawn under a `hat: "hair"` cap hide the brows. For expressive custom faces use `hat: null`, draw a fringe and brows on skin, and skip the default face with `back: true` + `headExtra`.
+- A hand at the chin is hidden by the head (it is drawn after the arms) and looks like a button just below. Use it only with a visible elbow and a clear hand.
+
 ## 2026-11 — "यलम्बरको शिर" (Nepali legend, 38.5 s, 11 shots)
 
 ### Workflow and time
