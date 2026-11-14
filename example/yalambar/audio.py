@@ -1,4 +1,4 @@
-# Cinematic thriller score + full SFX layer for "यलम्बरको शिर". Writes audio/music.wav + audio/sfx.wav (levels set by mix.py).
+# Cinematic thriller score + full SFX layer for "यलम्बरको शिर". Writes music.wav + sfx.wav (levels set by mix.py).
 import numpy as np, wave
 from scipy.signal import butter, sosfilt, fftconvolve
 
@@ -265,7 +265,7 @@ def save(name, x):
     with wave.open(name, 'wb') as w:
         w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes((x.T * 32767).astype('<i2').tobytes())
 M = reverb(M, 2.6, 0.32, 2.6); X = reverb(X, 1.8, 0.18, 3.5)
-save('audio/music.wav', M); save('audio/sfx.wav', X)
+save('music.wav', M); save('sfx.wav', X)  # next: python3 mix.py voice.mp3 music.wav sfx.wav
 # section levels (dB re. peak) to check the dynamics follow the story
 mm = M[:, : int(DUR * SR)].mean(0); pk = np.abs(mm).max()
 for name, a, b in [("hook", 0, 3.47), ("boulder", 3.47, 5.93), ("arrival", 5.93, 8.23), ("dialogue", 8.23, 14.27), ("scale", 16.47, 22.4), ("drop", 22.5, 26.4), ("chakra", 26.47, 28.27), ("flight", 28.53, 32.2), ("finale", 32.5, 38.5)]:

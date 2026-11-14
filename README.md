@@ -9,6 +9,8 @@ Audio in, finished vertical cartoon short out. 2D bean-head cards in an inked, p
   mix.py (level-locked mix), finish.sh (loudness + encode + QA).
 - `vendor/` three.js r160 module build and toon.ts (both MIT, licenses alongside), so setup needs no network.
 
+**New here? Start with `SETUP.md`** (one-time Mac setup), then `PROMPTS.md` (what to type to Claude Code). `CLAUDE.md` is the project memory Claude Code loads every session, and `.claude/skills/make-reel/` is the reel workflow (`/make-reel`).
+
 **Read `LESSONS.md` first.** It collects what each project taught (timing, framing, sound, Nepali specifics) and gets a new entry after every short.
 
 Extras:
