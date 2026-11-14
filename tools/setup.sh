@@ -23,7 +23,7 @@ fi
 # toon base: the Pen / head / face library from mromidev/claude-animated-shorts (MIT), types stripped
 TOON="$KIT/vendor/toon.ts"
 if [ ! -f "$TOON" ]; then rm -rf /tmp/_cas; git clone -q --depth 1 https://github.com/mromidev/claude-animated-shorts /tmp/_cas; TOON=/tmp/_cas/templates/bridge/toon.ts; fi
-node -e "const m=require('node:module'),fs=require('fs');fs.writeFileSync(process.argv[1],m.stripTypeScriptTypes(fs.readFileSync(process.argv[2],'utf8'),{mode:'transform'}))" "$P/web/toonbase.js" "$TOON" 2>/dev/null
+node -e "const m=require('node:module'),fs=require('fs');src=fs.readFileSync(process.argv[2],'utf8');let out;try{out=m.stripTypeScriptTypes(src,{mode:'transform'})}catch(e){out=m.stripTypeScriptTypes(src,{mode:'strip'})}fs.writeFileSync(process.argv[1],out)" "$P/web/toonbase.js" "$TOON" 2>/dev/null
 [ -s "$P/web/toonbase.js" ] || { echo "toonbase.js empty: type stripping failed"; exit 1; }
 python3 "$KIT/tools/patch_toon.py" "$P/web/toonbase.js"
 cat "$P/web/toonbase.js" "$P/web/roman.js" "$P/web/nepal.js" "$P/web/mascot.js" > "$P/web/toon.js"

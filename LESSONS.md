@@ -2,6 +2,12 @@
 
 Newest first. Each entry says what happened and what to do next time.
 
+## 2026-11-14 — Mac setup check (Apple M4)
+- **Mac M4 GPU renders at about 0.5 s/frame with `GL=gpu`** (`gpucheck.mjs` reports "ANGLE Metal Renderer: Apple M4"). That is about 5x faster than the cloud's 2-3.5 s/frame with SwiftShader, so a 30 s reel (900 frames) takes about 8 min.
+- Node 26 accepts only `mode:'strip'` in `stripTypeScriptTypes`; `'transform'` throws. `tools/setup.sh` now tries `transform` and falls back to `strip` (`vendor/toon.ts` strips cleanly).
+- `setup.sh` hides that step's errors (`2>/dev/null` + `set -e`), so a failure there exits with no message. Run it with `bash -x` to see where it stops.
+- The project folder is now `~/Desktop/CuriousManche/cartoon-short-kit`. Start Claude Code from there.
+
 ## 2026-11 — Channel brand: "The Curious Manche"
 - Channel name: **The Curious Manche** (मान्छे = person). It covers international stories, trending news and facts, voiced in Nepali for now.
 - Mascot: `engine/mascot.js` → `drawManche` (bean-head in a dhaka topi, one eyebrow raised, eyes looking up-right, small "o" mouth) + `drawQ` question mark.

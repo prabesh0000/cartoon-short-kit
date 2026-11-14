@@ -7,7 +7,7 @@ You do this once. It takes about 30-45 minutes. After that, making a reel is: op
 ## 0. What you end up with
 
 ```
-~/CuriousManche/
+~/Desktop/CuriousManche/
 └── cartoon-short-kit/                ← this repo. Always open Claude Code HERE.
     ├── CLAUDE.md                     ← project memory: brand, your preferences, rules (Claude reads it every session)
     ├── SETUP.md                      ← this guide
@@ -69,6 +69,10 @@ npx playwright install chromium
 ```bash
 curl -fsSL https://claude.ai/install.sh | bash
 ```
+The installer puts `claude` in `~/.local/bin` but doesn't add that folder to your PATH. Add it:
+```bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc && source ~/.zshrc
+```
 Close Terminal, open a new window, then check:
 ```bash
 claude --version
@@ -82,7 +86,7 @@ If you see `command not found: claude`, run `source ~/.zshrc` or open a new wind
 1. On GitHub, open **github.com/prabesh0000/cartoon-short-kit/pull/1** and press **Merge pull request** → **Confirm merge**. That puts all these files on `main`.
 2. In Terminal:
 ```bash
-mkdir -p ~/CuriousManche && cd ~/CuriousManche
+mkdir -p ~/Desktop/CuriousManche && cd ~/Desktop/CuriousManche
 git clone https://github.com/prabesh0000/cartoon-short-kit
 cd cartoon-short-kit
 ls
@@ -94,7 +98,7 @@ You should see `CLAUDE.md`, `SETUP.md`, `PROMPTS.md`, `engine`, `tools`, `inbox`
 ## 4. First start + test run
 
 ```bash
-cd ~/CuriousManche/cartoon-short-kit
+cd ~/Desktop/CuriousManche/cartoon-short-kit
 claude
 ```
 - First time: it asks you to **log in**. Follow the browser link.
@@ -118,7 +122,7 @@ Afterwards you can delete the test: `rm -rf reels/test`.
 
 ## 5. Making a reel (every time)
 
-1. `cd ~/CuriousManche/cartoon-short-kit && claude`
+1. `cd ~/Desktop/CuriousManche/cartoon-short-kit && claude`
 2. Type: `/make-reel give me 10 ideas` (more prompts in **PROMPTS.md**).
 3. Pick a number → Claude writes the Nepali script (about 60 words ≈ 30 s).
 4. Record it in **ElevenLabs** (voice "Ashok Pokhrel", no music) and save the `.mp3` into `inbox/`.
@@ -149,6 +153,7 @@ Afterwards you can delete the test: `rm -rf reels/test`.
 | `node` too old | `brew upgrade node` |
 | `pip` says "externally managed" | Use the exact pip command from step 2 (it includes `--break-system-packages`) |
 | Playwright can't find a browser | `npx playwright install chromium` |
+| `tools/setup.sh` stops with no message, or says "toonbase.js empty" | Fixed in the kit: Node 26 dropped the `transform` option for type stripping, and the script now falls back to `strip`. Run `git pull` to get the fix |
 | Renders are slow | Ask Claude: "run the GPU check and switch to the fastest GL mode" |
 | The render stopped (Mac slept) | Ask Claude: "resume the render". It continues from the last frame (`RESUME=1`) |
 | Claude asks permission for every command | Make sure you trusted the folder; type `/permissions` to see the rules |

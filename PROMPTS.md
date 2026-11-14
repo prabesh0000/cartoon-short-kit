@@ -2,7 +2,7 @@
 
 Open Terminal, then:
 ```
-cd ~/CuriousManche/cartoon-short-kit
+cd ~/Desktop/CuriousManche/cartoon-short-kit
 claude
 ```
 Then copy-paste one of these. Swap the parts in [brackets].
