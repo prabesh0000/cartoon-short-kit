@@ -1,2 +1,10 @@
 __pycache__/
 *.pyc
+# your voiceovers and rendered reels stay on your Mac, not in git
+inbox/*
+!inbox/.gitkeep
+reels/*
+!reels/.gitkeep
+.claude/settings.local.json
+.DS_Store
+node_modules/

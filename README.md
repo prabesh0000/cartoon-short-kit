@@ -9,6 +9,15 @@ Audio in, finished vertical cartoon short out. 2D bean-head cards in an inked, p
   mix.py (level-locked mix), finish.sh (loudness + encode + QA).
 - `vendor/` three.js r160 module build and toon.ts (both MIT, licenses alongside), so setup needs no network.
 
+**New here? Start with `SETUP.md`** (one-time Mac setup), then `PROMPTS.md` (what to type to Claude Code). `CLAUDE.md` is the project memory Claude Code loads every session, and `.claude/skills/make-reel/` is the reel workflow (`/make-reel`).
+
+**Read `LESSONS.md` first.** It collects what each project taught (timing, framing, sound, Nepali specifics) and gets a new entry after every short.
+
+Extras:
+- `tools/patch_toon.py` (run by setup.sh) adds optional hooks to the toon `bodyFront`: `armFn`, `behind`, `front`, `headExtra`, `back` (custom poses, props, crowns, back views).
+- `engine/nepal.js`: the Nepal cast (Kirat king and warriors, two armies, Krishna seen from behind, townsfolk in dhaka topi, the Akash Bhairav mask, the Sudarshan chakra, props, puffs, glows) plus POSES and `armBlend`.
+- `example/yalambar/`: the Nepali short "यलम्बरको शिर" (standalone engine variant, cinematic thriller score template, hand-mapped timing).
+
 Pipeline (run inside the project folder setup.sh creates):
 ```
 bash <kit>/tools/setup.sh ~/shorts/my-short && cd ~/shorts/my-short
