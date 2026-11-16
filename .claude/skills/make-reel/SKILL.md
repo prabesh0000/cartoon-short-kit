@@ -28,7 +28,9 @@ voiceover. The voice is never edited. Music is synthesized at **50 % of the voic
 - Keep the user posted with a task list. Show a stills contact sheet before the long render.
 
 ## Stage 1: Intake (always first)
-Check `inbox/` for a new voiceover. If there is one: ask which script it was recorded from (or read a `.txt` next to it), then go to Stage 4.
+Run `git pull` first: scripts planned in the claude.ai chat arrive as `scripts/<slug>.md`, and kit updates come the same way.
+Then check `scripts/` for a ready script and `inbox/` for a new voiceover. If there is a voiceover: match it to its script (`scripts/<slug>.md` or a `.txt` next to it; ask if unclear), then go to Stage 4.
+If there is a ready script but no voiceover: show it, run the Stage 3 checklist on it, and give the recording tips.
 Otherwise ask once: **"Where are you starting from?"** Need ideas + script / Have a script, need the voiceover / Voiceover ready.
 Also ask the length if not given. Default **25-30 s**.
 
@@ -44,19 +46,38 @@ Verify every fact with web search before offering it. Trending news: search for 
 Mark your top 3 picks. Ask for a number or "more".
 
 ## Stage 3: Script (after they pick)
-Narration only, in **Nepali (Devanagari)** unless told otherwise. Nepali TTS runs about **2 words/s**: 20 s ≈ 40 words, 30 s ≈ 60. (English is about 3.7 words/s.)
-1. **Hook** (sentence 1, no setup).
-2. **Setting** in 1-2 lines.
-3. **Escalation**, 2-4 beats, each bigger. Others doubt or mock.
-4. **Pivot / mechanism** ("तर…").
-5. **Twist** as the last words.
-6. Optional final question for comments ("तपाईंलाई थाहा थियो?").
-Plain spoken Nepali, numbers as words, no stage directions. Reply with the script in a copyable block, the word count, the estimated length, a one-paragraph visual plan, and recording tips: ElevenLabs voice "Ashok Pokhrel", natural pauses at sentence ends, export without music, put the file in `inbox/`.
-Save the script to `inbox/<slug>.txt`.
+**Load the `storytelling-hooks` skill first** and follow its workflow (read its `patterns.md`). Narration only, in **Nepali (Devanagari)** unless told otherwise. Nepali TTS runs about **2 words/s** (ignore that skill's 2.5 words/s): 20 s ≈ 40 words, 30 s ≈ 60.
+
+1. **5 hook options**, each stacking 2-3 levers (curiosity gap, emotional mirror, conflict, relatability, pattern + surprise, three-act), levers labelled. Score them on the storytelling-hooks checklist and recommend one, with the reason. The hook must land in about 2 s and keep its question open until the payoff.
+2. **Three hook layers** for 0:00 (most feeds autoplay muted):
+   - **First frame:** mid-action and intriguing with the sound off (it becomes frame 0 of the shot plan).
+   - **Spoken line:** the chosen hook.
+   - **Text overlay:** 2-5 Devanagari words carrying the *other half* of the gap (stakes, audience or number), never a caption of the spoken line.
+3. **The script** in this order: hook → setup (1-2 lines) → turning point ("तर…" / "अचम्मको कुरा…") → twist → **bookend** (repeat a key word from the hook) folded into **one CTA**, usually one specific, easy comment question ("मञ्जुश्रीको यो कथा तपाईंले पहिलो पटक कसबाट सुन्नुभएको थियो?").
+4. **Beat overlays:** 2-4 words flashed at the turning point and the twist, for muted viewers.
+
+**Storytelling rules (BEATS + what the user asked for):**
+- **Begin with the real story.** Find the tension (legend vs science, power vs no post). Never invent facts, quotes or people.
+- **One arc:** setup → turning point → payoff. The viewer is the hero discovering something; the channel is the guide.
+- **Anchor in specifics:** one concrete, checkable detail beats ten general lines ("कालो, नरम माटो, सयौं मिटर बाक्लो"; "दस हजार गोली, नौ सय छयासी चरा").
+- **One emotion** (wonder, unease, pride, outrage), built toward. No hype, no trailer voice.
+- **It must read as one story, never a list of cut-off facts.** Link sentences: भनिन्छ, र, तर, जुन, अचम्मको कुरा, जाँदाजाँदै. The user rejects choppy scripts.
+- **Plant the twist early:** mention the thing that turns out to matter (the soil, the phone) before the reveal.
+- **Question hooks work** when they name something viewers already know ("के मञ्जुश्रीले साँच्चै…?").
+- **Legends:** never call them false and never mock them. Confirm what science confirms, hedge what is probable ("सम्भवतः").
+- **News about real people:** keep "आरोप छ" and "दोष प्रमाणित भएको छैन" in the narration; no names of officials on screen; every claim from 2+ sources.
+- Plain spoken Nepali, numbers as words, no stage directions in the narration.
+- A flowing script gets **one continuous camera journey** (follow the water, sink into the ground) with dissolves only on time jumps, not hard cuts.
+
+**Reply with:** the hook options and the pick, the three hook layers, the script in a copyable block, the word count and length, the camera journey (one row per line), and recording tips:
+- ElevenLabs voice "Ashok Pokhrel", natural pauses at sentence ends, export without music, file into `inbox/`.
+- Delivery the user likes: dramatic, **news-anchor** energy, not whispers. On Eleven v3/v4 use audio tags (`[dramatically]`, `[short pause]`); on Multilingual v2/Flash use `<break time="0.5s" />` (max 3 s, only a few). Tags in brackets get read aloud on the wrong model, so test one line first.
+
+Save the script, hook layers and camera journey to `scripts/<slug>.md` (git-tracked) and a plain-text copy to `inbox/<slug>.txt`.
 
 ## Stage 4: Build (after the voiceover arrives). Do everything without stopping, except the stills check.
 ### 4.0 Project
-`bash tools/setup.sh reels/<slug>`, then copy `inbox/<voice>` to `reels/<slug>/voice.mp3` and the script to `reels/<slug>/work/script.txt`. Work inside `reels/<slug>/`.
+`bash tools/setup.sh reels/<slug>`, then copy `inbox/<voice>` to `reels/<slug>/voice.mp3` and the narration lines (from `scripts/<slug>.md` or `inbox/<slug>.txt`) to `reels/<slug>/work/script.txt`. Work inside `reels/<slug>/`.
 
 ### 4.1 Timing
 `python3 timing.py voice.mp3 work/script.txt --out work` (uses whisper / faster-whisper if installed, else silence detection + script alignment).
@@ -64,7 +85,7 @@ Check `work/phrases.json`: pauses should fall at sentence ends. **Nepali:** if i
 
 ### 4.2 Shot plan (`work/PLAN.md` before code)
 One row per shot: frames, words, setting, light, camera move, characters / poses / expressions, effects, SFX cue.
-- **Frame 0 = the strongest image** (the payoff or the most dramatic moment), not a calm close-up.
+- **Frame 0 = the hook's first-frame layer** (the strongest, mid-action image), not a calm close-up. Put the hook overlay and the beat overlays in the plan (Devanagari, not mirrored).
 - Usually one shot per phrase; merge tiny phrases. Illustrate every sentence literally; props carry the jokes.
 - Vary shot sizes; light for beats (day / golden / storm / dusk); a time or place jump gets a white flash.
 - The twist gets a sting (music stops, low hit, push-in with roll). The last shot's payoff lands on the final word.
@@ -114,6 +135,8 @@ Print per-section RMS (builds louder than drops) and plot the stem levels agains
 - `open reels/<slug>/out/` and give a few lines on each shot. Offer captions, tweaks, or the next idea.
 
 ## Stage 5: After every reel (the user asked for this every time)
-Add a dated entry at the top of `LESSONS.md`: what was new, what broke, what to do next time.
-Put reusable new characters or props into `engine/nepal.js` (or a new cast file) and new score instruments into the template.
-Suggest a commit, and commit or push only when the user says so.
+1. Add a dated entry at the top of `LESSONS.md`: what was new, what broke, what to do next time.
+2. Put reusable new characters or props into `engine/nepal.js` (or a new cast file) and new score instruments into the template.
+3. Offer post captions (Nepali + English, the hook in the first 125 characters, 5 hashtags, sources for news) and, for YouTube Shorts, a title via `titles-and-thumbnails`.
+4. **Git:** remind the user to say "commit and push" so the lessons reach GitHub and the claude.ai chat. Commit or push only when they say so (never force-push).
+5. After posting: if a reel underperforms, use `retention-audit` with its retention graph. Once there are 10+ reels, run `channel-formula` on the account.

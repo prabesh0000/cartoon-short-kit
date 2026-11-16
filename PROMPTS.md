@@ -3,9 +3,23 @@
 Open Terminal, then:
 ```
 cd ~/Desktop/CuriousManche/cartoon-short-kit
+git pull
 claude
 ```
-Then copy-paste one of these. Swap the parts in [brackets].
+`git pull` brings in scripts planned in the claude.ai chat (`scripts/`) and kit updates. Then copy-paste one of these. Swap the parts in [brackets].
+
+## The whole flow in one prompt (script already planned in the chat)
+Put the voiceover in `inbox/[slug].mp3` first, then:
+```
+/make-reel Build the reel for scripts/[slug].md. The voiceover is inbox/[slug].mp3.
+Follow the full flow: read LESSONS.md, use the hook layers and camera journey from the script file,
+cinematic score with soft SFX on key cuts and actions, show me the stills sheet before the full render.
+```
+
+## The whole flow from zero
+```
+/make-reel New reel from scratch: 10 verified ideas, then a storytelling-hooks script for the one I pick.
+```
 
 ## Get ideas
 ```
