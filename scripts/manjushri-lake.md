@@ -1,23 +1,22 @@
 # मञ्जुश्रीको ताल (Manjushri's lake): legend + science
 
-Status: script final, waiting for the voiceover (`inbox/manjushri-lake.mp3`). Length: 64 words ≈ 32 s. Everyday Nepali words only (user request, 16 Nov).
-Emotion: wonder → unease. Twist loop: earthquakes (probably) emptied the lake; the lake's clay now makes earthquakes worse.
+Status: script final, waiting for the voiceover (`inbox/manjushri-lake.mp3`). Length: 62 words ≈ 31 s. No earthquake references (user request, 16 Nov). Everyday Nepali words only (user request, 16 Nov).
+Emotion: wonder → surprise. Twist: the legend's lake is real, and Kathmandu still sits on its bed.
 
 ## Hook layers (0:00)
 - **First frame:** Manjushri seen from behind, mid-swing, sword blazing above a vast blue lake (mid-action, works on mute).
 - **Spoken line:** line 1 of the script.
 - **Overlay:** `काठमाडौंमुनिको रहस्य`
-- **Beat overlays:** `ताल = सत्य` (line 4), `झन् हल्लिन्छ` (line 7).
+- **Beat overlays:** `ताल = सत्य` (line 4), `तालकै पिँधमा` (line 6).
 
 ## Narration (record exactly this)
 ```
 के मञ्जुश्रीले साँच्चै तरवारले काठमाडौंको ताल खाली गरेका थिए?
 भनिन्छ, तालको कमलसम्म पुग्न उनले चोभारको डाँडा काटे,
 पानी बग्यो, र त्यही मलिलो माटोमा मान्छे बसे।
-अचम्मको कुरा, विज्ञान पनि भन्छ, यहाँ साँच्चै ताल थियो,
-र सायद ठूला भूकम्पले त्यसको पानी बगाइदिए।
-तर ताल गयो, माटो छोडेर गयो, कालो, नरम माटो, सयौं मिटर बाक्लो।
-र आज भूकम्प आउँदा, त्यही माटोले काठमाडौंलाई झन् हल्लाउँछ।
+अचम्मको कुरा, विज्ञान पनि भन्छ, यहाँ साँच्चै ताल थियो।
+तर ताल जाँदा एउटा कुरा छोडेर गयो: सयौं मिटर बाक्लो, कालो माटो।
+आज काठमाडौं त्यही माटोमाथि छ, मतलब, सहर अझै पनि तालकै पिँधमा बसेको छ।
 तपाईंले मञ्जुश्रीको यो कथा पहिलो चोटि कसबाट सुन्नुभएको थियो?
 ```
 
@@ -27,17 +26,17 @@ Emotion: wonder → unease. Twist loop: earthquakes (probably) emptied the lake;
 | 1 | Manjushri from behind on a ridge, mid-swing, sword glowing, vast lake below |
 | 2 | Push toward the glowing lotus; the strike; Chobhar splits open |
 | 3 | Ride the rushing water down; green fields and villages grow along it |
-| 4-5 | Pull up: the modern city fades in where the lake was; ghost ripples of the old lake; deep rumble |
-| 6 | Sink straight down through the ground into thick black clay layers |
-| 7 | Rise back up; buildings wobble like jelly on the clay |
-| 8 | Settle on the Manche mascot with "?" |
+| 4 | Pull up: the modern city fades in where the lake was |
+| 5 | Sink straight down through the ground into thick black clay layers |
+| 6 | Rise back up; the old lake's water shimmers back over the rooftops (bookends the opening lake), city seen as if underwater |
+| 7 | Settle on the Manche mascot with "?" |
 
 Respect: Manjushri only from behind or as a glowing silhouette; never mocked; the legend is never called false.
 
 ## Sound
-Calm, mystic opening (drone + soft bells) → a big hit on the sword strike → rushing water → a low rumble and heartbeat under lines 4-6 → near-silence before line 7 → the biggest hit on "कम्पन झन् बढाउँछ" → a soft gong under the question.
+Calm, mystic opening (drone + soft bells) → a soft, deep hit on the sword strike → rushing water → a light pulse building under lines 4-5 → near-silence as we sink into the clay → a warm swell with water ambience when the lake shimmers back over the city → a soft gong under the question. SFX soft (-12 dB, peaks ≤ 0.4x voice).
 
 ## Sources (checked 16 Nov 2026)
-- Lake existed; 550 m+ of lake and river deposits; drained in stages, probably by earthquakes about 51,000 (±13,000) and 38,000 years ago; clay soil (kalimati) amplifies shaking and liquefies: https://en.wikipedia.org/wiki/Paleo_Kathmandu_Lake
+- Lake existed; 550 m+ of lake and river deposits under the valley (the city sits on the old lakebed): https://en.wikipedia.org/wiki/Paleo_Kathmandu_Lake
 - "Ample geological evidence" the valley was a lake; drained in phases through Chobhar: https://archive.nepalitimes.com/news.php?id=17327
 - Swayambhu Purana: Manjushri cut Chobhar; the lotus settled at Swayambhu: https://ecs.com.np/heritage-tale/manjushree
