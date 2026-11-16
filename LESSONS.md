@@ -2,6 +2,44 @@
 
 Newest first. Each entry says what happened and what to do next time.
 
+## 2026-11-15 — "इनाम सापकोटा" (trending news, 30.6 s, 12 shots)
+- **Timing: faster-whisper works on the Mac** and beats silence detection. Install it in a venv with the system Python 3.9 (`/usr/bin/python3 -m venv …`), not Homebrew Python 3.15, where `av` fails to build. Run model `small`, `language='ne'`, `word_timestamps=True`, `initial_prompt=<script>`. The recording differed from the script (a dropped line, reworded phrases), and Whisper caught that; silence matching alone could not.
+- Live news with real people: the subject is a faceless dark silhouette with a white "?" (no real faces). Officials are generic and unnamed. The script says "आरोप छ" and "दोष प्रमाणित भएको छैन", and the visuals avoid implying guilt (the scale settles level).
+- Built on the Chhath engine (`reels/chhath/web/main.js` + `motion.js`), not the template `main.js`: its world/story split is much easier to reuse. New: `inam.js` (drawMan, drawCop, drawJudge, drawApf, phone screen with Devanagari contact tiles, domino faces, scale, magnifier, spot pool + cone). A dark "void" hall is just a floor plus a dark sky and fog, with no walls.
+- Devanagari text on canvas works headless on macOS with `'Kohinoor Devanagari'`.
+- Dominoes: a group pivots at the far bottom edge and is rotated by `-angle` on x. Lean angle = asin((gap - d) / h), then fall further when the next one falls.
+- Vertical framing again: a desk top-down shot only shows about 1 m of width, so stack the subjects in depth (scale behind the files), not side by side.
+- Sound used the new soft rules: SFX -12 dB vs the voice, low-passed tocks and whooshes on major cuts only, news palette (pulse, ticks, pads, soft low hits). Waiting for the user's verdict.
+- Whole render: 918 frames in about 20 s on the M4.
+- **Bug (user spotted): the characters flickered after the domino part.** An additive light cone on a yaw billboard at the same x,z as a character card depth-fights with it: the card washes out or goes blocky from frame to frame. Put cones at least 1 m behind the subject (away from the camera). QA: diff consecutive frames and flag spikes that are not cuts or flashes.
+- The user asked for a better "middleman" shot. A static wide shot with tiny figures did not read. What worked: a close two-shot for the handoff, then a crane up that reveals the queue, him and the court doors, plus a dotted gold line drawn through him on the key word ("बिचौलिया"). Show an abstract idea literally: put the person *in the middle* of a visible path.
+- **Engine bug fixed: seated characters ignored armFn** (`mode: "sit"` always drew hanging arms), so a "phone at the ear" looked glued to the head. `tools/patch_toon.py` now makes sit use armFn when given; re-run it on older reels' `web/toonbase.js`. Always check a new pose on a cast sheet (`castshot.mjs` + `web/cast.html`) before using it in a shot.
+- For a hand holding something at the head, end the arm *outside* the head outline (about 0.6 W from the centre) and draw the prop in headExtra, or the head hides the hand. Body `tilt` shifts the arm away from props drawn in headExtra, so do not combine them.
+- **Prop handoffs: ONE prop card on ONE world-space path** (giver's chest -> hands meet -> taker's near hand), with arm poses timed to it. The first version drew the file twice (with the giver and inside the taker's drawing) and left the giver's arm out after the handoff, so it read as two handoffs.
+- A faceless character can still act: light-ink sly eyes (heavy upper lid), a raised brow and a smirk on the dark head, with the "?" floating above it (`slyFace` in `inam.js`). Use the big "?" face only for back views.
+- "Bland" news beats get better with one physical action on the key word: a stamp slamming "बर्खास्त" on an order letter, an evidence board with red strings, a spotlight that travels to something meaningful (towering "?" dominoes) rather than off into empty space. The user rejected the travelling light as "no value". What worked: the "?" lifts off the man's head on "उनी होइनन्" and settles, huge, over the court, so the question visibly moves from the person to the system.
+- The white-on-dark "sly face" looked bad. Use a normal skin-tone cartoon head with engine expressions (add custom `FACE` entries such as `scheme` = lid eyes, brows inner-down, smirk) and float a small "?" above the head. Use `hat: null` plus a hair cap clipped to the head so the brows show.
+- On-screen Latin text (a name sign) must fit about 2.5 m wide at that depth in a vertical frame, and check that near props (the chair) do not cover it in low-angle shots.
+- Endings land better as a **callback to the hook**: the same empty red chair from shot 1 sits at the top of the staircase, lit by a cone of light, with the "?" over it. Shoot the "ordinary man" from the front at a low angle so the stairs tower behind him, not from above (from above, a dark figure on grey steps reads as nothing).
+- Investigation beats: animate the evidence board as a card (`drawBoard(p, k)`, strings drawn in one by one), close the desk front so legs do not show, and remove props that read as blobs (the lamp model).
+
+## 2026-11-15 — Feedback on Chhath: the SFX were too loud
+- The user found the Chhath SFX too loud and distracting (already posted). From now on SFX must be **soft and soothing**.
+- Causes: SFX mixed at -6 dB vs the voice by *gated* RMS (measured only while sounding, so every hit was nearly as loud as the music), peaks up to 0.7x the voice, swishes swept to 6-8 kHz, and a cue on almost every cut.
+- The user also wants the **background sound to fit each reel's theme and setting**. The make-reel skill (4.7) now lists a music palette per topic type and ambience per setting. Pick both per reel and write them in the shot plan.
+- Fix in the kit: `tools/mix.py` now defaults to `--sfx 0.25 --sfx-peak 0.4` (-12 dB, peaks <= 0.4x voice). The SFX rules in the make-reel skill now say: fewer cues, low-pass at about 3-4 kHz, attacks of 10 ms or more, warm sounds over bright ones.
+
+## 2026-11-14 — "छठ: डुब्दो सूर्य पहिले" (Chhath, 33.9 s, 14 shots)
+- Built on the Yalambar engine variant (`example/yalambar/web/main.js`), patched so `lightAt(f)` may return a light **object**. Presets mixed per frame (`mixL`/`seq` in story.js) give sunset → night → sunrise time-lapses in one shot.
+- On the M4 the stills ran at 0.03-0.1 s/frame and the full 1016-frame render took about 30 s. Iterate on stills freely.
+- Sun = a screen card at `cam + sunDir*1400` (fog off) + an additive glow; it hides itself below the horizon behind the water plane. Its reflection streak must be narrow (design 80 px wide); a 200 px card made white bars across the river.
+- Waist-deep characters: stand cards at y -0.75 behind an opaque water plane at y 0. Ripple rings are flat alpha cards.
+- New cast in `chhath.js`: `drawVrati` (sari veil, Chhath nose-to-forehead sindoor, soop/lota), `drawKarna` (back view), grandparents, props (soop, lota, stream, diya, garland, asana, sun, beam). New POSES: `offer`, `soopUp`, `pour`, `lap`. Worth moving into `engine/` if Nepali festivals recur.
+- Bug: a `continue` placed after `add(mesh)` left skipped rocks at the world origin, right in the main river shot. Decide skips before creating meshes.
+- Vertical framing: at fov 42 a character only 1-2 m off the look line is out of frame. Aim the look point through the subject's depth, not past it.
+- An additive light beam is invisible against a bright golden sky. Use a darker sky or an alpha beam.
+- Timing again came from silence detection: 10 script lines mapped exactly onto 12 speech segments, because "कथा छ," and the final question got their own pauses.
+
 ## 2026-11-14 — Mac setup check (Apple M4)
 - **Mac M4 GPU renders at about 0.5 s/frame with `GL=gpu`** (`gpucheck.mjs` reports "ANGLE Metal Renderer: Apple M4"). That is about 5x faster than the cloud's 2-3.5 s/frame with SwiftShader, so a 30 s reel (900 frames) takes about 8 min.
 - Node 26 accepts only `mode:'strip'` in `stripTypeScriptTypes`; `'transform'` throws. `tools/setup.sh` now tries `transform` and falls back to `strip` (`vendor/toon.ts` strips cleanly).

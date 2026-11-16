@@ -10,7 +10,7 @@ The repo you are in **is** the kit. `CLAUDE.md` (brand, preferences, rules) is a
 
 The look: flat 2D bean-head characters (canvas-drawn cards with plum outlines) in a colourful 3D world with black ink
 outlines, painted textures, depth of field and gliding cameras. Output: 1080x1920, 30 fps, exactly as long as the
-voiceover. The voice is never edited. Music and SFX are synthesized and sit at **50 % of the voice level**.
+voiceover. The voice is never edited. Music is synthesized at **50 % of the voice level**; SFX are soft, at **25 %** (-12 dB).
 
 ## Folders
 - `inbox/`: the user drops voiceovers (`.mp3`/`.wav`) and the final script text here.
@@ -24,7 +24,7 @@ voiceover. The voice is never edited. Music and SFX are synthesized and sit at *
 - Religious figures and deities: respectful, never mocked. Seen from behind, or as their worshipped form (see LESSONS.md, Yalambar).
 - Diegetic text must read correctly (not mirrored). Captions only if the user asks (Devanagari fonts on macOS: "Kohinoor Devanagari", "Devanagari Sangam MN").
 - Never edit or re-time the voice. Every visual reaction lands 0-3 frames before its word.
-- Audio: always mix with `mix.py` (music exactly -6 dB vs the voice by gated RMS; SFX at or below that, peaks ≤ 0.7x the voice peak). No ducking or compression; one linear gain + a limiter in `finish.sh`.
+- Audio: always mix with `mix.py` (music exactly -6 dB vs the voice by gated RMS; SFX -12 dB, peaks ≤ 0.4x the voice peak). No ducking or compression; one linear gain + a limiter in `finish.sh`.
 - Keep the user posted with a task list. Show a stills contact sheet before the long render.
 
 ## Stage 1: Intake (always first)
@@ -91,11 +91,21 @@ Vertical frame: hfov = 2·atan(tan(vfov/2)·0.5625), about 19° at fov 36, so st
 the camera inside geometry, faces hidden, characters out of frame, mirrored text, boxed glows. Then `open stills/sheet_a.jpg` for the user, with a one-line shot list, and wait for OK.
 
 ### 4.7 Sound (`audio.py` → stems → `mix.py`)
-Default: **cinematic thriller score written to the beats**. Use `example/yalambar/audio.py` as the template: keep the instruments, rewrite the cue sections.
-Impact + braam open; war drums + ostinato for action; drone, ticking and tremolo under dialogue; a riser + reverse cymbal into hits; a near-silent drop + heartbeat before the twist; the biggest hit on the twist; choir + brass for the climax; final hit + gong.
-SFX: a swish on every cut; on jumps a whoosh, then thud + metal/wood + debris (growing each repeat); fly-bys, wind and sparkles on flights; thunder, poofs, crowd.
+**Match the background sound (score + ambience) to the theme, place and mood of each reel; never reuse one bed for every reel.** Write it to the beats, cinematic, never a happy repetitive loop. Use `example/yalambar/audio.py` as the code template, but pick the palette per reel and state it in the shot plan:
+- Devotional / festival (Chhath, Tihar, Dashain): drone, soft bansuri-like flute, tanpura, temple bells, gentle frame drum; calm swells, no war drums.
+- War / legend / myth (Yalambar): war drums, braams, brass, choir, ostinato.
+- History: strings, slow pulse, ambient pads, period-appropriate instruments where possible.
+- Trending news: modern tension, low synth pulse, ticking, clean hits.
+- Surprising facts / science: curious plucks, light percussion, airy pads, a reveal sting.
+- Mystery / horror: low drones, dissonant strings, heartbeat, near-silence.
+Ambience comes from each shot's setting and changes when the setting changes: river → water lapping; village → birds, distant voices; city → traffic hum; night → crickets; mountains → wind; battlefield → distant crowd. Keep it very low.
+For thriller-type reels, the structure: impact + braam open; war drums + ostinato for action; drone, ticking and tremolo under dialogue; a riser + reverse cymbal into hits; a near-silent drop + heartbeat before the twist; the biggest hit on the twist; choir + brass for the climax; final hit + gong.
+SFX must be **soft and soothing, never loud or distracting** (the user's rule since Chhath, 2026-11-14):
+- Fewer cues: soft whooshes on major scene changes, not every cut; one gentle accent per key action. Ambience (water, wind, birds) stays very low.
+- Gentle tone: low-pass noise-based cues at about 3-4 kHz (no 6-8 kHz hiss); attacks of 10 ms or more (no clicks, cracks or sharp pops); avoid metal, debris and harsh transients unless the story needs an impact, then keep it low and short.
+- Warm over bright: bells, soft chimes, low thuds, breathy whooshes.
 Print per-section RMS (builds louder than drops) and plot the stem levels against cut frames to check that hits land.
-`python3 mix.py voice.mp3 music.wav sfx.wav` (→ `mix_raw.wav`) → confirm music -6.0 dB vs the voice, SFX ≤ -6 dB.
+`python3 mix.py voice.mp3 music.wav sfx.wav` (→ `mix_raw.wav`) → confirm music -6.0 dB vs the voice, SFX ≤ -12 dB. Listen to a cut-heavy section before finishing.
 
 ### 4.8 Render + finish
 - `node gpucheck.mjs` once per machine: use the GL mode that names the GPU. `GL=gpu` is the default on macOS; `GL=swiftshader` is the slow fallback.

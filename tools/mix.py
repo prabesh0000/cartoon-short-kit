@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Level-locked mix: music bed and SFX at 50 % of the voice level.
+"""Level-locked mix: music bed at 50 % of the voice level, SFX soft (25 %, peaks <= 0.4x voice).
 
 Usage:
-  python3 mix.py voice.mp3 music.wav sfx.wav [--out mix_raw.wav] [--music 0.5] [--sfx 0.5] [--sfx-peak 0.7]
+  python3 mix.py voice.mp3 music.wav sfx.wav [--out mix_raw.wav] [--music 0.5] [--sfx 0.25] [--sfx-peak 0.4]
 
 - The voice is never changed (no EQ, no compression, no re-timing).
 - Levels are gated RMS: 400 ms blocks every 100 ms, absolute gate -70 dBFS,
@@ -10,8 +10,8 @@ Usage:
   (the BS.1770 gating scheme, without K-weighting). Silence and gaps do not count,
   so each stem is measured only where it is actually sounding.
 - music gain  = 0.5 x voice gated RMS / music gated RMS   (-6.0 dB vs voice)
-- sfx gain    = 0.5 x voice gated RMS / sfx gated RMS, then lowered if needed so the
-  loudest SFX peak is at most 0.7 x the voice peak (no hit pokes out over the narration).
+- sfx gain    = 0.25 x voice gated RMS / sfx gated RMS (-12 dB), then lowered if needed so the
+  loudest SFX peak is at most 0.4 x the voice peak (no hit pokes out over the narration).
 - No ducking, no compression. If the summed mix would clip, ONE linear gain scales
   the whole mix (ratios stay exact). finish.sh then applies the loudness gain + limiter.
 The output is as long as the voice. Prints measured levels; check music = -6.0 dB vs voice.
@@ -52,8 +52,8 @@ def main():
     ap.add_argument("voice"); ap.add_argument("music"); ap.add_argument("sfx")
     ap.add_argument("--out", default="mix_raw.wav")
     ap.add_argument("--music", dest="music_lvl", type=float, default=0.5, help="music level as a fraction of the voice (0.5 = -6 dB)")
-    ap.add_argument("--sfx", dest="sfx_lvl", type=float, default=0.5, help="sfx level as a fraction of the voice")
-    ap.add_argument("--sfx-peak", type=float, default=0.7, help="max sfx peak as a fraction of the voice peak")
+    ap.add_argument("--sfx", dest="sfx_lvl", type=float, default=0.25, help="sfx level as a fraction of the voice")
+    ap.add_argument("--sfx-peak", type=float, default=0.4, help="max sfx peak as a fraction of the voice peak")
     a = ap.parse_args()
 
     v = load(a.voice); N = len(v)
