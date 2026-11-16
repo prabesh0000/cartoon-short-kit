@@ -1,24 +1,24 @@
 # मञ्जुश्रीको ताल (Manjushri's lake): legend + science
 
-Status: script final, waiting for the voiceover (`inbox/manjushri-lake.mp3`). Length: 63 words ≈ 31 s.
+Status: script final, waiting for the voiceover (`inbox/manjushri-lake.mp3`). Length: 64 words ≈ 32 s. Everyday Nepali words only (user request, 16 Nov).
 Emotion: wonder → unease. Twist loop: earthquakes (probably) emptied the lake; the lake's clay now makes earthquakes worse.
 
 ## Hook layers (0:00)
 - **First frame:** Manjushri seen from behind, mid-swing, sword blazing above a vast blue lake (mid-action, works on mute).
 - **Spoken line:** line 1 of the script.
 - **Overlay:** `काठमाडौंमुनिको रहस्य`
-- **Beat overlays:** `ताल = सत्य` (line 4), `कम्पन झन् बढ्छ` (line 7).
+- **Beat overlays:** `ताल = सत्य` (line 4), `झन् हल्लिन्छ` (line 7).
 
 ## Narration (record exactly this)
 ```
-के मञ्जुश्रीले साँच्चै तरवारले काठमाडौंको ताल रित्याएका थिए?
+के मञ्जुश्रीले साँच्चै तरवारले काठमाडौंको ताल खाली गरेका थिए?
 भनिन्छ, तालको कमलसम्म पुग्न उनले चोभारको डाँडा काटे,
-पानी बगेर गयो, र त्यही उर्वर माटोमा सभ्यता फस्टायो।
-अचम्मको कुरा, विज्ञान पनि भन्छ, ताल साँच्चै थियो,
-र सम्भवतः भूकम्पहरूले त्यसलाई रित्याए।
-तर ताल जाँदाजाँदै आफ्नो माटो छाडेर गयो, कालो, नरम माटो, सयौं मिटर बाक्लो।
-र आज भूकम्प आउँदा, काठमाडौंमुनिको त्यही माटोले कम्पन झन् बढाउँछ।
-मञ्जुश्रीको यो कथा तपाईंले पहिलो पटक कसबाट सुन्नुभएको थियो?
+पानी बग्यो, र त्यही मलिलो माटोमा मान्छे बसे।
+अचम्मको कुरा, विज्ञान पनि भन्छ, यहाँ साँच्चै ताल थियो,
+र सायद ठूला भूकम्पले त्यसको पानी बगाइदिए।
+तर ताल गयो, माटो छोडेर गयो, कालो, नरम माटो, सयौं मिटर बाक्लो।
+र आज भूकम्प आउँदा, त्यही माटोले काठमाडौंलाई झन् हल्लाउँछ।
+तपाईंले मञ्जुश्रीको यो कथा पहिलो चोटि कसबाट सुन्नुभएको थियो?
 ```
 
 ## Camera journey (one continuous move, dissolves only on time jumps)
