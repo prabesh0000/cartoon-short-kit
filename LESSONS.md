@@ -2,6 +2,18 @@
 
 Newest first. Each entry says what happened and what to do next time.
 
+## 2026-11-16 — Scripting lessons (Chhath, Inam Sapkota, Manjushri lake)
+- Scripts must read as **one story**, not a list of cut-off facts: link sentences with भनिन्छ / र / तर / जुन / अचम्मको कुरा / जाँदाजाँदै. The user rejected a choppy version.
+- **Question hooks** about something everyone already knows grab attention ("के मञ्जुश्रीले साँच्चै तरवारले काठमाडौंको ताल रित्याएका थिए?").
+- **Plant the twist early**: "उर्वर माटोमा सभ्यता फस्टायो" sets up the ending where the same माटो amplifies earthquakes.
+- Legend vs science: never say the legend is false. Confirm what science confirms ("ताल साँच्चै थियो") and hedge what is probable ("सम्भवतः").
+- News on real people: every claim needs a source; one line ("नेताका भाइ पक्राउ") was missed in the first check and turned out true (Kathmandu Post, 14 Nov). Search the outlet's latest feed before calling a claim unverified. Keep "आरोप छ" + "दोष प्रमाणित भएको छैन".
+- Dramatic VO: the user wants a **news-anchor** delivery, not whispers. ElevenLabs v3/v4 use audio tags ([dramatically], [short pause]); v2/Flash use `<break time="0.5s" />` (max 3 s, few per script). Tags in brackets are read aloud on the wrong model.
+- Instagram hashtags: keep to 5 (a 5-tag cap was reported from Dec 2025).
+- Third-party "visual storyteller" agents/skills are aimed at app/pitch visuals; read before installing. The useful parts (BEATS) now live in the make-reel skill, Stage 3.
+- **storytelling-hooks** (yaxeen/storytelling-skills, MIT) is now in `.claude/skills/` and is used for every script: 5 hook options with labelled levers, three hook layers (mid-action first frame, spoken line, an overlay carrying the other half of the gap), bookend + one specific comment CTA. Also added: titles-and-thumbnails, retention-audit, channel-formula.
+- Git loop between the claude.ai chat and Claude Code: the chat pushes `scripts/<slug>.md`; Code runs `git pull` at the start; the user says "commit and push" at the end. `inbox/` and `reels/` are git-ignored, so scripts must live in `scripts/` to travel.
+
 ## 2026-11 — Channel brand: "The Curious Manche"
 - Channel name: **The Curious Manche** (मान्छे = person). It covers international stories, trending news and facts, voiced in Nepali for now.
 - Mascot: `engine/mascot.js` → `drawManche` (bean-head in a dhaka topi, one eyebrow raised, eyes looking up-right, small "o" mouth) + `drawQ` question mark.
