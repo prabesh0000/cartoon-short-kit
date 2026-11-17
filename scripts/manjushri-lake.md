@@ -1,6 +1,6 @@
 # मञ्जुश्रीको ताल (Manjushri's lake): legend + science
 
-Status: script final, waiting for the voiceover (`inbox/manjushri-lake.mp3`). Length: 62 words ≈ 31 s. No earthquake references (user request, 16 Nov). Everyday Nepali words only (user request, 16 Nov).
+Status: script final, waiting for the voiceover (`inbox/manjushri-lake.mp3`). Length: 63 words ≈ 31 s. No earthquake references (user request, 16 Nov). Everyday Nepali words only (user request, 16 Nov).
 Emotion: wonder → surprise. Twist: the legend's lake is real, and the streets viewers walk today were its floor.
 
 ## Hook layers (0:00)
@@ -13,7 +13,7 @@ Emotion: wonder → surprise. Twist: the legend's lake is real, and the streets 
 ```
 के मञ्जुश्रीले साँच्चै तरवारले काठमाडौंको ताल खाली गरेका थिए?
 भनिन्छ, तालको कमलसम्म पुग्न उनले चोभारको डाँडा काटे,
-पानी बग्यो, र त्यही मलिलो माटोमा मान्छे बसे।
+पानी बग्यो, र त्यही मलिलो माटोमा मान्छेहरूको बस्ती बस्यो।
 अचम्मको कुरा, विज्ञान पनि भन्छ, यहाँ साँच्चै ताल थियो।
 तर ताल जाँदा एउटा कुरा छोडेर गयो: सयौं मिटर बाक्लो, कालो माटो।
 आज तपाईं काठमाडौंको जुन सडकमा हिँड्नुहुन्छ, त्यो कुनै बेला तालको पिँध थियो।
