@@ -1,13 +1,13 @@
 # मञ्जुश्रीको ताल (Manjushri's lake): legend + science
 
 Status: script final, waiting for the voiceover (`inbox/manjushri-lake.mp3`). Length: 62 words ≈ 31 s. No earthquake references (user request, 16 Nov). Everyday Nepali words only (user request, 16 Nov).
-Emotion: wonder → surprise. Twist: the legend's lake is real, and Kathmandu still sits on its bed.
+Emotion: wonder → surprise. Twist: the legend's lake is real, and the streets viewers walk today were its floor.
 
 ## Hook layers (0:00)
 - **First frame:** Manjushri seen from behind, mid-swing, sword blazing above a vast blue lake (mid-action, works on mute).
 - **Spoken line:** line 1 of the script.
 - **Overlay:** `काठमाडौंमुनिको रहस्य`
-- **Beat overlays:** `ताल = सत्य` (line 4), `तालकै पिँधमा` (line 6).
+- **Beat overlays:** `ताल = सत्य` (line 4), `तालको पिँध` (line 6).
 
 ## Narration (record exactly this)
 ```
@@ -16,7 +16,7 @@ Emotion: wonder → surprise. Twist: the legend's lake is real, and Kathmandu st
 पानी बग्यो, र त्यही मलिलो माटोमा मान्छे बसे।
 अचम्मको कुरा, विज्ञान पनि भन्छ, यहाँ साँच्चै ताल थियो।
 तर ताल जाँदा एउटा कुरा छोडेर गयो: सयौं मिटर बाक्लो, कालो माटो।
-आज काठमाडौं त्यही माटोमाथि छ, मतलब, सहर अझै पनि तालकै पिँधमा बसेको छ।
+आज तपाईं काठमाडौंको जुन सडकमा हिँड्नुहुन्छ, त्यो कुनै बेला तालको पिँध थियो।
 तपाईंले मञ्जुश्रीको यो कथा पहिलो चोटि कसबाट सुन्नुभएको थियो?
 ```
 
@@ -28,7 +28,7 @@ Emotion: wonder → surprise. Twist: the legend's lake is real, and Kathmandu st
 | 3 | Ride the rushing water down; green fields and villages grow along it |
 | 4 | Pull up: the modern city fades in where the lake was |
 | 5 | Sink straight down through the ground into thick black clay layers |
-| 6 | Rise back up; the old lake's water shimmers back over the rooftops (bookends the opening lake), city seen as if underwater |
+| 6 | Rise back up onto a busy Kathmandu street at walking height (a bean-head walking with a phone); the old lake's water shimmers back over the street and rooftops, bookending the opening lake |
 | 7 | Settle on the Manche mascot with "?" |
 
 Respect: Manjushri only from behind or as a glowing silhouette; never mocked; the legend is never called false.
