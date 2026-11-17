@@ -1,6 +1,6 @@
 # मञ्जुश्रीको ताल (Manjushri's lake): legend + science
 
-Status: script final, waiting for the voiceover (`inbox/manjushri-lake.mp3`). Length: 72 words ≈ 36 s. Earthquake only as the scientists' guess (user request, 17 Nov). Everyday Nepali words only (user request, 16 Nov).
+Status: script final, waiting for the voiceover (`inbox/manjushri-lake.mp3`). Length: 62 words ≈ 31 s. Earthquake only as the scientists' guess (user request, 17 Nov). Everyday Nepali words only (user request, 16 Nov).
 Emotion: wonder → surprise. Twist: the legend's lake is real, and the streets viewers walk today were its floor.
 
 ## Hook layers (0:00)
@@ -16,8 +16,7 @@ Emotion: wonder → surprise. Twist: the legend's lake is real, and the streets 
 पानी बग्यो, र त्यही मलिलो माटोमा मान्छेहरूको बस्ती बस्यो।
 अचम्मको कुरा, विज्ञान पनि भन्छ, यहाँ साँच्चै ताल थियो।
 वैज्ञानिकहरूको अनुमान छ, ठूलो भूकम्पले त्यसको पानी बगायो।
-तर ताल जाँदा एउटा कुरा छोडेर गयो: सयौं मिटर बाक्लो, कालो माटो।
-आज तपाईं काठमाडौंको जुन सडकमा हिँड्नुहुन्छ, त्यो कुनै बेला तालको पिँध थियो।
+र आज, तपाईं काठमाडौंको जुन सडकमा हिँड्नुहुन्छ, त्यो कुनै बेला तालको पिँध थियो।
 तपाईंलाई के लाग्छ, साँच्चै के भएको थियो होला?
 ```
 
@@ -29,14 +28,13 @@ Emotion: wonder → surprise. Twist: the legend's lake is real, and the streets 
 | 3 | Ride the rushing water down; green fields and villages grow along it |
 | 4 | Pull up: the modern city fades in where the lake was |
 | 5 | Dissolve back to the ancient lake: the ground shudders and the same Chobhar ridge cracks open (mirrors the sword strike) |
-| 6 | Sink straight down through the ground into thick black clay layers |
-| 7 | Rise back up onto a busy Kathmandu street at walking height (a bean-head walking with a phone); the old lake's water shimmers back over the street and rooftops, bookending the opening lake |
-| 8 | Split image: the sword on one side, the cracking ridge on the other; the Manche mascot with "?" between them |
+| 6 | Dissolve forward onto a busy Kathmandu street at walking height (a bean-head walking with a phone); the old lake's water shimmers back over the street and rooftops, bookending the opening lake |
+| 7 | Split image: the sword on one side, the cracking ridge on the other; the Manche mascot with "?" between them |
 
 Respect: Manjushri only from behind or as a glowing silhouette; never mocked; the legend is never called false.
 
 ## Sound
-Calm, mystic opening (drone + soft bells) → a soft, deep hit on the sword strike → rushing water → a light pulse under line 4 → a soft, low rumble under line 5 (no loud hit) → near-silence as we sink into the clay → a warm swell with water ambience when the lake shimmers back over the city → a soft gong under the question. SFX soft (-12 dB, peaks ≤ 0.4x voice).
+Calm, mystic opening (drone + soft bells) → a soft, deep hit on the sword strike → rushing water → a light pulse under line 4 → a soft, low rumble under line 5 (no loud hit) → a warm swell with water ambience when the lake shimmers back over the city → a soft gong under the question. SFX soft (-12 dB, peaks ≤ 0.4x voice).
 
 ## Sources (checked 16 Nov 2026)
 - Lake existed; 550 m+ of lake and river deposits under the valley (the city sits on the old lakebed): https://en.wikipedia.org/wiki/Paleo_Kathmandu_Lake
