@@ -31,6 +31,7 @@ Claude Code reads this file at the start of every session. Keep it short and cur
 - Voiceover delivery: dramatic, news-anchor energy, not whispers.
 - Legends: respectful, never called false. News about real people: "आरोप छ" + "दोष प्रमाणित भएको छैन", 2+ sources per claim.
 - Nepali scripts are sized at about **2 words/s** (60 words ≈ 30 s).
+- **On-screen text: style A, clean cinematic** (`guides/caption-style.md`): off-white, one brand-orange accent word, soft plate, gentle fade-up. The user found bright, outlined, bouncy text cheap.
 - Show a stills contact sheet before the long render.
 - **Recheck before delivering** (user asked, 2026-11-17): run the audio audit (`tools/audit.py`), the frame-diff scan, and check that every line has a picture that proves it. Open with the central question as a designed title card.
 

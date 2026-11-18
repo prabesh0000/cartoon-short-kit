@@ -25,7 +25,7 @@ Recording: <delivery, tricky words, pauses, how the last word should sound>
 
 ## Editing specifics
 - Pace: a new visual or camera change every 1.5-3 s; nothing static for more than 3 s.
-- Text: inside the safe area (keep clear of roughly the top 250 px, bottom 420 px and right 150 px of 1080x1920, where app buttons and captions sit). Devanagari, large, high contrast, 2-5 words per overlay, on screen at least 1 s.
+- Text: style A from `guides/caption-style.md` (accent word for each overlay listed under Hook layers); inside the safe area.
 - Subtitles: <key-phrase overlays only (default) / full Nepali subtitles>
 - Ending: <outro or loop: last frame matches frame 0>
 - Cover frame: <which frame + cover text>

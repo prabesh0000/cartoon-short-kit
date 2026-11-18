@@ -87,6 +87,7 @@ Check `work/phrases.json`: pauses should fall at sentence ends. Silence detectio
 
 ### 4.2 Shot plan (`work/PLAN.md` before code)
 Start from the brief's visual journey and editing specifics (pace, safe area for text, ending/loop, cover frame); only fill gaps yourself.
+**All on-screen text follows `guides/caption-style.md` (style A, clean cinematic):** Kohinoor Devanagari Bold, off-white #F4EFE6, at most one brand-orange #FFA04C accent word, a soft dark plate for beat overlays, a 0.2 s fade-up, no outlines, no bouncing.
 One row per shot: frames, words, setting, light, camera move, characters / poses / expressions, effects, SFX cue.
 - **Frame 0 = the hook's first-frame layer** (the strongest, mid-action image), not a calm close-up. Put the hook overlay and the beat overlays in the plan (Devanagari, not mirrored).
 - **Hook title card** (user request, 2026-11-17): the reel's central question as a designed card in the first second (`drawHook`: gold vs ice words, icons, word-by-word reveal), e.g. **तरवार कि भूकम्प?**. Overlays use `drawOverlay` (glowing outlined text, no box). Keep them clear of the hero's face and raised props.

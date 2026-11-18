@@ -50,6 +50,7 @@ Newest first. Each entry says what happened and what to do next time.
 - **Loop endings** work: end on an unfinished "…सोध्नुहोस् कि…" that completes with the hook; the last frame equals frame 0, there is no silence gap, and the same SFX plays at both ends. The verb must fit a question ("ask", not "let him know").
 - Accuracy catch: "the danger isn't in the ball" was wrong (capsule chemicals can be toxic); say "not only in the ball".
 - Say "डब्लुएचओ" (letters) instead of the full name; it is shorter and TTS reads it as W-H-O.
+- The user found the on-screen text cheap (bright colours, outlines). From now on every reel uses **style A, clean cinematic** (`guides/caption-style.md`): Kohinoor Devanagari Bold, off-white #F4EFE6, one brand-orange #FFA04C accent word, a soft dark plate, a 0.2 s fade-up.
 
 ## 2026-11-17 — "मञ्जुश्रीको ताल" (legend + science, 32.2 s, 7 shots)
 - Timing: silence detection at -32 dB / 80 ms found every comma pause, so the 7 script lines mapped exactly without Whisper (the faster-whisper venv from Inam was gone; it lived in a temp folder, so reinstall it somewhere permanent if needed).

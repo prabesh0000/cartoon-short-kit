@@ -15,8 +15,9 @@ Sensitive topic: **tobacco + health.** Follow `guides/sensitive-topics.md` secti
 ## Hook layers (0:00)
 - **First frame:** extreme close-up: fingers squeeze a plain filter and the capsule cracks with a visible "pop" flash (mid-action, works on mute).
 - **Spoken line:** line 1.
-- **Overlay:** `सत्य झन् डरलाग्दो छ` (from 0:00 to the end of line 1)
-- **Beat overlays:** `बल मात्र होइन` (line 3), `४०% बढी खतरा` (line 4, next to the bar), `गहिरो तान` (line 6, small, near the diagram)
+- **Overlay:** `सत्य झन् डरलाग्दो छ` (from 0:00 to the end of line 1; accent word: डरलाग्दो)
+- **Beat overlays:** `बल मात्र होइन` (line 3; accent: मात्र), `४०% बढी खतरा` (line 4, next to the bar; accent: ४०%, counts up), `गहिरो तान` (line 6, near the diagram; accent: गहिरो)
+- All text in style A (`guides/caption-style.md`).
 
 ## Narration (record exactly this)
 ```
@@ -43,10 +44,10 @@ Recording: dramatic news-anchor tone. "डब्लुएचओ" must be read as
 
 ## Editing specifics
 - Pace: a new visual or camera change every 1.5-3 s.
-- Text inside the safe area (clear of roughly the top 250 px, bottom 420 px and right 150 px).
+- Text: style A (`guides/caption-style.md`), inside the safe area.
 - Subtitles: key-phrase overlays only.
 - **Ending: loop.** No outro, no mascot card, no fade; the last frame equals frame 0; music runs to the last frame.
-- Cover frame: the capsule crack with the text `बल फुटाउँदा बच्चा हुँदैन?`
+- Cover frame: the capsule crack with the text `बल फुटाउँदा बच्चा हुँदैन?` (style A cover text, accent: बच्चा)
 
 ## Sound
 Modern, tense pulse (not devotional, not epic). A crisp soft "pop" on the capsule at 0:00 and again at the very end (the same sound, for the loop); an icy shimmer on the mist; a low heartbeat under lines 4-5; a soft wooden creak on the cradle. SFX soft (-12 dB, peaks ≤ 0.4x voice).
