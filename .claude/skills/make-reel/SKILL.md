@@ -29,6 +29,7 @@ voiceover. The voice is never edited. Music is synthesized at **50 % of the voic
 
 ## Stage 1: Intake (always first)
 Run `git pull` first: scripts planned in the claude.ai chat arrive as `scripts/<slug>.md`, and kit updates come the same way.
+**Each `scripts/<slug>.md` is the per-video brief** (format: `scripts/_TEMPLATE.md`). Read all of it: its "Rules for this reel", hook layers, visual journey, editing specifics, sound and QA list override the defaults in this skill. If it names a sensitive topic, also read and follow `guides/sensitive-topics.md`, and run that file's checklist before rendering.
 Then check `scripts/` for a ready script and `inbox/` for a new voiceover. If there is a voiceover: match it to its script (`scripts/<slug>.md` or a `.txt` next to it; ask if unclear), then go to Stage 4.
 If there is a ready script but no voiceover: show it, run the Stage 3 checklist on it, and give the recording tips.
 Otherwise ask once: **"Where are you starting from?"** Need ideas + script / Have a script, need the voiceover / Voiceover ready.
@@ -73,7 +74,7 @@ Mark your top 3 picks. Ask for a number or "more".
 - ElevenLabs voice "Ashok Pokhrel", natural pauses at sentence ends, export without music, file into `inbox/`.
 - Delivery the user likes: dramatic, **news-anchor** energy, not whispers. On Eleven v3/v4 use audio tags (`[dramatically]`, `[short pause]`); on Multilingual v2/Flash use `<break time="0.5s" />` (max 3 s, only a few). Tags in brackets get read aloud on the wrong model, so test one line first.
 
-Save the script, hook layers and camera journey to `scripts/<slug>.md` (git-tracked) and a plain-text copy to `inbox/<slug>.txt`.
+Save the full per-video brief to `scripts/<slug>.md` using `scripts/_TEMPLATE.md` (script, hook layers, visual journey, editing specifics, sound, reach pack, QA, sources; git-tracked) and a plain-text copy of the narration to `inbox/<slug>.txt`. For a sensitive topic, apply `guides/sensitive-topics.md` while writing.
 
 ## Stage 4: Build (after the voiceover arrives). Do everything without stopping, except the stills check.
 ### 4.0 Project
@@ -84,6 +85,7 @@ Save the script, hook layers and camera journey to `scripts/<slug>.md` (git-trac
 Check `work/phrases.json`: pauses should fall at sentence ends. **Nepali:** if it misaligns, map the phrases to `ffmpeg -i voice.mp3 -af silencedetect=noise=-38dB:d=0.18 -f null -` segments by hand (short repeated words are anchors), as in `example/yalambar/phrases.json`. Total frames = round(duration × 30).
 
 ### 4.2 Shot plan (`work/PLAN.md` before code)
+Start from the brief's visual journey and editing specifics (pace, safe area for text, ending/loop, cover frame); only fill gaps yourself.
 One row per shot: frames, words, setting, light, camera move, characters / poses / expressions, effects, SFX cue.
 - **Frame 0 = the hook's first-frame layer** (the strongest, mid-action image), not a calm close-up. Put the hook overlay and the beat overlays in the plan (Devanagari, not mirrored).
 - Usually one shot per phrase; merge tiny phrases. Illustrate every sentence literally; props carry the jokes.

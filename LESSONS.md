@@ -2,6 +2,13 @@
 
 Newest first. Each entry says what happened and what to do next time.
 
+## 2026-11-18 — Per-video briefs + sensitive topics (ice cigarette myth)
+- From now on every reel gets a **per-video brief** in `scripts/<slug>.md` (template `scripts/_TEMPLATE.md`): rules, hook layers, visual journey with shot sizes and motion, editing specifics (pace, text safe area, ending, cover), sound, reach pack (caption, hashtags, pinned comment, poll, platform notes), QA, sources. The user asked for this after every voiceover.
+- Sensitive topics now have `guides/sensitive-topics.md`. Tobacco: no brand anywhere (Nepal Act 2011, Section 10), no appealing smoking, adults only, educational framing from frame 0 (TikTok makes tobacco-promoting content For You feed-ineligible; educational exceptions exist).
+- **Loop endings** work: end on an unfinished "…सोध्नुहोस् कि…" that completes with the hook; the last frame equals frame 0, there is no silence gap, and the same SFX plays at both ends. The verb must fit a question ("ask", not "let him know").
+- Accuracy catch: "the danger isn't in the ball" was wrong (capsule chemicals can be toxic); say "not only in the ball".
+- Say "डब्लुएचओ" (letters) instead of the full name; it is shorter and TTS reads it as W-H-O.
+
 ## 2026-11-16 — Scripting lessons (Chhath, Inam Sapkota, Manjushri lake)
 - Scripts must read as **one story**, not a list of cut-off facts: link sentences with भनिन्छ / र / तर / जुन / अचम्मको कुरा / जाँदाजाँदै. The user rejected a choppy version.
 - **Question hooks** about something everyone already knows grab attention ("के मञ्जुश्रीले साँच्चै तरवारले काठमाडौंको ताल रित्याएका थिए?").

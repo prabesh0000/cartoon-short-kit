@@ -12,6 +12,8 @@ Claude Code reads this file at the start of every session. Keep it short and cur
 ## How to work here
 - **Start of every session: run `git pull`.** Scripts planned in the claude.ai chat arrive as `scripts/<slug>.md`, along with kit updates.
 - To make a reel, use the **make-reel** skill (`.claude/skills/make-reel/SKILL.md`). Typing `/make-reel` also works.
+- **Every reel has a per-video brief in `scripts/<slug>.md`** (template `scripts/_TEMPLATE.md`), written in the claude.ai chat. Follow it; it overrides defaults.
+- **Sensitive topics** (tobacco, alcohol, drugs, health, news about real people, religion, ethnic identity, politics): follow `guides/sensitive-topics.md` and run its checklist before rendering.
 - **Every script goes through the `storytelling-hooks` skill** (5 hook options, three hook layers, one flowing arc, bookend + one CTA). Also here: `titles-and-thumbnails`, `retention-audit`, `channel-formula` (copied from yaxeen/storytelling-skills, MIT; see `licenses/`).
 - **Read `LESSONS.md` before every reel.** After every reel, add a dated entry at its top (the user wants learnings saved every time).
 - Voiceovers arrive in `inbox/`. Each reel is built in `reels/<slug>/` (git-ignored). Brand assets are in `brand/`.
