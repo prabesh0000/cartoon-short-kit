@@ -2,7 +2,7 @@
 
 Status: script final, waiting for the voiceover (`inbox/ice-capsule-myth.mp3`). Length: about 64 words ≈ 32 s.
 Emotion: curiosity → unease. Twist: the fertility risk is not only in the capsule, it is the whole cigarette; the cool capsule makes smoke feel lighter, so people may inhale deeper.
-**Loop ending:** the last words "…उसलाई पनि थाहा होस् कि…" run straight into the first line on replay.
+**Loop ending:** "…ट्याग गरेर सोध्नुहोस् कि…" runs straight into the first line ("के आइस चुरोट…?") on replay, so the hook becomes the question you ask your friend. Trim all silence at the start and end of the voiceover so the loop has no gap.
 
 ## Rules for this reel (tobacco)
 - **Never show or say a brand** (no Shikhar/Surya names, logos, pack designs) on screen or in the caption. Nepal's Tobacco Products (Control and Regulation) Act 2011, Section 10, bans tobacco promotion in any media, online included. Use a plain, unbranded white pack and filter.
@@ -23,7 +23,7 @@ Emotion: curiosity → unease. Twist: the fertility risk is not only in the caps
 डब्लुएचओका अनुसार, चुरोट खाने महिलामा बच्चा नहुने खतरा चालीस प्रतिशत बढी हुन्छ,
 र पुरुषको पनि सन्तान हुने सम्भावना घट्छ।
 अनि त्यो चिसो बलले धुवाँ हल्का लगाउँछ, त्यसैले मान्छे झन् गहिरो तान्न सक्छन्।
-आइस पट्काउने आफ्नो साथीलाई ट्याग गर्नुहोस्, उसलाई पनि थाहा होस् कि...
+आइस पट्काउने आफ्नो साथीलाई ट्याग गरेर सोध्नुहोस् कि...
 ```
 Recording: "डब्लुएचओ" must be read as the letters W-H-O (test that line). Let "कि…" rise like an unfinished sentence. No pause at the very end.
 
