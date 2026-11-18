@@ -1,6 +1,6 @@
 # आइस चुरोटको बल (ice cigarette capsule myth): health myth-buster
 
-Status: script final, voiceover `inbox/ice-capsule-myth.mp3`. Length: about 63 words ≈ 31 s.
+Status: **posted** (2026-11-18, with the old text style). The text-layer rules apply from the next reel on. Length: about 63 words ≈ 31 s.
 Emotion: curiosity → unease. Twist: the fertility risk is not only in the capsule, it is the whole cigarette, and the cool capsule makes smoke feel lighter, so people may inhale deeper.
 Loop ending: yes. "…ट्याग गरेर सोध्नुहोस् कि…" runs straight into line 1 ("के आइस चुरोट…?") on replay.
 Sensitive topic: **tobacco + health.** Follow `guides/sensitive-topics.md` sections 1, 2 and 7.
