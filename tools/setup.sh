@@ -13,7 +13,7 @@ mkdir -p "$P/web/lib" "$P/work" "$P/stills" "$P/out"
 cp "$KIT"/engine/*.js "$KIT"/engine/index.html "$P/web/"
 cp "$KIT"/example/soldier/story.js "$P/web/story.js"        # starting point: rewrite for the new story
 cp "$KIT"/example/soldier/audio.py "$P/audio.py"            # starting point: rewrite the cue table
-cp "$KIT"/tools/*.mjs "$KIT"/tools/*.py "$KIT"/tools/finish.sh "$P/"
+cp "$KIT"/tools/*.mjs "$KIT"/tools/*.py "$KIT"/tools/textlayer.js "$KIT"/tools/finish.sh "$P/"
 # three.js r160 (module build): vendored, else npm, else a sparse git clone (works where only GitHub is reachable)
 if [ -f "$KIT/vendor/three.module.js" ]; then cp "$KIT/vendor/three.module.js" "$P/web/lib/"
 else

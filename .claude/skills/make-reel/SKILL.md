@@ -87,7 +87,7 @@ Check `work/phrases.json`: pauses should fall at sentence ends. Silence detectio
 
 ### 4.2 Shot plan (`work/PLAN.md` before code)
 Start from the brief's visual journey and editing specifics (pace, safe area for text, ending/loop, cover frame); only fill gaps yourself.
-**All on-screen text follows `guides/caption-style.md` (style A, clean cinematic):** Kohinoor Devanagari Bold, off-white #F4EFE6, at most one brand-orange #FFA04C accent word, a soft dark plate for beat overlays, a 0.2 s fade-up, no outlines, no bouncing.
+**All on-screen text follows `guides/caption-style.md`:** write it to `work/text.json` (the text layer places and colours it; never draw text as scene cards), mark every person and each shot's hero prop `protect: true`, and wire `engine/protect.js` into `main.js`. Text must never be blocked or block anything; colours adapt to the background automatically.
 One row per shot: frames, words, setting, light, camera move, characters / poses / expressions, effects, SFX cue.
 - **Frame 0 = the hook's first-frame layer** (the strongest, mid-action image), not a calm close-up. Put the hook overlay and the beat overlays in the plan (Devanagari, not mirrored).
 - **Hook title card** (user request, 2026-11-17): the reel's central question as a designed card in the first second (`drawHook`: gold vs ice words, icons, word-by-word reveal), e.g. **तरवार कि भूकम्प?**. Overlays use `drawOverlay` (glowing outlined text, no box). Keep them clear of the hero's face and raised props.
@@ -114,7 +114,7 @@ Characters never freeze: idle bob, blinks, anticipation → overshoot → settle
 Vertical frame: hfov = 2·atan(tan(vfov/2)·0.5625), about 19° at fov 36, so stage characters in depth. For an over-the-shoulder shot, put the camera on the line through both characters.
 
 ### 4.6 Look check (STOP here for the user)
-`node render.mjs stills/a "<mid-frame of each shot>,..."` then `python3 sheet.py stills/a stills/sheet_a.jpg`. Look at the sheet yourself first and fix:
+`node render.mjs stills/a "<mid-frame of each shot>,..."` then `python3 sheet.py stills/a stills/sheet_a.jpg`. Read `work/text_report.json` (no `coversProtected`, no `frameWarnings`, contrast at least 4.5/3) and fix the story if anything is flagged. Look at the sheet yourself first and fix:
 the camera inside geometry, faces hidden, characters out of frame, mirrored text, boxed glows, a cause hidden behind its actor. Then `open stills/sheet_a.jpg` for the user, with a one-line shot list, and wait for OK.
 
 ### 4.7 Sound (`audio.py` → stems → `mix.py`)

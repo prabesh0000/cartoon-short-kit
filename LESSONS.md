@@ -2,6 +2,11 @@
 
 Newest first. Each entry says what happened and what to do next time.
 
+## 2026-11-18 — Text layer: clean, adaptive, never blocking
+- The user wants on-screen text always clean (never blocked, never covering anything) with colours that adapt to the background.
+- New: `tools/textlayer.js` + `render.mjs` composite all text in the browser after each frame, from `work/text.json` (no more text cards in the 3D scene). A plan pass picks a free, calm slot inside the safe area (avoiding `protect: true` cards via `engine/protect.js` and other text), then light or dark mode from the pixels behind it, with the plate tinted from the background hue and contrast checked (4.5 text, 3 accent).
+- Every frame is checked; `work/text_report.json` lists any overlap. Tested on the ice reel: the hook moved clear of the rumour bubble; "४०% बढी खतरा" had no free slot because the chart fills the safe area, and was flagged rather than covering it. Fix such flags in the story (shrink the prop, or drop the overlay when the picture already says it).
+
 ## 2026-11-18 — "आइस चुरोटको बल" (health myth-buster, 36.7 s, 1100 frames, LOOP)
 - The voiceover ran 36.7 s, not the brief's ~31 s (63 words ≈ 1.7 words/s with the news-anchor pauses). Size loop scripts at about 1.75 words/s.
 - Timing: silence detection (-32 dB, 80 ms) mapped all 7 lines onto the 9 long pauses again; no Whisper needed.
