@@ -16,7 +16,8 @@ voiceover. The voice is never edited. Music is synthesized at **50 % of the voic
 - `inbox/`: the user drops voiceovers (`.mp3`/`.wav`) and the final script text here.
 - `reels/<slug>/`: one project per reel, made by `bash tools/setup.sh reels/<slug>`. The final MP4 goes to `reels/<slug>/out/`.
 - `brand/`: profile photos and the transparent mascot. `engine/mascot.js` draws the host (`drawManche`, `drawQ`).
-- `example/yalambar/`: a complete finished reel (11 shots, Nepali VO, cinematic score). Copy its patterns.
+- `example/manjushri/`: the newest finished reel (legend + science, 8 shots): world/story split, mixed lights, title card, overlays, cut-away diorama, audit-clean score. **Start new reels from its `web/main.js`.**
+- `example/yalambar/`: an earlier finished reel (11 shots, war-legend thriller score).
 
 ## Rules
 - Original stories and shots only; never recreate another creator's video. No real, named living people as characters, and no brand mascots or logos.
@@ -82,12 +83,14 @@ Save the full per-video brief to `scripts/<slug>.md` using `scripts/_TEMPLATE.md
 
 ### 4.1 Timing
 `python3 timing.py voice.mp3 work/script.txt --out work` (uses whisper / faster-whisper if installed, else silence detection + script alignment).
-Check `work/phrases.json`: pauses should fall at sentence ends. **Nepali:** if it misaligns, map the phrases to `ffmpeg -i voice.mp3 -af silencedetect=noise=-38dB:d=0.18 -f null -` segments by hand (short repeated words are anchors), as in `example/yalambar/phrases.json`. Total frames = round(duration × 30).
+Check `work/phrases.json`: pauses should fall at sentence ends. Silence detection at `-32 dB` / `d=0.08` usually finds every comma pause in ElevenLabs Nepali, which maps the script phrase by phrase (Manjushri: exact). **Nepali:** if it misaligns, map the phrases to `ffmpeg -i voice.mp3 -af silencedetect=noise=-38dB:d=0.18 -f null -` segments by hand (short repeated words are anchors), as in `example/yalambar/phrases.json`. Total frames = round(duration × 30).
 
 ### 4.2 Shot plan (`work/PLAN.md` before code)
 Start from the brief's visual journey and editing specifics (pace, safe area for text, ending/loop, cover frame); only fill gaps yourself.
 One row per shot: frames, words, setting, light, camera move, characters / poses / expressions, effects, SFX cue.
 - **Frame 0 = the hook's first-frame layer** (the strongest, mid-action image), not a calm close-up. Put the hook overlay and the beat overlays in the plan (Devanagari, not mirrored).
+- **Hook title card** (user request, 2026-11-17): the reel's central question as a designed card in the first second (`drawHook`: gold vs ice words, icons, word-by-word reveal), e.g. **तरवार कि भूकम्प?**. Overlays use `drawOverlay` (glowing outlined text, no box). Keep them clear of the hero's face and raised props.
+- **Every line gets a picture that proves it**: cause and effect in one frame (the actor on the thing he acts on); a science line needs a science image (cut-away layers, a scientist, a seismograph), not just a pretty wide.
 - Usually one shot per phrase; merge tiny phrases. Illustrate every sentence literally; props carry the jokes.
 - Vary shot sizes; light for beats (day / golden / storm / dusk); a time or place jump gets a white flash.
 - The twist gets a sting (music stops, low hit, push-in with roll). The last shot's payoff lands on the final word.
@@ -99,7 +102,7 @@ Far-apart areas for different places. Flat normals (`toNonIndexed().computeVerte
 No cones on flat sand: they read as Egyptian pyramids.
 
 ### 4.4 Cast (`web/roman.js`, `web/nepal.js`, `web/mascot.js` → `web/toon.js`)
-Rebuild after edits: `cat web/toonbase.js web/roman.js web/nepal.js web/mascot.js > web/toon.js`.
+Rebuild after edits: `cat web/toonbase.js web/roman.js web/nepal.js web/mascot.js web/manjushri.js > web/toon.js` (add the reel's own cast file at the end).
 bodyFront hooks (from `tools/patch_toon.py`): `armFn` (POSES + `armBlend` in nepal.js), `behind`, `front`, `headExtra`, `back: true`.
 Give each card a facing vector and switch to the back-view drawing when the camera is behind it. Card keys hold every visual parameter, quantised with `q()`.
 Render a character test sheet before using new designs.
@@ -111,7 +114,7 @@ Vertical frame: hfov = 2·atan(tan(vfov/2)·0.5625), about 19° at fov 36, so st
 
 ### 4.6 Look check (STOP here for the user)
 `node render.mjs stills/a "<mid-frame of each shot>,..."` then `python3 sheet.py stills/a stills/sheet_a.jpg`. Look at the sheet yourself first and fix:
-the camera inside geometry, faces hidden, characters out of frame, mirrored text, boxed glows. Then `open stills/sheet_a.jpg` for the user, with a one-line shot list, and wait for OK.
+the camera inside geometry, faces hidden, characters out of frame, mirrored text, boxed glows, a cause hidden behind its actor. Then `open stills/sheet_a.jpg` for the user, with a one-line shot list, and wait for OK.
 
 ### 4.7 Sound (`audio.py` → stems → `mix.py`)
 **Match the background sound (score + ambience) to the theme, place and mood of each reel; never reuse one bed for every reel.** Write it to the beats, cinematic, never a happy repetitive loop. Use `example/yalambar/audio.py` as the code template, but pick the palette per reel and state it in the shot plan:
@@ -128,11 +131,13 @@ SFX must be **soft and soothing, never loud or distracting** (the user's rule si
 - Gentle tone: low-pass noise-based cues at about 3-4 kHz (no 6-8 kHz hiss); attacks of 10 ms or more (no clicks, cracks or sharp pops); avoid metal, debris and harsh transients unless the story needs an impact, then keep it low and short.
 - Warm over bright: bells, soft chimes, low thuds, breathy whooshes.
 Print per-section RMS (builds louder than drops) and plot the stem levels against cut frames to check that hits land.
-`python3 mix.py voice.mp3 music.wav sfx.wav` (→ `mix_raw.wav`) → confirm music -6.0 dB vs the voice, SFX ≤ -12 dB. Listen to a cut-heavy section before finishing.
+`python3 mix.py voice.mp3 music.wav sfx.wav` (→ `mix_raw.wav`) → confirm music -6.0 dB vs the voice, SFX ≤ -12 dB.
+Then `python3 audit.py`: the speech-band (300 Hz-4 kHz) bed should sit about 8 dB under the voice (median), the last 50 ms must be quiet (fade the stems over the last ~0.9 s), and the SFX onsets (printed as frames) must match their picture cues within 3 frames. Fix masking in the arrangement, not with ducking: "oo" choir, a fixed music dip at 500 Hz-4 kHz, water as low rumble, chimes and birds in the comma pauses.
 
 ### 4.8 Render + finish
 - `node gpucheck.mjs` once per machine: use the GL mode that names the GPU. `GL=gpu` is the default on macOS; `GL=swiftshader` is the slow fallback.
 - `node render.mjs frames "0-<N-1>"` in the background; poll with `tail` until done. `RESUME=1` continues after an interruption. Remind the user to keep the Mac awake (e.g. `caffeinate -i` in another terminal).
+- **Frame-diff scan** after every full render: mean abs diff of consecutive frames (108x192); flag spikes > 6x the median that are not planned cuts/flashes. It catches cameras inside hills, one-frame pops and whip moves (replace whips with a cut on a word).
 - `bash finish.sh "Title"` → MP4 + `out/qa_sheet.jpg`. No frozen spans ≥0.4 s, no black frames, loudness about -14 LUFS.
 - `open reels/<slug>/out/` and give a few lines on each shot. Offer captions, tweaks, or the next idea.
 

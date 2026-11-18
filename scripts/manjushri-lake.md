@@ -1,6 +1,6 @@
 # मञ्जुश्रीको ताल (Manjushri's lake): legend + science
 
-Status: script final, waiting for the voiceover (`inbox/manjushri-lake.mp3`). Length: 62 words ≈ 31 s. Earthquake only as the scientists' guess (user request, 17 Nov). Everyday Nepali words only (user request, 16 Nov).
+Status: **done 2026-11-17** (voiceover `inbox/majushree.mp3`, 32.2 s; reel built in `reels/manjushri-lake/`, code kept in `example/manjushri/`). Final cut adds a hook title card "तरवार कि भूकम्प?", a science cut-away and a seismograph. Length: 62 words ≈ 31 s. Earthquake only as the scientists' guess (user request, 17 Nov). Everyday Nepali words only (user request, 16 Nov).
 Emotion: wonder → surprise. Twist: the legend's lake is real, and the streets viewers walk today were its floor.
 
 ## Hook layers (0:00)

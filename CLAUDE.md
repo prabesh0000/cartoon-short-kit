@@ -17,12 +17,13 @@ Claude Code reads this file at the start of every session. Keep it short and cur
 - **Every script goes through the `storytelling-hooks` skill** (5 hook options, three hook layers, one flowing arc, bookend + one CTA). Also here: `titles-and-thumbnails`, `retention-audit`, `channel-formula` (copied from yaxeen/storytelling-skills, MIT; see `licenses/`).
 - **Read `LESSONS.md` before every reel.** After every reel, add a dated entry at its top (the user wants learnings saved every time).
 - Voiceovers arrive in `inbox/`. Each reel is built in `reels/<slug>/` (git-ignored). Brand assets are in `brand/`.
-- Never rebuild the engine from memory; it is all in `engine/`, `tools/` and `vendor/`. Worked example: `example/yalambar/`.
-- Commit or push only when the user asks. At the end of a session, remind them to say "commit and push" so lessons reach GitHub. Never force-push.
+- Never rebuild the engine from memory; it is all in `engine/`, `tools/` and `vendor/`. Worked examples: `example/manjushri/` (newest, start here) and `example/yalambar/`.
+- Commit or push only when the user asks. **When the user says "end", that means: commit everything and push** (no need to ask). Otherwise, at the end of a session, remind them to say "commit and push" so lessons reach GitHub. Never force-push.
+- Worked example for loops, text in the safe area, diagrams and SFX checks: `example/ice-capsule/` (newest).
 
 ## The user's standing preferences
 - Be direct and concise, prioritise accuracy, verify facts (web search) before stating them, and say plainly when something is uncertain.
-- **Music: cinematic and thrilling, never a happy repetitive loop.** Template: `example/yalambar/audio.py`.
+- **Music: cinematic and thrilling, never a happy repetitive loop.** Templates: `example/manjushri/audio.py` (divine cinematic, audit-clean), `example/yalambar/audio.py` (war thriller).
 - **Background sound (music palette + ambience) must fit each reel's theme and setting**, e.g. devotional for festivals, drums for war legends, modern pulse for news, river/birds/crickets/traffic to match each shot. Never reuse one generic bed.
 - **Sound effects on key transitions and actions** (cuts, jumps, flights, impacts, vanishings), always **soft and soothing, never loud or distracting**: sitting well under the voice (-12 dB, peaks <= 0.4x the voice). Chhath (2026-11-14) was too loud.
 - Hooks: open on the strongest, mid-action image. Question hooks about stories people already know work well. Aim for 25-30 s. End on the twist, then a bookend comment question.
@@ -31,6 +32,7 @@ Claude Code reads this file at the start of every session. Keep it short and cur
 - Legends: respectful, never called false. News about real people: "आरोप छ" + "दोष प्रमाणित भएको छैन", 2+ sources per claim.
 - Nepali scripts are sized at about **2 words/s** (60 words ≈ 30 s).
 - Show a stills contact sheet before the long render.
+- **Recheck before delivering** (user asked, 2026-11-17): run the audio audit (`tools/audit.py`), the frame-diff scan, and check that every line has a picture that proves it. Open with the central question as a designed title card.
 
 ## Brand
 - Name: The Curious Manche. Handles: @thecuriousmanche (fallback @curiousmanche); the same handle on every platform.

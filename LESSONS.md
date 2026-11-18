@@ -2,12 +2,76 @@
 
 Newest first. Each entry says what happened and what to do next time.
 
+## 2026-11-18 — "आइस चुरोटको बल" (health myth-buster, 36.7 s, 1100 frames, LOOP)
+- The voiceover ran 36.7 s, not the brief's ~31 s (63 words ≈ 1.7 words/s with the news-anchor pauses). Size loop scripts at about 1.75 words/s.
+- Timing: silence detection (-32 dB, 80 ms) mapped all 7 lines onto the 9 long pauses again; no Whisper needed.
+- **Loops:** the last frames (f1094-1099) replay the macro set at times -6..-1 before the crack, so f1099 -> f0 is one continuous move. Audio is **circular**: render the stems 4 s long, then add everything past the end onto the start. **Run every filter (EQ dip, low-pass) BEFORE the wrap**; filtering after it restarts the IIR state at sample 0 and puts a click on every loop (seam step was 1.7x the largest normal step, after the fix it is inside the normal range). Loop pop: place it 12 ms before the end so its peak lands on f0 after the wrap. Use a tempo whose eighth note divides the length (128 eighths here = 104.7 bpm) so the pulse grid survives the wrap.
+- With a loop, `audit.py`'s "last 50 ms quiet" and the 0.9 s end fade do not apply: the music must run to the last frame.
+- **Text cards are now drawn after DOF** (`top: true` cards go to a separate scene rendered last in `main.js`). Overlays at the "focus distance" still picked up the background's blur, because noink cards are not in the depth buffer. `screen(id, px, py, hp)` places cards by output pixels, which keeps them inside the safe area (clear of top 250 / bottom 420 / right 150 px).
+- **New per-cue SFX test** (`tools/sfx_check.py`, now copied into every new project): for each named cue, its frame, its 300 Hz-4 kHz level vs the voice there, and its peak vs the voice peak. It caught a chart-rise tone sitting -3.4 dB under the key number "चालीस प्रतिशत", a falling tone at -5 dB and a whisper on a word tail. Fix: move tones an octave down (150-310 Hz) and low-pass them at 700-900 Hz.
+- Music masking fixes that worked: pads one octave down with a 650 Hz low-pass, ticks on eighths (not 16ths) at a low level, icy plucks **only in the pauses**, and a deeper voice-band dip (-0.78 x 450 Hz-4 kHz). Speech band went from -5.1 to -8.5 dB median.
+- New SFX designs (in `audio.py`): `pop` (pitch-drop sine + low-passed puff, 8-9 ms attack, no click), `hiss` (cold air), `whisper` (breathy AM noise), `heart`, `paper`, `rise`, `creak` (stick-slip wood), `slide`, `tap`, `ding`, `squeak`, `whip` (rising whoosh).
+- Drawing lesson: a curved nail plus curved crease lines on a fingertip read as a smiling face. Draw the nail as a plate, with straight creases.
+- **User feedback (v2): the "deeper inhale" chalkboard sketch looked bad.** The user wants a proper human, proper lungs and a visible inhalation. What replaced it (`drawLungs` in `example/ice-capsule/web/ice.js`):
+  - a front-view person in a see-through chest window;
+  - a ringed windpipe, bronchi and two lobes;
+  - lungs that expand with a breath value, and a diaphragm that drops;
+  - smoke particles that travel mouth → windpipe → bronchi → tips, stopping at a depth `d`, with grey haze settling where they reach;
+  - a menthol-blue glow in the throat and a depth gauge.
+
+  Clean textbook style, no disease or blood. The user asked for the organs, which overrides the guide's "symbols only" default.
+- **User feedback (v3): "the ice menthol scene can be better."** The 3D half-pipe read as a flat wall of fibres with a green disc and fog. What replaced it (`drawFilterCut` in `example/ice-capsule/web/ice.js`), a designed cut-away illustration:
+  - an upright filter opened to show its fibres, with a glossy capsule holding liquid menthol;
+  - on the burst: shell shards, frost and snowflakes spreading through the fibres;
+  - dark smoke rising from the tobacco end that turns pale, soft and sparkly as it passes the mist, then drifts out of the mouth end;
+  - a thermometer that drops from red to blue under "चिसो", and an up-arrow with "हल्का".
+
+  Lesson: for an explanatory beat, a designed 2D cut-away card in the 3D set reads better than a literal 3D macro. Every word of the line ("मेन्थोल", "चिसो", "हल्का") gets its own visible picture.
+- Final-check routine that worked:
+  - `sfx_check.py` (every cue: ≤ -8 dB in the speech band under speech, ≤ 0.4x the voice peak);
+  - `audit.py` (speech-band median ≤ -8 dB);
+  - the loop seam step ≤ the 99th-percentile sample step;
+  - a frame-diff scan with the planned events listed;
+  - a full overlap sheet (every 12th frame), looked at specifically for text or props touching frame edges.
+- **User feedback: "things are blocking other things."** Audit a full sheet (every 12th frame) for overlaps before delivering. Found and fixed:
+  - the hook card over the thumb (the fingers now come in diagonally from the right, the filter sits lower, and the card is upper-left);
+  - a street pole in front of the rumour line (poles hidden in that stretch; the wires stay above frame);
+  - the overlay touching the rumour bubble;
+  - onlookers cut by the bottom (caption) edge;
+  - a text overlay over the tower's smoking tip (shortened);
+  - the chart card covering the rumour bubble and the window (the report gives way to the bubble in the same spot, the chart pops in after its own cut, the window moved);
+  - a man pushed out of frame by the dolly-in;
+  - diagram labels cropped by the push-in (labels kept ≥ 120 px from the card edges).
+- Sensitive-topic pass: no brand anywhere (plain white filter and paper), nobody smokes on screen, the tower's smoke is heavy grey, adult bean-heads only, symbols instead of organs (airway tube on a chalkboard), "WHO" shown as text only (no logo).
+
 ## 2026-11-18 — Per-video briefs + sensitive topics (ice cigarette myth)
 - From now on every reel gets a **per-video brief** in `scripts/<slug>.md` (template `scripts/_TEMPLATE.md`): rules, hook layers, visual journey with shot sizes and motion, editing specifics (pace, text safe area, ending, cover), sound, reach pack (caption, hashtags, pinned comment, poll, platform notes), QA, sources. The user asked for this after every voiceover.
 - Sensitive topics now have `guides/sensitive-topics.md`. Tobacco: no brand anywhere (Nepal Act 2011, Section 10), no appealing smoking, adults only, educational framing from frame 0 (TikTok makes tobacco-promoting content For You feed-ineligible; educational exceptions exist).
 - **Loop endings** work: end on an unfinished "…सोध्नुहोस् कि…" that completes with the hook; the last frame equals frame 0, there is no silence gap, and the same SFX plays at both ends. The verb must fit a question ("ask", not "let him know").
 - Accuracy catch: "the danger isn't in the ball" was wrong (capsule chemicals can be toxic); say "not only in the ball".
 - Say "डब्लुएचओ" (letters) instead of the full name; it is shorter and TTS reads it as W-H-O.
+
+## 2026-11-17 — "मञ्जुश्रीको ताल" (legend + science, 32.2 s, 7 shots)
+- Timing: silence detection at -32 dB / 80 ms found every comma pause, so the 7 script lines mapped exactly without Whisper (the faster-whisper venv from Inam was gone; it lived in a temp folder, so reinstall it somewhere permanent if needed).
+- Score palette "god-like cinematic" (user's words): wordless choir, deep drone, singing bowl, timpani rolls (no war drums), D minor → D major on the strike, soft gong on the question. Mixed at music -6.0 dB / SFX -12.0 dB, SFX peak 0.36x voice; every SFX bus low-passed at 3.8 kHz. Waiting for the user's verdict on loudness.
+- Deity on a card: Manjushri back view only (golden robe, five-point crown, topknot, flaming sword, halo), scaled 4x for a "divine giant". A raised sword needs a bigger design canvas (1400x1400, body offset so the sole stays at 97.5 %); a 600x1000 card clips the sword.
+- Draining a lake onto a flat lakebed pops in one frame when the water plane crosses the bed. Fade the water's opacity over the last ~2.5 m instead (set `transparent = true` once at build: toggling it per frame needs `needsUpdate` and silently does nothing).
+- A whip pan whose look point passes the camera position points the camera straight down (frame 231 was all water). Use a cut on a whoosh, or keep the look target ahead of the camera.
+- After moving camera keys, check them against the rim hills: two keys sat inside hills (all-green frames). The frame-diff scan (skip the planned cuts and flashes) caught all three problems; run it after every full render.
+- Additive glow cards lower than the ground clip into hard boxes; keep foam/spray cards small and centred above the surface.
+- Screen-space overlays (Devanagari, Kohinoor) work as screen-billboard cards placed at the focus distance, so DOF never blurs them.
+- Underwater "the lake returns" beat: blend the light to a blue preset with short fog, add a lake surface seen from below, light rays, fish and bubbles. It reads instantly and keeps the street recognisable.
+- The whole render (966 frames) took about 20 s on the M4, so iterate on full renders freely.
+- **Refinement pass (user: "recheck, refine")**, what it found:
+  - The cause was hidden: a 4x Manjushri card covered the saddle he was cutting, and the slash arc floated in the sky. **Stage cause and effect in one frame**: put the actor ON the thing he acts on, shoot over the shoulder with the actor upper-left and the target centre-low, and draw the slash *into* the target, then a glowing seam, then the split.
+  - A line like "विज्ञान पनि भन्छ" needs its own picture. A cut-away slab of the valley floor (clay bands, shells, fish fossils, a scientist with a magnifier, a translucent lake box rising over the city) explains "the lake was real" far better than an aerial city. Seamless tiling: band waves must use a period that divides the texture width.
+  - Hook layer: the central question as a designed title card, **तरवार कि भूकम्प?** (gold vs ice gradients, sword + crack icons, word-by-word reveal, a shake on भूकम्प). It gives muted viewers the other half of the spoken hook. Keep it clear of the hero's raised prop.
+  - Screen-space cards (title, overlays, seismograph): place them at the focus distance, offset in camera up/right units; glowing outlined text reads better than grey pill boxes.
+  - Fast cranes past a striped wall read as a whip (frame diff 35-50 vs a median of 2.3). Cut on a word instead (here on "यहाँ").
+  - **Audio audit** (`reels/manjushri-lake/work/audit.py`): measure the bed vs the voice in the **300 Hz-4 kHz band** during speech; broadband RMS overstates masking because sub-bass drones don't mask words. Fixes that worked without ducking: an "oo" choir instead of "ah" (its formants sit in the voice band), a fixed -9 dB dip at 500 Hz-4 kHz in the music, water as a low rumble (90-600 Hz), and bells/chimes/birds moved into the comma pauses. Result: speech-band median -8.3 dB.
+  - Always fade the stems over the last ~0.9 s: the gong tail was cut off abruptly at the voice end.
+  - SFX onsets checked against picture frames (energy jumps in the SFX stem): all within 3 frames.
+
 
 ## 2026-11-16 — Scripting lessons (Chhath, Inam Sapkota, Manjushri lake)
 - Scripts must read as **one story**, not a list of cut-off facts: link sentences with भनिन्छ / र / तर / जुन / अचम्मको कुरा / जाँदाजाँदै. The user rejected a choppy version.
