@@ -2,6 +2,16 @@
 
 Newest first. Each entry says what happened and what to do next time.
 
+## 2026-11-19 — Scripting lessons ("गाँजाले चाक सुक्छ?", drug myth-buster, brief in `scripts/ganja-chaak-myth.md`)
+- **A myth-buster needs a character, not just facts.** The first draft was correct but flat (no emotional mirror, no conflict). Adding the chowk uncle (काका) who swears the myth is true gave the reel a conflict (uncle vs science), a false win in the middle and a bookend punchline ("काकाको कुरा … चोकको गफमा मात्र छ"). Use a believer character for every myth reel.
+- **Pattern + surprise: say the expectation out loud before breaking it.** The user added "भोकले मान्छेहरू झन् धेरै खान्छन्, तौल त बढ्नुपर्ने हो नि?" before the "तर अध्ययन अनुसार…" twist. An implied expectation makes a weak twist.
+- **Let characters speak instead of the narrator summarising.** The user rejected "काका जितेजस्तो भयो" (narrator says he won); his own line "काका झन् फुरुक्क, 'मैले भनेकै थिएँ!'" works better.
+- **The user prefers "अध्ययन अनुसार" to numbers in the narration** ("तेत्तीस हजार मान्छेको अध्ययनमा" felt heavy). Put the number on screen as a beat overlay instead, so the claim stays concrete.
+- After user edits, the script grew from 60 to 70 words (≈ 38-40 s). Expect edits to add words; start drafts at ~55 words.
+- Accuracy catches: "users' weight rose less **than others**" (everyone in the study gained weight; without "अरूभन्दा" it sounds like users lost weight). "बढेको पाइयो" (was found) keeps a single study hedged.
+- Drug topics: no smoking, joints, chillums, smoke or hero cannabis leaf on screen; the topic lives in narration and text. No drug hashtags (#weed, #ganja, #420). Caption says recreational cannabis is illegal in Nepal.
+- ElevenLabs v3 directions for Nepali: Natural stability, speed 1.0, at most two English tags per line ([dramatically], [confidently], [curious], [surprised], [smug], [short pause], [playfully], [mischievously]). Keep the plain script as the timing source; the tags are not spoken.
+
 ## 2026-11-18 — Text layer: clean, adaptive, never blocking
 - The user wants on-screen text always clean (never blocked, never covering anything) with colours that adapt to the background.
 - New: `tools/textlayer.js` + `render.mjs` composite all text in the browser after each frame, from `work/text.json` (no more text cards in the 3D scene). A plan pass picks a free, calm slot inside the safe area (avoiding `protect: true` cards via `engine/protect.js` and other text), then light or dark mode from the pixels behind it, with the plate tinted from the background hue and contrast checked (4.5 text, 3 accent).
