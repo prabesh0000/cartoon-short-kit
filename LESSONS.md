@@ -2,6 +2,18 @@
 
 Newest first. Each entry says what happened and what to do next time.
 
+## 2026-11-19 — "गाँजाले चाक सुक्छ?" (drug myth-buster, 34.43 s, 1033 frames, LOOP; first reel on the text layer)
+- Timing: silence detection (-32 dB, 80 ms) mapped all 17 phrases onto the 16 long pauses exactly (70 words ran 34.4 s ≈ 2.0 words/s with v3 tags). No Whisper needed.
+- **The text layer's protect box is the whole card**, including the empty space above a character's head. Two consequences:
+  - in an XCU the person card covers the whole screen, so mark it `protect: false` there and add an invisible proxy card (`draw: () => {}`, `protect: true`) over the real hero (the tape at the hips, the head, the diagram's body). Proxies also let text sit on the empty part of a full-frame diagram panel;
+  - **a top hook overlay cannot survive a continuous tilt-up/pull-back reveal**: the face always sweeps through the top band. Use a snap-cut on a whoosh to a framing with the face below ~600 px, then keep a small drift back.
+- Frame-diff caught three moves that read as whips: a lateral glide along the bench (diff 23), a tilt down to the scale (30) and a pull-back with a pan across a textured wall (13-14 at 12x the median). All became **cuts on words** ("सुक्छ", "तौल", "मात्र"). In a vertical frame, any pan across a textured wall spikes; prefer cuts plus slow drifts.
+- **`finish.sh` uses `-shortest`**: the voice was 4 ms shorter than the picture, so the MP4 lost its last frame and the circular audio lost 4 ms at the loop seam. Fix: mix against `voice_pad.wav` (the voice plus trailing silence up to the picture length, made with `apad=whole_dur`); the voice itself is unchanged. Check `nb_read_frames` = TOTAL.
+- Running `render.mjs` with `TEXT=work/cover.json` (for the cover) overwrites `work/textplan.json` and `text_report.json`; re-run with `REPLAN=1` afterwards so the report matches the reel.
+- Hi-res XCU of a canvas character: a second card with the same drawing, scaled 5x into the hip region (`g.scale(5,5); g.translate(-x0,-y0)`), laid in the same plane just in front of the body card. Sharp at 1 m with no visible swap.
+- Masking: plate clacks at 466-587 Hz and a marimba note sat in the speech band under words; an octave down + a 900 Hz low-pass fixed them (speech-band median -14.1 dB, all 40 cues OK).
+- New cast in `reels/ganja-chaak-myth/web/ganja.js`: seated uncle with tea glass + squash/stretch puff and deflate, young man with jeans + tailor's tape (tight/loose + zip lines), hunger dial, momo plate, bathroom scale, dial scales with a dashed "ghost" needle, 1 kg weight, tea-shop chalkboard whose arrow cracks into "?", magnifier, clothed body diagram with an even fat glow and inward arrows. Poses: kasam, tea, slap, cross, sip/eat, knees, laughBelly.
+
 ## 2026-11-19 — Scripting lessons ("गाँजाले चाक सुक्छ?", drug myth-buster, brief in `scripts/ganja-chaak-myth.md`)
 - **A myth-buster needs a character, not just facts.** The first draft was correct but flat (no emotional mirror, no conflict). Adding the chowk uncle (काका) who swears the myth is true gave the reel a conflict (uncle vs science), a false win in the middle and a bookend punchline ("काकाको कुरा … चोकको गफमा मात्र छ"). Use a believer character for every myth reel.
 - **Pattern + surprise: say the expectation out loud before breaking it.** The user added "भोकले मान्छेहरू झन् धेरै खान्छन्, तौल त बढ्नुपर्ने हो नि?" before the "तर अध्ययन अनुसार…" twist. An implied expectation makes a weak twist.
