@@ -2,6 +2,13 @@
 
 Newest first. Each entry says what happened and what to do next time.
 
+## 2026-11-20 — Scripting lessons ("आखिर सुन किन घट्यो?", same-day news explainer, brief in `scripts/gold.md`)
+- **For trending news, the user prefers the plain question everyone is already asking** ("आखिर सुन किन घट्यो?") over a clever setup hook. Put the expectation to break in line 2 instead ("बिहेको सिजनमा त महँगिनुपर्ने हो, तर…").
+- **Twists read better as a direct statement:** "कारण नेपाल होइन, अमेरिका हो" beat "कारण नेपालमा होइन, अमेरिकामा छ".
+- **Tie the tag CTA to the topic's audience** ("चाँडै बिहे गर्ने साथीलाई ट्याग गरेर सोध्नुहोस् कि…"); it also loops into the question hook.
+- News numbers: round in the narration ("झन्डै एक लाख" for 93,900) and show the exact figures on screen. Date every figure in the brief and re-check on render day; post within 1-2 days.
+- Money topics: no buy/sell advice; end on a question; caption says "Not financial advice".
+
 ## 2026-11-19 — "गाँजाले चाक सुक्छ?" (drug myth-buster, 34.43 s, 1033 frames, LOOP; first reel on the text layer)
 - Timing: silence detection (-32 dB, 80 ms) mapped all 17 phrases onto the 16 long pauses exactly (70 words ran 34.4 s ≈ 2.0 words/s with v3 tags). No Whisper needed.
 - **The text layer's protect box is the whole card**, including the empty space above a character's head. Two consequences:
