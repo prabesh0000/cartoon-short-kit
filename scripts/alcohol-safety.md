@@ -1,6 +1,6 @@
 # टन्न भएको साथी (Drunk friend): fact
 
-Status: script final, voiceover recorded by Mr. P. Drop the audio at `inbox/alcohol-safety.mp3` before building. Length: about 100 words, roughly 50 s. That's over the 25-30 s target, so trim before render if needed.
+Status (2026-11-21): built from `inbox/drunk.mp3`, which is the OLD take (no recovery-position line, club ending). Internal version only, not for posting; re-record the narration below for a postable version. Original status: script final, voiceover recorded by Mr. P. Drop the audio at `inbox/alcohol-safety.mp3` before building. Length: about 100 words, roughly 50 s. That's over the 25-30 s target, so trim before render if needed.
 Emotion: calm, then urgent, then light. Twist: sleeping does not sober anyone up. Loop ending: no.
 Sensitive topic: alcohol and health claims. Follow `guides/sensitive-topics.md` and run its checklist before rendering.
 
@@ -60,7 +60,8 @@ To set in Claude Code: calm, low-key bed for the health facts, then a lighter cu
 - [ ] Facts match sources  - [ ] Text inside the safe area  - [ ] Loop or ending works
 - [ ] Sensitive-topic checklist passed (open point above)
 
-## Sources (not yet checked)
-- One standard drink per hour as a rough average for alcohol clearance: check the NHS or CDC.
-- Sleep does not speed up alcohol clearance: check the NHS or CDC.
-- Vomiting while lying on the back risks choking; the recovery position is recommended: check a first-aid source such as the Red Cross.
+## Sources (checked 2026-11-21)
+- Blood alcohol keeps rising after the last drink (up to ~40 min): HSE Ireland, https://www2.hse.ie/living-well/alcohol/health/how-alcohol-can-affect-everyday-life/alcohol-poisoning/
+- About one standard drink per hour; sleep, coffee, cold showers do not speed it up: Better Health Victoria, https://www.betterhealth.vic.gov.au/health/healthyliving/alcohol ; University of Toledo, https://www.utoledo.edu/studentaffairs/counseling/selfhelp/substanceuse/metabolizingalcohol.html
+- Recovery position to prevent choking on vomit; call for help if they can't be woken; sips of water only if able to swallow: NHS, https://www.nhs.uk/conditions/alcohol-poisoning/ ; St John Ambulance, https://www.sja.org.uk/first-aid-advice/alcohol-poisoning/
+- Caveat: "एक पेग" ≈ one standard drink only for a small (30 ml) peg; a 60 ml peg is about two. Narration says "करिब", acceptable; on-screen text should say "एक स्ट्यान्डर्ड ड्रिङ्क / सानो पेग" if shown.
