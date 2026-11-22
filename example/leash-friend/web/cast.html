@@ -1,0 +1,29 @@
+<!doctype html><html><body style="margin:0;background:#556"><canvas id="c" width="2400" height="2000"></canvas>
+<script type="module">
+import * as T from "./toon.js";
+const c = document.getElementById("c"), g = c.getContext("2d");
+g.fillStyle = "#8a9ab0"; g.fillRect(0, 0, 2400, 2000);
+const cell = (x, y, w, h, sc, fn) => { g.save(); g.translate(x, y); g.scale(sc, sc); g.lineJoin = "round"; g.lineCap = "round"; fn(new T.Pen(g)); g.restore(); };
+cell(0, 0, 600, 1000, 0.5, (p) => T.drawBhai(p, { mode: "sit", pose: ["beg", "beg", 1], tail: 0.2, leash: { to: [600, 600], sag: 40 }, expr: "pant", look: 0.6 }));
+cell(300, 0, 600, 1000, 0.5, (p) => T.drawBhai(p, { mode: "sit", pose: ["hang", "phoneUp", 1], phone: true, expr: "side", look: 0.8, leash: { to: [600, 900], sag: 20 } }));
+cell(600, 0, 600, 1000, 0.5, (p) => T.drawBhai(p, { pose: ["bags", "bags", 1], bags: true, tail: 0.2, expr: "grin" }));
+cell(900, 0, 600, 1000, 0.5, (p) => T.drawGF(p, { pose: ["leashHold", "leashHold", 1], hold: true, glint: 1 }));
+cell(1200, 0, 600, 1000, 0.5, (p) => T.drawGF(p, { mode: "sit", pose: ["rub", "rub", 1], expr: "evilLaugh" }));
+cell(1500, 0, 600, 1000, 0.5, (p) => T.drawYou(p, { expr: "sadL" }));
+cell(1800, 0, 600, 1000, 0.5, (p) => T.drawYou(p, { mode: "sit", pose: ["hang", "phoneUp", 1], phone: true, expr: "smile" }));
+cell(2100, 0, 600, 1000, 0.5, (p) => T.drawBhai(p, { mode: "sit", pose: ["hang", "eatL", 1], expr: "grin", leash: { to: [80, 975], sag: 10 } }));
+cell(0, 520, 900, 800, 0.6, (p) => T.drawLion(p, { roar: 1, tail: 0.2 }));
+cell(560, 520, 600, 500, 0.6, (p) => T.drawDog(p, { kind: "lap", lie: 1, topi: true, mouth: "smile" }));
+cell(940, 520, 600, 500, 0.6, (p) => T.drawDog(p, { kind: "park", look: 1, mouth: "pant" }));
+cell(1320, 520, 600, 500, 0.6, (p) => T.drawDog(p, { kind: "park", look: 0, mouth: "smile" }));
+cell(1700, 520, 700, 500, 0.6, (p) => T.drawLionShadow(p, 1));
+cell(0, 1000, 1000, 1300, 0.38, (p) => T.drawCircle5(p, { heart: 1, hi: 1, out: 1 }));
+cell(390, 1000, 600, 1000, 0.5, (p) => T.drawChat(p, { sent: 1, seen: 1, dots: 0.2 }));
+cell(700, 1000, 1000, 1300, 0.38, (p) => T.drawCounter(p, { n: 89, chips: 1, b: 1, two: 1, bub: 1 }));
+cell(1090, 1000, 600, 1000, 0.5, (p) => T.drawShare(p, { open: 1, pick: 1, tap: 0.4 }));
+cell(1400, 1000, 600, 800, 0.5, (p) => T.drawPoster(p));
+cell(1700, 1000, 1000, 600, 0.6, (p) => T.drawHookL(p, 1, 1, 1, 0.1));
+cell(1700, 1400, 300, 300, 0.8, (p) => T.drawBroken(p, 1));
+cell(2000, 1400, 300, 200, 1, (p) => T.drawMomo(p));
+window.done = true;
+</script></body></html>

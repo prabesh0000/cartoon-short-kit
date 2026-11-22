@@ -1,0 +1,7 @@
+{"overlays": [
+ {"id": "stakes", "kind": "beat", "from": 30, "to": 112, "text": "प्रेम = २ साथी गायब", "accent": "२ साथी", "y": 1420},
+ {"id": "which", "kind": "hook", "from": 370, "to": 432, "text": "कुन दुई?", "accent": "दुई?"},
+ {"id": "hass", "kind": "beat", "from": 814, "to": 847, "text": "हस्, बेबी", "accent": "बेबी"},
+ {"id": "notyou", "kind": "beat", "from": 970, "to": 1006, "text": "तपाईंप्रति होइन", "accent": "तपाईंप्रति"},
+ {"id": "handle", "kind": "beat", "from": 1255, "to": 1283, "text": "@thecuriousmanche", "accent": "@thecuriousmanche", "y": 1420}
+]}
