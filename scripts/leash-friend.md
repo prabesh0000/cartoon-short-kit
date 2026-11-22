@@ -38,7 +38,7 @@ Sensitive topic: none. "Beers" became "मःम" on purpose, so alcohol doesn't
 
 तर चिन्ता नगर्नुस्, हराएको कुकुरझैं ऊ ब्रेकअप भएकै दिन फर्किन्छ।
 
-[mischievously] पट्टा लगाएको साथीलाई यो पठाइदिनुस्... गर्लफ्रेन्डले हेर्न दिइन् भने।
+[mischievously] पट्टा लगाएको साथीलाई यो पठाइदिनुस्... उसकी गर्लफ्रेन्डले उसलाई हेर्न दिइन् भने।
 ```
 Recording: ElevenLabs voice "Ashok Pokhrel" on v3 (the tags need v3/v4; on v2 they're read aloud). Delivery: a serious nature-documentary narrator, deadpan; the comedy comes from playing it straight. Pause before "कुन दुई?" and before "तपाईंप्रति होइन". "हस्, बेबी" is said softly and obediently, like a different person. The last line ends with a small smirk.
 
