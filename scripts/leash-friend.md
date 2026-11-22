@@ -1,6 +1,6 @@
 # पट्टा लगाएको साथी (The friend on a leash): fact + comedy
 
-Status: script final, waiting for the voiceover `inbox/leash-friend.mp3`. Length: about 80 words, roughly 38-40 s at 2 words/s. For about 30 s, cut lines 2 and 7 (about 66 words left).
+Status: script final, waiting for the voiceover `inbox/leash-friend.mp3`. Length: about 80 words, roughly 38-40 s at 2 words/s. For about 30 s, cut lines 2 (lion → lap dog) and 7 (about 66 words left).
 Emotion: playful teasing that builds to a sting ("तपाईंप्रति होइन"), then a warm laugh. Twist: the two friends he lost include you. Loop ending: no.
 Sensitive topic: none. "Beers" became "मःम" on purpose, so alcohol doesn't trigger the checklist; keep it that way.
 
@@ -10,7 +10,7 @@ Sensitive topic: none. "Beers" became "मःम" on purpose, so alcohol doesn't
 - Keep the wording of the facts exactly: "दुईजना नजिकका साथी गुम्छन्" (survey average) and "झन्डै उनान्नब्बे शब्द चिन्छ" (dogs *respond to* words; they don't understand them all).
 
 ## Hook layers (0:00)
-- **First frame:** a café. The friend (bean-head, dhaka topi) sits at a table wearing a pink leash; the other end goes off-frame to the right. His head is mid-turn toward the leash. The chair opposite him is empty (the viewer's seat), and a wolf's shadow on the wall behind him howls.
+- **First frame:** a café. The friend (bean-head, dhaka topi) sits at a table wearing a pink leash; the other end goes off-frame to the right. His head is mid-turn toward the leash. The chair opposite him is empty (the viewer's seat), and a lion's shadow on the wall behind him roars.
 - **Spoken line:** line 1.
 - **Overlay:** "प्रेम = २ साथी गायब" (the stakes; it doesn't repeat the spoken line).
 - **Beat overlays:** "कुन दुई? 👀" (line 3), "हस्, बेबी" (line 5), "तपाईंप्रति होइन" (line 6).
@@ -18,7 +18,7 @@ Sensitive topic: none. "Beers" became "मःम" on purpose, so alcohol doesn't
 ## Hook options considered
 1. **गर्लफ्रेन्ड भएको साथी किन पट्टा लगाएको कुकुरजस्तो हुन्छ?** (curiosity gap + relatability + a clear image). **Chosen:** it's the user's own hook, it works as a picture with the sound off, and it targets exactly the people who have "that friend".
 2. प्रेममा पर्दा दुईजना साथी गुम्छन्, र एउटा तपाईं हुनुहुन्छ। (fact + mirror; gives the twist away too early)
-3. तपाईंको साथी पहिले ब्वाँसो थियो, अब काखे कुकुर भयो। (pattern + surprise; weaker question)
+3. तपाईंको साथी पहिले सिंह थियो, अब काखे कुकुर भयो। (pattern + surprise; weaker question)
 4. "आज मःम?" भनेर म्यासेज गर्नुभयो? जवाफ आउन अनुमति चाहिन्छ। (relatability + conflict)
 5. तपाईंको साथीलाई अब दुईवटा शब्द मात्र आउँछ। (curiosity gap; too vague to stop a scroll)
 
@@ -26,7 +26,7 @@ Sensitive topic: none. "Beers" became "मःम" on purpose, so alcohol doesn't
 ```
 [deadpan] गर्लफ्रेन्ड भएको साथी किन पट्टा लगाएको कुकुरजस्तो हुन्छ?
 
-पहिले जङ्गली ब्वाँसो थियो... अहिले काखे कुकुर।
+पहिले जङ्गलको राजा सिंह थियो... अहिले काखे कुकुर।
 
 [matter-of-fact] विज्ञान भन्छ, प्रेममा पर्दा दुईजना नजिकका साथी गुम्छन्। [mischievously] कुन दुई? अनुमान लगाउनुस् त।
 
@@ -45,8 +45,8 @@ Recording: ElevenLabs voice "Ashok Pokhrel" on v3 (the tags need v3/v4; on v2 th
 ## Visual journey
 | Line | Shot size | Visual | Motion |
 |---|---|---|---|
-| 1 | MCU | Café, friend on a leash, empty chair, wolf shadow howls | Slow push-in; his head snaps toward the leash on "पट्टा" |
-| 2 | WS → MCU | Split: friend as a wolf on a hilltop howling at the moon → cut to him curled on a sofa cushion as a lap dog | Cut on "अहिले" |
+| 1 | MCU | Café, friend on a leash, empty chair, lion shadow roars | Slow push-in; his head snaps toward the leash on "पट्टा" |
+| 2 | WS → MCU | Split: friend as a lion roaring on a rock at sunset → cut to him curled on a sofa cushion as a lap dog | Cut on "अहिले" |
 | 3 | Diagram | Five friends in a circle; on "प्रेममा" a heart drops in and two friends slide out of the circle | The circle tightens; on "कुन दुई?" the camera turns to the empty café chair |
 | 4 | OTS → CU | Phone screen "आज मःम? 🥟" → friend glances at her face before typing → split-screen: a dog in a park glancing at its owner | Cut on "कुकुरले पनि" |
 | 5 | Diagram | Dog with a word-counter ticking up to "८९" → friend with a counter that shows only "हस्, बेबी" | Counter roll; snap |
@@ -62,13 +62,13 @@ Recording: ElevenLabs voice "Ashok Pokhrel" on v3 (the tags need v3/v4; on v2 th
 - Cover frame: line 1's leash shot, with the cover text "तपाईंको साथी पनि? 🐕".
 
 ## Sound
-Mock-epic nature documentary: a big cinematic string swell and a distant wolf howl for "जङ्गली ब्वाँसो", which deflates into a tiny squeaky-toy note for "काखे कुकुर". Light pizzicato tension under the facts, a soft bell-ding on the word counter, and a muted cash-register "ding" for "हस्, बेबी". Ambience: café murmur and cups. SFX soft (-12 dB, peaks ≤ 0.4x voice).
+Mock-epic nature documentary: a big cinematic string swell and a distant lion roar for "जङ्गलको राजा सिंह", which deflates into a tiny squeaky-toy note for "काखे कुकुर". Light pizzicato tension under the facts, a soft bell-ding on the word counter, and a muted cash-register "ding" for "हस्, बेबी". Ambience: café murmur and cups. SFX soft (-12 dB, peaks ≤ 0.4x voice).
 
 ## Reach pack (for the user to post)
 - Caption: Your friend got a girlfriend and suddenly needs permission to eat momo? Science says love costs you two close friends. Guess which two. 🐕
 - Hashtags (5): #TheCuriousManche #NepaliComedy #FriendshipGoals #RelationshipHumor #NepaliReels
 - Pinned comment: "तपाईंको पट्टा लगाएको साथीको नाम लेख्नुस्, उसलाई थाहा नदिई 👀"
-- Poll / Story sticker: "तपाईंको साथी अहिले: 🐺 ब्वाँसो / 🐕 काखे कुकुर"
+- Poll / Story sticker: "तपाईंको साथी अहिले: 🦁 सिंह / 🐕 काखे कुकुर"
 - Platform notes: tag-a-friend CTA, so expect shares over saves; post in the evening.
 
 ## QA before posting
