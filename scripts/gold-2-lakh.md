@@ -1,6 +1,6 @@
 # के सुन फेरि दुई लाखभन्दा तल झर्ला? (Will gold drop below 2 lakh again?): trending news explainer
 
-Status: script ready; voiceover coming as `inbox/gold-2-lakh.*`. Slug: `gold-2-lakh`. Length: about 77 words, roughly 38-41 s (measure the real file; it rules). For about 32 s, cut line 5.
+Status: script ready; voiceover coming as `inbox/gold-2-lakh.*`. Slug: `gold-2-lakh`. Length: about 77 words, roughly 38-41 s (measure the real file; it rules). Don't shorten by cutting line 4 or 5 alone (balance rule below); trim elsewhere if needed.
 Emotion: hope (cheaper gold?) → the maths → the reason it could fall → the other side (banks expect a rebound) → surprise (the experts were badly wrong) → "nobody knows" → a comment question. Twist: one big bank forecast $6,000 for this year-end, and gold is at about $3,500.
 Loop ending: no. End on the comment question.
 Sensitive topic: **money / news.** No buy or sell advice, no prediction from us. Facts dated 22 Nov 2026 (मंसिर ६, २०८३). **Same-day news reel: render and post within 1-2 days.** Re-check the Nepal price on render day; if it has moved a lot, tell the user before rendering (lines 2-3 and the overlays may need an update).
