@@ -2,6 +2,16 @@
 
 Newest first. Each entry says what happened and what to do next time.
 
+## 2026-11-24 — "Did you know kids got X-rayed to buy shoes?" (English, YouTube fact video, 38.6 s = 38.28 s voice + hold, 1158 frames, 22 shots; voice `inbox/xrayforshoes.wav`)
+- **First English reel.** faster-whisper with `language="en"` transcribed the whole take in one pass (no skipped middle, unlike Nepali). The first file in `inbox/` was a TTS sample line ("Elias snuffed the flame…"): always transcribe before building. The real take reworded the brief (for 30 years, lines 2+3 merged, "in Copenhagen", "strangest part"); all still matched the sources, so it was timed as recorded.
+- Built from `reels/skin-colour` with a new `web/xray.js`: generic wooden fitting cabinet (cloth that pulls off, three glowing hoods, invented "SEE YOUR FEET!" plaque), the eyepiece view (heel + fanning metatarsals + short segmented toes that wiggle, or crowd and bend in a tight shoe), a 9:16 cut-away beam diagram, the slot insert, a foot-icon world map (reusing the continent polygons from skin.js), a vertical US map with dots that count to 34 and a BANNED stamp, a years counter, a till, the worker with an apron and a bandage + soft red glow (no wounds), a green under-light on faces at the eyepiece.
+- **Fast explainer pace** (a new picture every 1-2 s): 22 shots in 38.6 s. Whooshes only in the pauses (11 of them), never on the fast cuts inside sentences; music at 112 bpm.
+- `rrX(p, ..., null)` filled with the previous fillStyle (a solid red card): helpers must skip the fill when the colour is null.
+- Bones drawn as long straight lines read as a hand or a fork; a big heel, fanning metatarsals and short segmented toes read as a foot.
+- A kid behind a cabinet needs a step (card base +0.4 m) or the hoods hide his face. A wide shop with an empty back wall centre looked bare; shelves now run the full width, and the shop sign sits below the top text slot.
+- Sound "curious, slightly eerie": low 60/120 Hz cabinet hum, soft zap (rising tone + 40 Hz AM, low-passed), cool drone from "who got hurt", stamp thunk + timpani on "banned", the register ding moved after the last word so it doesn't cover "X-rays". Final: music -6.0, SFX -12.0, speech-band median -18.0 dB, all cues OK, -14.5 LUFS.
+- Deviation from the brief: no "Banned in 34 states" overlay (the map card shows 34 + BANNED and the overlay had no free slot).
+
 ## 2026-11-24 — "के तपाईं कालो हुनुहुन्छ?" (science fact + ethnic identity, 51.6 s = 50.83 s voice + 0.8 s hold, 1548 frames, 16 shots; voice `inbox/kale.mp3`)
 - The voiceover arrived as `kale.mp3` (brief expected `skin-colour.*`), and the brief was on its own branch (`skin-colour`): after `git pull`, check new remote branches for the brief. Whisper skipped 29.5-44.7 s again; two ~10 s chunks recovered it. The take matched the script.
 - Built from `reels/nepaliport` (same engine), new `web/skin.js` + `world.js` + `story.js`. Areas: C = Kathmandu chowk (brick houses with carved windows, shutters, wires, big sun disc + halo), S = savanna (flat-top acacias, low squashed hills, blazing sun), N = cold north (pines, rocks, short fog), B = foggy forest (fog near 6 / far 46), E = studio (world map, sun-shield insert, 3,200 px ruler).
