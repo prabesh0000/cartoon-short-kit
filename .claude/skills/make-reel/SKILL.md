@@ -48,7 +48,7 @@ Verify every fact with web search before offering it. Trending news: search for 
 Mark your top 3 picks. Ask for a number or "more".
 
 ## Stage 3: Script (after they pick)
-**Load the `storytelling-hooks` skill first** and follow its workflow (read its `patterns.md`). Narration only, in **Nepali (Devanagari)** unless told otherwise. Nepali TTS runs about **2 words/s** (ignore that skill's 2.5 words/s): 20 s ≈ 40 words, 30 s ≈ 60.
+**Load the `storytelling-hooks` skill first** and follow its workflow (read its `patterns.md`). Narration only. Language by platform: **YouTube = English fact videos**, Instagram/TikTok/Facebook = **Nepali (Devanagari)**; the brief decides. Nepali TTS runs about **2 words/s** (20 s ≈ 40 words, 30 s ≈ 60); English about **2.5 words/s** (30 s ≈ 75 words).
 
 1. **5 hook options**, each stacking 2-3 levers (curiosity gap, emotional mirror, conflict, relatability, pattern + surprise, three-act), levers labelled. Score them on the storytelling-hooks checklist and recommend one, with the reason. The hook must land in about 2 s and keep its question open until the payoff.
 2. **Three hook layers** for 0:00 (most feeds autoplay muted):
@@ -72,7 +72,7 @@ Mark your top 3 picks. Ask for a number or "more".
 - A flowing script gets **one continuous camera journey** (follow the water, sink into the ground) with dissolves only on time jumps, not hard cuts.
 
 **Reply with:** the hook options and the pick, the three hook layers, the script in a copyable block, the word count and length, the camera journey (one row per line), and recording tips:
-- ElevenLabs voice "Ashok Pokhrel", natural pauses at sentence ends, export without music, file into `inbox/`.
+- Voice named in the brief (Nepali default: ElevenLabs "Ashok Pokhrel"; English: the brief's English narrator, e.g. ElevenLabs, Azure or Kokoro), natural pauses at sentence ends, export without music, file into `inbox/`.
 - Delivery the user likes: dramatic, **news-anchor** energy, not whispers. On Eleven v3/v4 use audio tags (`[dramatically]`, `[short pause]`); on Multilingual v2/Flash use `<break time="0.5s" />` (max 3 s, only a few). Tags in brackets get read aloud on the wrong model, so test one line first.
 
 Save the full per-video brief to `scripts/<slug>.md` using `scripts/_TEMPLATE.md` (script, hook layers, visual journey, editing specifics, sound, reach pack, QA, sources; git-tracked) and a plain-text copy of the narration to `inbox/<slug>.txt`. For a sensitive topic, apply `guides/sensitive-topics.md` while writing.

@@ -6,7 +6,10 @@ Claude Code reads this file at the start of every session. Keep it short and cur
 ## What we make
 - Vertical animated reels (1080x1920, 30 fps, 20-40 s) for Instagram, TikTok, YouTube Shorts and Facebook.
 - Topics: **stories and legends, history, trending news, surprising facts**. International, not only Nepal.
-- Narration: **Nepali (Devanagari)** for now, from ElevenLabs (voice "Ashok Pokhrel"). English may come later, on a separate account.
+- Narration by platform (user, 2026-11-24):
+  - **YouTube: English fact videos.** English script, English narrator, English on-screen text.
+  - **Instagram, TikTok, Facebook: Nepali (Devanagari).**
+  - The brief (`scripts/<slug>.md`) says which language and which voice. The voice may come from ElevenLabs, Azure TTS, Kokoro (local, free) or the user's own recording; timing works the same for any of them.
 - Look: bean-head toon characters on canvas cards in an inked, painted three.js world (see `README.md`).
 
 ## How to work here
@@ -30,7 +33,7 @@ Claude Code reads this file at the start of every session. Keep it short and cur
 - **Scripts must flow like one story** (linking words, the twist planted early), never a list of cut-off facts.
 - Voiceover delivery: dramatic, news-anchor energy, not whispers.
 - Legends: respectful, never called false. News about real people: "आरोप छ" + "दोष प्रमाणित भएको छैन", 2+ sources per claim.
-- Nepali scripts are sized at about **2 words/s** (60 words ≈ 30 s).
+- Nepali scripts are sized at about **2 words/s** (60 words ≈ 30 s). English scripts at about **2.5 words/s** (75 words ≈ 30 s); the real voice file always rules.
 - **On-screen text: style A, clean cinematic** (`guides/caption-style.md`), drawn by the text layer from `work/text.json`: **never blocked, never blocking** (mark people and hero props `protect: true`), **colours adapt to the background** (light or dark mode, contrast-checked). Zero flags in `work/text_report.json` before delivery.
 - Show a stills contact sheet before the long render.
 - **Recheck before delivering** (user asked, 2026-11-17): run the audio audit (`tools/audit.py`), the frame-diff scan, and check that every line has a picture that proves it. Open with the central question as a designed title card.
@@ -43,4 +46,4 @@ Claude Code reads this file at the start of every session. Keep it short and cur
 ## Machine notes (macOS)
 - Render with the GPU: `GL=gpu` is the default on macOS in `tools/render.mjs`. Check once by running `node gpucheck.mjs` inside any reel project; `GL=swiftshader` is the slow CPU fallback.
 - Keep the Mac awake during renders (`caffeinate -i`).
-- Devanagari fonts for captions: "Kohinoor Devanagari", "Devanagari Sangam MN".
+- Caption fonts: "Kohinoor Devanagari", "Devanagari Sangam MN" (both also cover English letters, so English overlays use the same style A).
