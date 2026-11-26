@@ -4,7 +4,6 @@ Status: script final, voiceover pending as `inbox/nalapani-memorial.mp3` (no spa
 Platform: **YouTube Shorts first** (facts format). Also fine for Facebook.
 Emotion: curiosity → underdog tension → pride → surprise (respect from the enemy). Twist: "तर अंग्रेजले दुई स्तम्भ ठड्याए, एउटा आफ्नो जनरललाई, अर्को बलभद्रलाई।"
 Loop ending: yes. "…भर्ती हुन थाले।" runs into "के तपाईंलाई थाहा छ…" on replay.
-Sensitive topic: **war history and a national hero.** Respectful, not jingoistic; no gore. Follow `guides/sensitive-topics.md` where relevant (no mocking of either side; no real faces).
 
 ## Rules for this reel
 - **No gore.** Gillespie's death is shown far away (a falling silhouette, a hat on the ground), never a wound or blood.

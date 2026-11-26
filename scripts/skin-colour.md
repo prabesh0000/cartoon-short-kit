@@ -4,7 +4,6 @@ Status: script final, **voiceover coming** as `inbox/skin-colour.*` (ElevenLabs 
 Platform: **Instagram + TikTok first** (Gen Z, playful), also fine for YouTube Shorts and Facebook.
 Emotion: surprise ("we were all dark") → curiosity (why skin changed) → "wow" (dark skin + blue eyes, pale skin only ~3,000 years ago) → warm, funny ending (call him दाइ, not काले). Twist: "युरोपमा गोरो छाला धेरै हुन थालेको त करिब तीन हजार वर्षअघि मात्र हो।"
 Loop ending: no. Ends on a share CTA ("…त्यो दाइलाई पठाउनुहोस्").
-Sensitive topic: **ethnic identity / skin colour.** Follow `guides/sensitive-topics.md` section 5 and run its checklist. The reel is anti-colourism: it must never make dark skin the joke.
 
 ## Rules for this reel
 - **Original reel.** The idea came from another creator's video; never copy its shots, layout, captions or its "sorry, your cousin" ending. Our ending is the काले → दाइ line.
@@ -84,7 +83,6 @@ Warm, curious and a little epic: a modern pulse with soft hand drums on the chow
 - [ ] Facts match sources  - [ ] Text inside the safe area  - [ ] Ending lands on "पठाउनुहोस्"
 - [ ] No caricature or stereotyped features; dark-skinned friend is never the butt of the joke
 - [ ] `एक अध्ययन` shown with the 3,000-year number
-- [ ] Sensitive-topic checklist passed (section 5)
 
 ## Sources (checked 24 Nov 2026)
 - Cheddar Man, Britain, ~10,000 years ago, dark skin and blue eyes (2018 genome study): https://www.aljazeera.com/amp/news/2018/2/7/scientists-say-earliest-britons-had-dark-skin and https://www.smithsonianmag.com/smart-news/ancient-briton-had-dark-skin-and-light-eyes-dna-analysis-shows-180968097/

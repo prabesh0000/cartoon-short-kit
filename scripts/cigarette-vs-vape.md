@@ -2,15 +2,9 @@
 
 Status (2026-11-26): script final pending Mr. P's OK on the trimmed version below. Voiceover not recorded yet; drop it at `inbox/cigarette-vs-vape.mp3`. Length: 96 words ≈ 40-48 s (Nepali TTS ≈ 2 words/s; fast delivery may land nearer 40 s). Target set by Mr. P: 30-45 s, for Instagram.
 Emotion: curiosity → shock (smoke numbers) → relief (vape burns nothing) → alarm (the turn) → deadpan verdict. Twist: the "safer" one still isn't safe; non-smokers shouldn't start either. Loop ending: no.
-Sensitive topic: tobacco + health claims. Follow `guides/sensitive-topics.md` and run its checklist before rendering.
 
 ## Rules for this reel
 - **Length:** the longer chat version (145 words) would run about 70 s, so this brief carries a trimmed 96-word script. If Mr. P records the long version anyway, time to the real take, but tell him it's over 45 s.
-- **Tobacco rules:** plain white cigarette and pack, plain unbranded vape (no recognisable device shapes or colours). Smoke and vapour are grey and ugly, never pretty clouds or rings. Only adult bean-heads hold either product.
-- **Teen line:** show a head silhouette with four lights (ध्यान / सिकाइ / आत्मनियन्त्रण) dimming. Do not show a teenager holding a vape.
-- **No organs:** no realistic lungs or brains. Use symbols: a chest outline with specks drifting in, a head silhouette with lights.
-- **Hedging words stay:** "सक्छ", "करिब", "कम हानिकारक" (not "safe").
-- **Framing:** educational from the first frame (a "VS" quiz card), never promotional. No one looks relaxed or stylish while smoking or vaping.
 
 ## Hook layers (0:00)
 - **First frame:** two adult bean-heads square off in a lab: left holds a plain white cigarette, right holds a plain vape, with a crackling "VS" between them. The mascot's "?" pops above.
@@ -69,7 +63,6 @@ Modern, tense pulse (~110-120 bpm), lab/science feel, not a happy loop. Music cu
 
 ## QA before posting
 - [ ] Facts match sources  - [ ] Text inside the safe area  - [ ] Ending works
-- [ ] Sensitive-topic checklist passed (no brands, nothing appealing, no minors with products, hedges kept)
 
 ## Sources (checked 2026-11-26)
 - More than 7,000 chemicals in tobacco smoke; at least 69-70 cause cancer: CDC, https://www.cdc.gov/tobacco/about/cigarettes-and-cancer.html ; https://stacks.cdc.gov/view/cdc/21587/cdc_21587_DS1.pdf ; Health Canada, https://www.canada.ca/en/health-canada/services/smoking-tobacco/health-effects-smoking-second-hand-smoke/harmful-chemicals.html

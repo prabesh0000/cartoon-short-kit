@@ -2,7 +2,6 @@
 
 Status: <script final / voiceover ready>, voiceover `inbox/<slug>.mp3`. Length: <words> words ≈ <s> s.
 Emotion: <one emotion, start → end>. Twist: <one line>. Loop ending: <yes/no, how>.
-Sensitive topic: <none / tobacco / health / news / religion / identity>; if any, follow `guides/sensitive-topics.md`.
 
 ## Rules for this reel
 - <anything Claude Code must or must not do for this specific video>
@@ -42,7 +41,6 @@ Recording: <delivery, tricky words, pauses, how the last word should sound>
 
 ## QA before posting
 - [ ] Facts match sources  - [ ] Text inside the safe area  - [ ] Loop or ending works
-- [ ] Sensitive-topic checklist passed (if relevant)
 
 ## Sources (checked <date>)
 - <claim>: <url>

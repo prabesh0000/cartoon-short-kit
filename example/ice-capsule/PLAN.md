@@ -12,7 +12,7 @@ Timing: silence detection (-32 dB, 80 ms). 7 lines map onto the 9 long pauses; r
 | 6 | अनि त्यो चिसो बलले धुवाँ हल्का लगाउँछ, / त्यसैले मान्छे झन् गहिरो तान्न सक्छन्। | 809–891 / 905–982 |
 | 7 | आइस पट्काउने आफ्नो साथीलाई / ट्याग गरेर सोध्नुहोस् कि… | 1001–1044 / 1047–1093 |
 
-Brief: `scripts/ice-capsule-myth.md` (overrides defaults). Sensitive: tobacco + health → `guides/sensitive-topics.md` §1, 2, 7.
+Brief: `scripts/ice-capsule-myth.md` (overrides defaults).
 No brand anywhere (plain white filter + paper). No one smokes on screen. Adults only. Symbols, no organs.
 
 Score: modern tense pulse (low synth pulse ~92 bpm, ticking hats low-passed, cold pad, sub hits), circular so the end flows into the start.

@@ -4,7 +4,6 @@ Status: script final; **voiceover recorded by the user, saved as "nepaliport"** 
 Platform: **Facebook first** (informative format), then YouTube. For Instagram / TikTok, a 30 s cut only if the user asks.
 Emotion: curiosity → "it was promised in 2019" → the swap (same states, different ports) → the clue (private vs government) → the catch (bulk ports, Paradip not ready) → open question. Twist: "ढोका त खुल्यो, तर नेपालले ढकढकाएको ढोका होइन।"
 Loop ending: no. End on the comment question.
-Sensitive topic: **politics + news about real, living people + a real company.** Follow `guides/sensitive-topics.md` sections 3 and 6 and run its checklist. Facts dated 24 Nov 2026 (मंसिर ८, २०८३). **Same-day news reel: render and post within 1-2 days.** On render day, check whether India or Nepal has given an official reason for the port swap; if so, tell the user before rendering (line 5 must change).
 
 ## Rules for this reel
 - **India has given no official reason.** The private-vs-government point is a fact; the "easier to give its own government's port" line is **one Birgunj trader's guess**. The screen must label it `अनुमान` (guess). Never present it as India's reason.
@@ -87,7 +86,6 @@ Cinematic, tense music bed (not a happy loop), low strings and a soft pulse; it 
 ## QA before posting
 - [ ] Facts match sources  - [ ] Text inside the safe area  - [ ] Ending lands on "कमेन्टमा लेख्नुहोस्"
 - [ ] `अनुमान` label visible on line 5  - [ ] No logos, no faces, map correct or cropped
-- [ ] Sensitive-topic checklist passed (sections 3 and 6)
 
 ## Sources (checked 24 Nov 2026)
 - Nepal got Kandla and Paradip; had asked for Dhamra and Mundra; agreed in 2019: https://english.onlinekhabar.com/india-grants-nepal-access-to-kandla-and-paradip-ports-for-trade.html

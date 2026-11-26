@@ -2,6 +2,9 @@
 
 Newest first. Each entry says what happened and what to do next time.
 
+## 2026-11-26 — Sensitive-topics guide removed
+- Mr. P removed `guides/sensitive-topics.md` and its rules from CLAUDE.md, the make-reel skill, the brief template and all briefs. Older entries below that mention it are history only; the file no longer exists.
+
 ## 2026-11-25 — "भारतसँग २६, पाकिस्तानसँग ७२" (Nepali sports news, 54.0 s = 53.38 s voice + 0.6 s hold, 1620 frames, 22 shots; voice `inbox/cricket.wav`)
 - The brief expected `cricekt*`; the file was `cricket.wav`. faster-whisper (ne) again skipped 24-30 s; a chunk re-run recovered "छ जना ब्याटर शून्यमै आउट…"; "अर्थात्," (43.2 s) was found only from the pause map. The take = the brief's final wording. The first fact search returned a February WOMEN's event with similar names; search the exact men's event + city + month.
 - Built from `reels/phantom-dna` with a new `web/cricket.js`: kit-coloured players (`drawPlayerQ`: cap or helmet with grille, pads, bat at any angle from the hands, kit bag, ball), the fan in a dhaka topi (`drawPerson` + `topi`), a PORTRAIT scoreboard 1000x1700 (a wide board crops in 9:16; name above score, flip by row with old/new values), stump sets that cartwheel (`drawStumpQ`, `drawSixQ`), semifinal slots + a बाहिर stamp, dressing-room seats, a plain press table, a batting order that topples like dominoes. World: a generic stadium function (striped outfield, pitch, tiered stands with a dotted crowd texture, floodlight towers, rope, a board frame) used twice (Doha at dusk + skyline; a night league ground), dressing room, press room, dawn apron (reused `drawPlaneB`).

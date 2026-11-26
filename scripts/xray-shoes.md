@@ -4,7 +4,6 @@ Status: script final; **voiceover recorded by the user, saved as "xrayfor kids"*
 Platform: **YouTube (English fact video).** All on-screen text in **English**.
 Emotion: curiosity → wonder (kids watching their bones) → unease (who got hurt) → ironic "aha" (it was only advertising). Twist: "It never helped shoes fit. It was just advertising. With X-rays."
 Loop ending: no. End deadpan on "With X-rays."
-Sensitive topic: **health (radiation).** Follow `guides/sensitive-topics.md` section 2: no claims beyond the sources, no graphic medical imagery.
 
 ## Rules for this reel
 - **Pace matches the voice:** fast, punchy explainer style. Cuts and camera moves on almost every sentence (every 1-2 s), snappy whooshes, no lingering holds.
@@ -80,7 +79,6 @@ Modern, curious, slightly eerie: a quick pulse with plucks and a light retro-192
 - [ ] Facts match sources  - [ ] Text inside the safe area  - [ ] Ending lands on "With X-rays."
 - [ ] No claim that kids got sick; no graphic injury
 - [ ] No real brand names on the cabinet
-- [ ] Sensitive-topic checklist passed (section 2)
 
 ## Sources (checked 24 Nov 2026)
 - Three decades from the mid-1920s; millions of children and adults in the US, Europe and elsewhere: https://www.smithsonianmag.com/science-nature/heres-looking-at-you-kids-85790281/

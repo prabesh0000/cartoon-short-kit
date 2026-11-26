@@ -4,11 +4,10 @@ Status: script final; **voiceover recorded by the user, saved as "balen"** (look
 Platform: **Facebook first** (informative format). For Instagram / TikTok / YouTube, only a neutral "scorecard" cut; never a sarcastic version (sitting PM = politics).
 Emotion: curiosity → what Nepal got → the catch (loan) → the big win (air route) → what it didn't get (border) → open question. Twist: "तर त्यसको चार भागमध्ये झन्डै तीन भाग ऊर्जाका लागि ऋण हो।"
 Loop ending: no. End on the comment question (score out of 10).
-Sensitive topic: **politics + news about real, living people.** Follow `guides/sensitive-topics.md` sections 3 and 6 and run its checklist. Facts dated 23 Nov 2026 (मंसिर ७, २०८३). **Same-day news reel: render and post within 1-2 days.** Re-check on render day whether the trip's cost has been published; if it has, tell the user (line 8 must change).
 
 ## Rules for this reel
 - **No opinion from the channel.** Every "got" is followed by its limit (aid → mostly loan; air route → technical talks pending; border → no agreement). The ending asks the viewer to score it; we never score it.
-- **No real faces, names or caricatures on screen** (guide section 3): the two prime ministers are **faceless silhouettes** in suits, with no name tags. The narration names them; the screen doesn't.
+- **No real faces, names or caricatures on screen**: the two prime ministers are **faceless silhouettes** in suits, with no name tags. The narration names them; the screen doesn't.
 - **No party symbols, no flags waved, no tagging politicians** (guide section 6). Small static flag pins on the table are fine; nothing celebratory.
 - **No mocking delivery or visuals.** The cost line is neutral: a blank receipt with "?", not a joke.
 - The air route needs technical consultations before it works: the screen **must** show `प्राविधिक छलफल बाँकी` under the route.
@@ -100,7 +99,6 @@ SFX soft (-12 dB, peaks ≤ 0.4x voice); check every cue with `sfx_check.py`.
 - [ ] Faceless silhouettes only; no real faces, names, party symbols or caricatures on screen
 - [ ] `प्राविधिक छलफल बाँकी` shown with the air route  - [ ] Loan share shown with the aid figure
 - [ ] No opinion from the channel; delivery and visuals neutral
-- [ ] `guides/sensitive-topics.md` checklist passed  - [ ] Text inside the safe area, nothing blocked
 - [ ] For TikTok: run TikTok Studio's content check before posting
 
 ## Sources (checked 23 Nov 2026)

@@ -2,7 +2,6 @@
 
 Status (2026-11-21): built from `inbox/drunk.mp3`, which is the OLD take (no recovery-position line, club ending). Internal version only, not for posting; re-record the narration below for a postable version. Original status: script final, voiceover recorded by Mr. P. Drop the audio at `inbox/alcohol-safety.mp3` before building. Length: about 100 words, roughly 50 s. That's over the 25-30 s target, so trim before render if needed.
 Emotion: calm, then urgent, then light. Twist: sleeping does not sober anyone up. Loop ending: no.
-Sensitive topic: alcohol and health claims. Follow `guides/sensitive-topics.md` and run its checklist before rendering.
 
 ## Rules for this reel
 - **Open point for the checklist:** the last line tells viewers to take a drunk friend to a club to dance. Checklist item 2 says nothing may make the act look appealing or comic in a harmful way, and this line may fail it. Mr. P chose to keep this line. Decide before render: keep it, or swap in the safer ending drafted in chat.
@@ -58,7 +57,6 @@ To set in Claude Code: calm, low-key bed for the health facts, then a lighter cu
 
 ## QA before posting
 - [ ] Facts match sources  - [ ] Text inside the safe area  - [ ] Loop or ending works
-- [ ] Sensitive-topic checklist passed (open point above)
 
 ## Sources (checked 2026-11-21)
 - Blood alcohol keeps rising after the last drink (up to ~40 min): HSE Ireland, https://www2.hse.ie/living-well/alcohol/health/how-alcohol-can-affect-everyday-life/alcohol-poisoning/

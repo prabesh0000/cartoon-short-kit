@@ -2,7 +2,6 @@
 
 Status: script final, waiting for the voiceover `inbox/leash-friend.mp3`. Length: about 80 words, roughly 38-40 s at 2 words/s. For about 30 s, cut lines 2 (lion → lap dog) and 7 (about 66 words left).
 Emotion: playful teasing that builds to a sting ("तपाईंप्रति होइन"), then a warm laugh. Twist: the two friends he lost include you. Loop ending: no.
-Sensitive topic: none. "Beers" became "मःम" on purpose, so alcohol doesn't trigger the checklist; keep it that way.
 
 ## Rules for this reel
 - Comedy, not mockery: the friend and the girlfriend are both likeable. She never looks mean or controlling; the joke is on his devotion. No real people.

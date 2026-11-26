@@ -3,7 +3,6 @@
 Status: **voiceover coming** as `inbox/gold.*` (ElevenLabs v3, Ashok Pokhrel, tagged version below). Slug: `gold`. Length: 63 words ≈ 32-36 s (measure the real file; it rules).
 Emotion: surprise → curiosity → "aha" (a decision in America changed the price of wedding jewellery in Nepal). Twist: "कारण नेपाल होइन, अमेरिका हो।"
 Loop ending: yes. "…ट्याग गरेर सोध्नुहोस् कि…" runs straight into line 1 ("आखिर सुन किन घट्यो?") on replay.
-Sensitive topic: **money / news.** No buy or sell advice. Facts dated 20 Nov 2026 (मंसिर ४, २०८३). **Same-day news reel: render and post within 1-2 days.** Re-check the Nepal price on render day; if it has moved a lot, tell the user before rendering (lines 2-3 and the overlays may need an update).
 
 ## Rules for this reel
 - **Not financial advice.** Nobody on screen tells the viewer to buy or sell. The last line only asks a friend; the caption says "Not financial advice".

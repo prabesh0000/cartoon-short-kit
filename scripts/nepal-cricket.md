@@ -4,7 +4,6 @@ Status: script final, **voiceover coming** as `inbox/nepal-cricket.*` (user's TT
 Platform: **YouTube (English).** All on-screen text in **English**.
 Emotion: shock (the scores) → a flicker of hope (beat UAE, bowlers held Pakistan A to 168) → frustration (collapse, knocked out) → the reveal (not the full team) → open question. Twist: "This wasn't Nepal's full team."
 Loop ending: no. End on the comment question.
-Sensitive topic: **news about real, living people (sport).** Follow `guides/sensitive-topics.md` section 3. Facts dated 24 Nov 2026. **Same-day news reel: render and post within 1-2 days.**
 
 ## Rules for this reel
 - **No real faces or caricatures.** Players are generic bean-heads in Nepal blue (red trim) and in neutral opponent colours (India A light blue, Pakistan A green), no names or numbers on shirts, no team or sponsor logos, no ACC/ICC marks. Real names are only spoken.
@@ -72,7 +71,6 @@ Modern sports-news pulse with tense low strings; stadium crowd ambience (cheers 
 ## QA before posting
 - [ ] Scores match the sources exactly  - [ ] Text inside the safe area  - [ ] Ending lands on "comments"
 - [ ] No recognisable real players, no logos, nobody mocked
-- [ ] Sensitive-topic checklist passed (section 3)
 
 ## Sources (checked 24 Nov 2026)
 - India A 332/9, Nepal 26 all out, India A won by 306 runs; Nepal missing key players due to the NPL: https://www.cricinfo.com/series/asia-cup-rising-stars-50-overs-2026-27-1562333/india-a-vs-nepal-4th-match-group-b-1562345/live-cricket-score

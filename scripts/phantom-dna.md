@@ -2,7 +2,6 @@
 
 Status: script final, awaiting voiceover `inbox/phantom-dna.mp3`. Length: 98 words ≈ 39 s.
 Emotion: cold dread → stunned disbelief → quiet irony. Twist: the DNA was on the cotton swabs before they ever reached a crime scene — contamination at the factory, not a killer. Loop ending: no.
-Sensitive topic: news about real people (a real murder victim, real police forces, a real living factory worker). Follow `guides/sensitive-topics.md` section 3.
 
 **Language: English.** This is a YouTube fact video — English script, English narrator, English on-screen text.
 
@@ -13,7 +12,7 @@ Sensitive topic: news about real people (a real murder victim, real police force
 - **Nothing graphic.** The six murders are represented only by blank case cards on an evidence board. No bodies, no blood, no weapons, no crime-scene tape over a shape on the ground. The one police death is not depicted at all in this cut.
 - No real country flags or state coats of arms. The map is schematic: plain coastline and state outlines, no labels except the one noted below.
 - "Forty crime scenes" and "six murders" are the source figures — do not round or inflate them.
-- Re-check the facts on render day (section 3 of the sensitive-topics guide).
+- Re-check the facts on render day.
 
 ## Hook layers (0:00)
 - **First frame:** a dark lab. One gloved hand holds a sealed cotton swab up to a lamp. The swab is already glowing faintly — the answer is on screen in frame one and nobody knows it yet. Motion: the swab turns slowly in the light, dust drifting through the beam.
@@ -102,7 +101,6 @@ SFX: pin thunks on each case card (in the pauses, never on words), poster creak,
 
 ## QA before posting
 - [ ] Facts match sources  - [ ] Text inside the safe area  - [ ] Ending works
-- [ ] Sensitive-topic checklist passed: no real names anywhere, police faceless, factory worker anonymous and not mocked, nothing graphic, figures match sources, facts re-checked on render day
 
 ## Sources (checked 2026-11-25)
 - 40 crime scenes across Austria, France and Germany, 1993-2009; swabs traced to one factory employing Eastern European women whose DNA matched; led to ISO 18385 in 2016: https://boingboing.net/?p=1114612

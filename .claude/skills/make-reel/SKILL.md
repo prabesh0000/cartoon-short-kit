@@ -20,9 +20,8 @@ voiceover. The voice is never edited. Music is synthesized at **50 % of the voic
 - `example/yalambar/`: an earlier finished reel (11 shots, war-legend thriller score).
 
 ## Rules
-- Original stories and shots only; never recreate another creator's video. No real, named living people as characters, and no brand mascots or logos.
-- **News and facts must be verified**: at least 2 independent sources from the last few days for news, with the date in the script ("गत हप्ता…"). Say plainly if something is disputed. No political opinions, no mocking real people, nothing graphic. Show violence as a flash cut.
-- Religious figures and deities: respectful, never mocked. Seen from behind, or as their worshipped form (see LESSONS.md, Yalambar).
+- Original stories and shots only; never recreate another creator's video.
+- **News and facts must be verified**: at least 2 independent sources from the last few days for news, with the date in the script ("गत हप्ता…"). Say plainly if something is disputed.
 - Diegetic text must read correctly (not mirrored). Captions only if the user asks (Devanagari fonts on macOS: "Kohinoor Devanagari", "Devanagari Sangam MN").
 - Never edit or re-time the voice. Every visual reaction lands 0-3 frames before its word.
 - Audio: always mix with `mix.py` (music exactly -6 dB vs the voice by gated RMS; SFX -12 dB, peaks ≤ 0.4x the voice peak). No ducking or compression; one linear gain + a limiter in `finish.sh`.
@@ -30,7 +29,7 @@ voiceover. The voice is never edited. Music is synthesized at **50 % of the voic
 
 ## Stage 1: Intake (always first)
 Run `git pull` first: scripts planned in the claude.ai chat arrive as `scripts/<slug>.md`, and kit updates come the same way.
-**Each `scripts/<slug>.md` is the per-video brief** (format: `scripts/_TEMPLATE.md`). Read all of it: its "Rules for this reel", hook layers, visual journey, editing specifics, sound and QA list override the defaults in this skill. If it names a sensitive topic, also read and follow `guides/sensitive-topics.md`, and run that file's checklist before rendering.
+**Each `scripts/<slug>.md` is the per-video brief** (format: `scripts/_TEMPLATE.md`). Read all of it: its "Rules for this reel", hook layers, visual journey, editing specifics, sound and QA list override the defaults in this skill.
 Then check `scripts/` for a ready script and `inbox/` for a new voiceover. If there is a voiceover: match it to its script (`scripts/<slug>.md` or a `.txt` next to it; ask if unclear), then go to Stage 4.
 If there is a ready script but no voiceover: show it, run the Stage 3 checklist on it, and give the recording tips.
 Otherwise ask once: **"Where are you starting from?"** Need ideas + script / Have a script, need the voiceover / Voiceover ready.
@@ -66,8 +65,7 @@ Mark your top 3 picks. Ask for a number or "more".
 - **It must read as one story, never a list of cut-off facts.** Link sentences: भनिन्छ, र, तर, जुन, अचम्मको कुरा, जाँदाजाँदै. The user rejects choppy scripts.
 - **Plant the twist early:** mention the thing that turns out to matter (the soil, the phone) before the reveal.
 - **Question hooks work** when they name something viewers already know ("के मञ्जुश्रीले साँच्चै…?").
-- **Legends:** never call them false and never mock them. Confirm what science confirms, hedge what is probable ("सम्भवतः").
-- **News about real people:** keep "आरोप छ" and "दोष प्रमाणित भएको छैन" in the narration; no names of officials on screen; every claim from 2+ sources.
+- **News:** every claim from 2+ sources.
 - Plain spoken Nepali, numbers as words, no stage directions in the narration.
 - A flowing script gets **one continuous camera journey** (follow the water, sink into the ground) with dissolves only on time jumps, not hard cuts.
 
@@ -75,7 +73,7 @@ Mark your top 3 picks. Ask for a number or "more".
 - Voice named in the brief (Nepali default: ElevenLabs "Ashok Pokhrel"; English: the brief's English narrator, e.g. ElevenLabs, Azure or Kokoro), natural pauses at sentence ends, export without music, file into `inbox/`.
 - Delivery the user likes: dramatic, **news-anchor** energy, not whispers. On Eleven v3/v4 use audio tags (`[dramatically]`, `[short pause]`); on Multilingual v2/Flash use `<break time="0.5s" />` (max 3 s, only a few). Tags in brackets get read aloud on the wrong model, so test one line first.
 
-Save the full per-video brief to `scripts/<slug>.md` using `scripts/_TEMPLATE.md` (script, hook layers, visual journey, editing specifics, sound, reach pack, QA, sources; git-tracked) and a plain-text copy of the narration to `inbox/<slug>.txt`. For a sensitive topic, apply `guides/sensitive-topics.md` while writing.
+Save the full per-video brief to `scripts/<slug>.md` using `scripts/_TEMPLATE.md` (script, hook layers, visual journey, editing specifics, sound, reach pack, QA, sources; git-tracked) and a plain-text copy of the narration to `inbox/<slug>.txt`.
 
 ## Stage 4: Build (after the voiceover arrives). Do everything without stopping, except the stills check.
 ### 4.0 Project

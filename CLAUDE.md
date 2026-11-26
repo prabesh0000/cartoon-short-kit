@@ -16,7 +16,6 @@ Claude Code reads this file at the start of every session. Keep it short and cur
 - **Start of every session: run `git pull`.** Scripts planned in the claude.ai chat arrive as `scripts/<slug>.md`, along with kit updates.
 - To make a reel, use the **make-reel** skill (`.claude/skills/make-reel/SKILL.md`). Typing `/make-reel` also works.
 - **Every reel has a per-video brief in `scripts/<slug>.md`** (template `scripts/_TEMPLATE.md`), written in the claude.ai chat. Follow it; it overrides defaults.
-- **Sensitive topics** (tobacco, alcohol, drugs, health, news about real people, religion, ethnic identity, politics): follow `guides/sensitive-topics.md` and run its checklist before rendering.
 - **Every script goes through the `storytelling-hooks` skill** (5 hook options, three hook layers, one flowing arc, bookend + one CTA). Also here: `titles-and-thumbnails`, `retention-audit`, `channel-formula` (copied from yaxeen/storytelling-skills, MIT; see `licenses/`).
 - **Read `LESSONS.md` before every reel.** After every reel, add a dated entry at its top (the user wants learnings saved every time).
 - Voiceovers arrive in `inbox/`. Each reel is built in `reels/<slug>/` (git-ignored). Brand assets are in `brand/`.
@@ -32,7 +31,7 @@ Claude Code reads this file at the start of every session. Keep it short and cur
 - Hooks: open on the strongest, mid-action image. Question hooks about stories people already know work well. Aim for 25-30 s. End on the twist, then a bookend comment question.
 - **Scripts must flow like one story** (linking words, the twist planted early), never a list of cut-off facts.
 - Voiceover delivery: dramatic, news-anchor energy, not whispers.
-- Legends: respectful, never called false. News about real people: "आरोप छ" + "दोष प्रमाणित भएको छैन", 2+ sources per claim.
+- News: 2+ sources per claim.
 - Nepali scripts are sized at about **2 words/s** (60 words ≈ 30 s). English scripts at about **2.5 words/s** (75 words ≈ 30 s); the real voice file always rules.
 - **On-screen text: style A, clean cinematic** (`guides/caption-style.md`), drawn by the text layer from `work/text.json`: **never blocked, never blocking** (mark people and hero props `protect: true`), **colours adapt to the background** (light or dark mode, contrast-checked). Zero flags in `work/text_report.json` before delivery.
 - Show a stills contact sheet before the long render.

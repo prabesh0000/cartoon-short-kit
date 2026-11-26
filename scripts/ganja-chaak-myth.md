@@ -3,7 +3,6 @@
 Status: **voiceover recorded** (ElevenLabs v3, Ashok Pokhrel, tagged version below), drop it in `inbox/ganja-chaak-myth.mp3`. Length: 70 words ≈ 38-40 s (measure the real file; it rules).
 Emotion: amused curiosity → "wait, the uncle is right?" → satisfying debunk. Twist: the study seems to back the uncle, but the gap is about a kilo, the cause is unproven, and fat never leaves one chosen spot.
 Loop ending: yes. "…ट्याग गरेर सोध्नुहोस् कि…" runs straight into line 1 ("के गाँजा तान्दा…?") on replay.
-Sensitive topic: **drugs + health.** Follow `guides/sensitive-topics.md` sections 1, 2 and 7. Recreational cannabis is illegal in Nepal (Narcotic Drugs (Control) Act 1976).
 
 ## Rules for this reel
 - **Nobody smokes on screen.** No joints, chillums, pipes, smoke, rolling, buying or hiding. No close-up or hero shot of a cannabis leaf; the topic is carried by the narration and the text.
@@ -99,7 +98,6 @@ SFX soft (-12 dB, peaks ≤ 0.4x voice); check every cue with `sfx_check.py`.
 - [ ] Nobody smokes; no joint, chillum, smoke or hero cannabis leaf anywhere  - [ ] Adults only
 - [ ] "33,000", "3 years", "about a kilo" and "cause not proven" match the sources  - [ ] Text inside the safe area, nothing blocked
 - [ ] The loop: last frame = frame 0, no silence gap, same "zip" sound
-- [ ] Sensitive-topic checklist (guide section 7) passed
 
 ## Sources (checked 19 Nov 2026)
 - 3-year prospective study (NESARC, n = 33,000, ages 18+): all participants gained weight; cannabis users gained less (lower BMI increase): https://pubmed.ncbi.nlm.nih.gov/30879064/ (full text: https://pmc.ncbi.nlm.nih.gov/articles/PMC6857742)

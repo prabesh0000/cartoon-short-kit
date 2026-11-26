@@ -3,7 +3,6 @@
 Status: **script final**, voiceover pending as `inbox/gold-buy-or-wait.*` (rename to `inbox/gold-buy-or-wait.mp3` first, because spaces break the tools). Slug: `gold-buy-or-wait`. Length: about 65 words ≈ 30 s (measure the real file; it rules).
 Emotion: curiosity → facts → "nobody knows". Twist: "अब यो तल्लो बिन्दु हो कि अझै घट्ने हो, त्यो पछि मात्र थाहा हुन्छ।"
 Loop ending: yes. The closing question runs straight into line 1 on replay.
-Sensitive topic: **money / news.** No buy or sell advice, no forecast from us. Facts from the 19 Nov 2026 report. **Same-day news reel: render and post within 1-2 days.** Re-check the Nepal price on render day; if it has moved a lot, update lines 2-3 and the overlays before rendering. Follow `guides/sensitive-topics.md` and run its checklist before rendering.
 Follow-up to `scripts/gold.md` and `scripts/gold-2-lakh.md`. Reuse the cast from `reels/gold/web/gold.js` (price board, chalk chart, globe, gold-bar character, generic bank).
 
 ## Rules for this reel
@@ -81,7 +80,6 @@ SFX soft (-12 dB, peaks ≤ 0.4x voice); check every cue with `sfx_check.py`.
 - [ ] Every number matches the sources and the date  - [ ] Nepal price re-checked on render day
 - [ ] "अनुमान" shown next to the December hike  - [ ] No buy/sell advice, no forecast from us
 - [ ] No real bank names or logos on screen  - [ ] Text inside the safe area, nothing blocked
-- [ ] Sensitive-topic checklist (`guides/sensitive-topics.md`) passed  - [ ] The loop: last frame = frame 0
 
 ## Sources (checked 23 Nov 2026)
 - Record and the latest fall: Nepal gold reached Rs 3,39,300 per tola as its domestic all-time high, and was down 24.08% in the 19 Nov report: https://www.sharesansar.com/newsdetail/gold-price-falls-2408-from-its-all-time-high-price-silver-by-5556-2026-11-19
