@@ -1,0 +1,295 @@
+{
+ "overlays": [
+  {
+   "id": "look",
+   "kind": "beat",
+   "from": 612,
+   "to": 648,
+   "text": "LOOK UP",
+   "accent": "UP",
+   "y": 380
+  },
+  {
+   "id": "blegh",
+   "kind": "beat",
+   "from": 834,
+   "to": 874,
+   "text": "BLEGH!",
+   "accent": "BLEGH!",
+   "y": 380,
+   "size": 104,
+   "plate": true
+  }
+ ],
+ "captions": [
+  {
+   "from": 0,
+   "to": 7,
+   "text": "What would"
+  },
+  {
+   "from": 7,
+   "to": 21,
+   "text": "you do"
+  },
+  {
+   "from": 21,
+   "to": 43,
+   "text": "if chunks"
+  },
+  {
+   "from": 43,
+   "to": 62,
+   "text": "of meat",
+   "accent": true
+  },
+  {
+   "from": 62,
+   "to": 76,
+   "text": "started"
+  },
+  {
+   "from": 76,
+   "to": 94,
+   "text": "falling"
+  },
+  {
+   "from": 94,
+   "to": 105,
+   "text": "from"
+  },
+  {
+   "from": 105,
+   "to": 127,
+   "text": "the sky?"
+  },
+  {
+   "from": 140,
+   "to": 149,
+   "text": "Because"
+  },
+  {
+   "from": 149,
+   "to": 156,
+   "text": "on a"
+  },
+  {
+   "from": 156,
+   "to": 166,
+   "text": "clear"
+  },
+  {
+   "from": 166,
+   "to": 175,
+   "text": "March"
+  },
+  {
+   "from": 175,
+   "to": 186,
+   "text": "morning"
+  },
+  {
+   "from": 186,
+   "to": 226,
+   "text": "in 1876,"
+  },
+  {
+   "from": 232,
+   "to": 244,
+   "text": "that's"
+  },
+  {
+   "from": 244,
+   "to": 253,
+   "text": "exactly"
+  },
+  {
+   "from": 253,
+   "to": 267,
+   "text": "what happened"
+  },
+  {
+   "from": 267,
+   "to": 286,
+   "text": "to Mrs."
+  },
+  {
+   "from": 286,
+   "to": 301,
+   "text": "Crouch,"
+  },
+  {
+   "from": 301,
+   "to": 307,
+   "text": "making"
+  },
+  {
+   "from": 307,
+   "to": 318,
+   "text": "soap"
+  },
+  {
+   "from": 318,
+   "to": 326,
+   "text": "in her"
+  },
+  {
+   "from": 326,
+   "to": 334,
+   "text": "Kentucky"
+  },
+  {
+   "from": 334,
+   "to": 357,
+   "text": "yard."
+  },
+  {
+   "from": 364,
+   "to": 380,
+   "text": "For several"
+  },
+  {
+   "from": 380,
+   "to": 394,
+   "text": "minutes"
+  },
+  {
+   "from": 394,
+   "to": 415,
+   "text": "it poured"
+  },
+  {
+   "from": 415,
+   "to": 445,
+   "text": "meat,",
+   "accent": true
+  },
+  {
+   "from": 451,
+   "to": 468,
+   "text": "and two"
+  },
+  {
+   "from": 468,
+   "to": 495,
+   "text": "men tasted"
+  },
+  {
+   "from": 495,
+   "to": 510,
+   "text": "it,"
+  },
+  {
+   "from": 510,
+   "to": 517,
+   "text": "guessing"
+  },
+  {
+   "from": 517,
+   "to": 546,
+   "text": "lamb,"
+  },
+  {
+   "from": 549,
+   "to": 571,
+   "text": "maybe deer."
+  },
+  {
+   "from": 587,
+   "to": 611,
+   "text": "But nobody"
+  },
+  {
+   "from": 611,
+   "to": 624,
+   "text": "looked"
+  },
+  {
+   "from": 624,
+   "to": 639,
+   "text": "high"
+  },
+  {
+   "from": 639,
+   "to": 655,
+   "text": "enough."
+  },
+  {
+   "from": 672,
+   "to": 687,
+   "text": "The best"
+  },
+  {
+   "from": 687,
+   "to": 709,
+   "text": "explanation?"
+  },
+  {
+   "from": 718,
+   "to": 736,
+   "text": "A flock"
+  },
+  {
+   "from": 736,
+   "to": 781,
+   "text": "of vultures,",
+   "accent": true
+  },
+  {
+   "from": 781,
+   "to": 799,
+   "text": "because"
+  },
+  {
+   "from": 799,
+   "to": 817,
+   "text": "when"
+  },
+  {
+   "from": 817,
+   "to": 824,
+   "text": "one"
+  },
+  {
+   "from": 824,
+   "to": 831,
+   "text": "vulture"
+  },
+  {
+   "from": 831,
+   "to": 841,
+   "text": "throws"
+  },
+  {
+   "from": 841,
+   "to": 850,
+   "text": "up,"
+  },
+  {
+   "from": 850,
+   "to": 867,
+   "text": "the rest"
+  },
+  {
+   "from": 867,
+   "to": 882,
+   "text": "join"
+  },
+  {
+   "from": 882,
+   "to": 907,
+   "text": "in."
+  },
+  {
+   "from": 931,
+   "to": 969,
+   "text": "So… what"
+  },
+  {
+   "from": 969,
+   "to": 990,
+   "text": "would you do?"
+  }
+ ],
+ "captionStyle": "word-en"
+}

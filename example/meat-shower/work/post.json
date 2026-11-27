@@ -1,0 +1,79 @@
+{
+ "blur": [
+  {
+   "from": 48,
+   "to": 63,
+   "n": 10,
+   "shutter": 0.9
+  },
+  {
+   "from": 64,
+   "to": 118,
+   "n": 6,
+   "shutter": 0.6
+  },
+  {
+   "from": 362,
+   "to": 451,
+   "n": 6,
+   "shutter": 0.6
+  },
+  {
+   "from": 542,
+   "to": 552,
+   "n": 10,
+   "shutter": 0.9
+  },
+  {
+   "from": 852,
+   "to": 878,
+   "n": 10,
+   "shutter": 0.9
+  },
+  {
+   "from": 119,
+   "to": 131,
+   "n": 8,
+   "shutter": 0.8
+  },
+  {
+   "from": 326,
+   "to": 350,
+   "n": 8,
+   "shutter": 0.8
+  },
+  {
+   "from": 612,
+   "to": 719,
+   "n": 8,
+   "shutter": 0.8
+  },
+  {
+   "from": 978,
+   "to": 1004,
+   "n": 8,
+   "shutter": 0.8
+  }
+ ],
+ "glow": [
+  {
+   "from": 0,
+   "to": 99999,
+   "amount": 0.22
+  },
+  {
+   "from": 0,
+   "to": 63,
+   "amount": 0.4,
+   "threshold": 0.72,
+   "radius": 24
+  },
+  {
+   "from": 672,
+   "to": 931,
+   "amount": 0.3,
+   "threshold": 0.78,
+   "radius": 28
+  }
+ ]
+}

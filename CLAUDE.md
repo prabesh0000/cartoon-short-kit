@@ -4,7 +4,7 @@ This repo is the production kit for **The Curious Manche** (मान्छे =
 Claude Code reads this file at the start of every session. Keep it short and current.
 
 ## What we make
-- Vertical animated reels (1080x1920, 30 fps, 20-40 s) for Instagram, TikTok, YouTube Shorts and Facebook.
+- Vertical animated reels (1080x1920, 30 fps, **30-60 s, whatever the story needs**; user 2026-11-27) for Instagram, TikTok, YouTube Shorts and Facebook.
 - Topics: **stories and legends, history, trending news, surprising facts**. International, not only Nepal.
 - Narration by platform (user, 2026-11-24):
   - **YouTube: English fact videos.** English script, English narrator, English on-screen text.
@@ -16,10 +16,12 @@ Claude Code reads this file at the start of every session. Keep it short and cur
 - **Start of every session: run `git pull`.** Scripts planned in the claude.ai chat arrive as `scripts/<slug>.md`, along with kit updates.
 - To make a reel, use the **make-reel** skill (`.claude/skills/make-reel/SKILL.md`). Typing `/make-reel` also works.
 - **Every reel has a per-video brief in `scripts/<slug>.md`** (template `scripts/_TEMPLATE.md`), written in the claude.ai chat. Follow it; it overrides defaults.
+- **Every reel follows `guides/editing-grammar.md`** (user 2026-11-27): the pacing, transitions (motion-blurred whips, follow-the-object, fly-throughs), mechanism cutaways, hero inserts, diegetic screen gags, crowds, light arc, effects, glow and no-dead-air rules learned from three reference shorts. Its QA list runs on every reel.
 - **Every script goes through the `storytelling-hooks` skill** (5 hook options, three hook layers, one flowing arc, bookend + one CTA). Also here: `titles-and-thumbnails`, `retention-audit`, `channel-formula` (copied from yaxeen/storytelling-skills, MIT; see `licenses/`).
 - **Read `LESSONS.md` before every reel.** After every reel, add a dated entry at its top (the user wants learnings saved every time).
 - Voiceovers arrive in `inbox/`. Each reel is built in `reels/<slug>/` (git-ignored). Brand assets are in `brand/`.
-- Never rebuild the engine from memory; it is all in `engine/`, `tools/` and `vendor/`. Worked examples: `example/manjushri/` (newest, start here) and `example/yalambar/`.
+- Never rebuild the engine from memory; it is all in `engine/`, `tools/` and `vendor/`.
+- **THE STANDARD (user, 2026-11-27: "best video till now, every video needs to be created like this"): `example/meat-shower/`** ("The Day It Rained Meat"). Start every new reel from it (its README says how) and match its level: action hook at frame 0, a new framing every ~2 s, carried transitions with motion blur, props animated as real actions, thought bubbles / gags / crowds, effects in every shot, word captions (English), a score that follows the story, a loop ending. Older examples (`example/manjushri/`, `example/yalambar/`, `example/ice-capsule/`) are for specific techniques only.
 - Commit or push only when the user asks. **When the user says "end", that means: commit everything and push** (no need to ask). Otherwise, at the end of a session, remind them to say "commit and push" so lessons reach GitHub. Never force-push.
 - Worked example for loops, text in the safe area, diagrams and SFX checks: `example/ice-capsule/` (newest).
 
@@ -28,14 +30,15 @@ Claude Code reads this file at the start of every session. Keep it short and cur
 - **Music: cinematic and thrilling, never a happy repetitive loop.** Templates: `example/manjushri/audio.py` (divine cinematic, audit-clean), `example/yalambar/audio.py` (war thriller).
 - **Background sound (music palette + ambience) must fit each reel's theme and setting**, e.g. devotional for festivals, drums for war legends, modern pulse for news, river/birds/crickets/traffic to match each shot. Never reuse one generic bed.
 - **Sound effects on key transitions and actions** (cuts, jumps, flights, impacts, vanishings), always **soft and soothing, never loud or distracting**: sitting well under the voice (-12 dB, peaks <= 0.4x the voice). Chhath (2026-11-14) was too loud.
-- Hooks: open on the strongest, mid-action image. Question hooks about stories people already know work well. Aim for 25-30 s. End on the twist, then a bookend comment question.
+- Hooks: open on the strongest, mid-action image. Question hooks about stories people already know work well. Length 30-60 s, set by the story (no padding, no cramming). End on the twist, then a bookend comment question.
 - **Scripts must flow like one story** (linking words, the twist planted early), never a list of cut-off facts.
 - Voiceover delivery: dramatic, news-anchor energy, not whispers.
 - News: 2+ sources per claim.
 - Nepali scripts are sized at about **2 words/s** (60 words ≈ 30 s). English scripts at about **2.5 words/s** (75 words ≈ 30 s); the real voice file always rules.
-- **On-screen text: style A, clean cinematic** (`guides/caption-style.md`), drawn by the text layer from `work/text.json`: **never blocked, never blocking** (mark people and hero props `protect: true`), **colours adapt to the background** (light or dark mode, contrast-checked). Zero flags in `work/text_report.json` before delivery.
+- **Captions by language** (user 2026-11-27): **English reels get word-by-word captions** (`tools/captions.py`, bold white + black outline, like the references) and **no hook title overlay**; beat overlays only for words that are not spoken (LOOK UP, BLEGH!). **Nepali reels keep style A key-phrase overlays only.**
+- **On-screen overlays: style A, clean cinematic** (`guides/caption-style.md`), drawn by the text layer from `work/text.json`: **never blocked, never blocking** (mark people and hero props `protect: true`), **colours adapt to the background** (light or dark mode, contrast-checked). Zero flags in `work/text_report.json` before delivery.
 - Show a stills contact sheet before the long render.
-- **Recheck before delivering** (user asked, 2026-11-17): run the audio audit (`tools/audit.py`), the frame-diff scan, and check that every line has a picture that proves it. Open with the central question as a designed title card.
+- **Recheck before delivering** (user asked, 2026-11-17): run the audio audit (`tools/audit.py`), the frame-diff scan (`tools/framediff.py`), and check that every line has a picture that proves it. Nepali reels: open with the central question as a designed title card over the mid-action frame 0. **English reels: no hook title overlay** (user, 2026-11-27: the word captions already say it); frame 0 is pure action.
 
 ## Brand
 - Name: The Curious Manche. Handles: @thecuriousmanche (fallback @curiousmanche); the same handle on every platform.

@@ -10,6 +10,7 @@ export const M = {
   easeIn: (t) => Math.pow(clamp(t), 3),
   back: (t, s = 1.7) => { t = clamp(t) - 1; return t * t * ((s + 1) * t + s) + 1; },        // overshoot then settle (pops, arrivals)
   anticip: (t, s = 0.12) => { t = clamp(t); return t < 0.25 ? -s * Math.sin(t / 0.25 * Math.PI) : M.back((t - 0.25) / 0.75); }, // wind-up then go
+  inOut: (t) => { t = clamp(t); return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; },   // whip pans: slow-fast-slow (pair with post.json blur)
   spring: (t, freq = 3, damp = 5) => { t = Math.max(0, t); return 1 - Math.exp(-damp * t) * Math.cos(freq * 2 * Math.PI * t); },  // settle wobble (t in s)
 };
 /** Centripetal Catmull-Rom through 3D points; u in [0,1] over the whole path (constant-ish speed). */
@@ -47,3 +48,34 @@ export const blinkAt = (f, seed) => { const per = 38 + (seed * 17) % 31, ph = (f
 export const walk = (f, f0, speed = 1.1, stride = 0.8) => { const t = Math.max(0, f - f0) / 30; return { dist: t * speed, phase: (t * speed / (2 * stride)) % 1 }; };
 /** Round values used in card keys so canvas redraws happen only when the pose visibly changes. */
 export const q = (x, n = 2) => Math.round(x * 10 ** n) / 10 ** n;
+
+// ---------- transitions learned from the reference shorts (guides/editing-grammar.md) ----------
+/** Whip pan as two camera keys: hold `from`, whip to `to` over `len` frames (8-12) with ease inOut.
+ *  Add the returned blur entry to work/post.json so the whip is motion-blurred (no strobing, framediff treats it as planned).
+ *  Usage: const w = whip(118, A, B); keys.push(...w.keys); post.blur.push(w.blur); */
+export const whip = (f0, from, to, len = 10, n = 10) => ({
+  keys: [{ ...from, f: f0 }, { ...to, f: f0 + len, ease: "inOut", roll: (to.roll || 0) }],
+  blur: { from: f0 + 1, to: f0 + len - 1, n, shutter: 0.9 },
+});
+/** Follow-the-object camera: the camera trails a moving object (rolled bomb, flushed waste, thrown ball).
+ *  posAt(f) -> [x,y,z] of the object. The camera sits at the object's position `lag` frames ago + offset and looks
+ *  slightly ahead of it, so the object leads the frame. Moves only HALF the object's speed when `half` (calmer, no spikes). */
+export const followCam = (posAt, f, { offset = [0, 0.6, 2.4], lag = 6, lead = 4, fov = 40, half = false, f0 = 0 } = {}) => {
+  const p = posAt(Math.max(f0, f - lag)), a = posAt(f + lead);
+  const base = half ? lerp3(posAt(f0), p, 0.5) : p;
+  return { pos: [base[0] + offset[0], base[1] + offset[1], base[2] + offset[2]], look: a, fov, roll: 0 };
+};
+/** Crowd layout: n positions on a jittered grid inside [x0,x1] x [z0,z1], back rows first (draw order), each with a
+ *  seed (outfit/face variety), a phase offset (so idles and laughs never move in sync) and a scale wobble.
+ *  Use for armies, a laughing court, a whole camp: crowds make the world feel big. */
+export const crowd = (n, { x0 = -4, x1 = 4, z0 = -6, z1 = -1, seed = 7, jitter = 0.35 } = {}) => {
+  const cols = Math.max(1, Math.round(Math.sqrt(n * (x1 - x0) / Math.max(0.1, z1 - z0)))), rows = Math.ceil(n / cols), out = [];
+  const rnd = (i) => { const x = Math.sin(i * 127.1 + seed * 311.7) * 43758.5453; return x - Math.floor(x); };
+  for (let i = 0; i < n; i++) {
+    const c = i % cols, r = Math.floor(i / cols);
+    const x = x0 + (cols === 1 ? 0.5 : (c + (r % 2) * 0.5) / cols) * (x1 - x0) + (rnd(i) - 0.5) * jitter;
+    const z = z0 + (rows === 1 ? 0.5 : r / (rows - 1)) * (z1 - z0) + (rnd(i + 99) - 0.5) * jitter;
+    out.push({ x, z, seed: 1 + Math.floor(rnd(i + 7) * 997), phase: Math.floor(rnd(i + 3) * 60), scale: 0.94 + rnd(i + 5) * 0.1 });
+  }
+  return out.sort((a, b) => a.z - b.z);
+};

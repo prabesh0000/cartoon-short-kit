@@ -1,0 +1,21 @@
+<!doctype html><html><body style="margin:0;background:#9fc6e8"><div id="w" style="display:flex;flex-wrap:wrap;align-items:flex-start"></div>
+<script type="module">
+import * as T from "./toon.js";
+const add = (w, h, fn, s = 0.5) => { const c = document.createElement("canvas"); c.width = w; c.height = h; c.style.width = w * s + "px"; c.style.flexShrink = 0; const g = c.getContext("2d"); g.lineJoin = g.lineCap = "round"; fn(new T.Pen(g)); document.getElementById("w").appendChild(c); };
+add(600, 1000, (p) => T.drawCrouchM(p, { pose: ["stirA", "stirB", 0.5], expr: "hum" }));
+add(600, 1000, (p) => T.drawCrouchM(p, { pose: ["stirA", "stirA", 0], expr: "gape" }));
+add(600, 1000, (p) => T.drawCrouchM(p, { pose: ["ladleOut", "ladleOut", 1], expr: "deadpan", chunk: 1 }));
+add(600, 1000, (p) => T.drawFarmerM(p, "a", { pose: ["eatM", "eatM", 1], expr: "chewA", chunk: 1, bite: 1 }));
+add(600, 1000, (p) => T.drawFarmerM(p, "b", { pose: ["holdM", "holdM", 1], expr: "squint", chunk: 1 }));
+add(600, 1000, (p) => T.drawFarmerM(p, "b", { pose: ["shrug", "shrug", 1], expr: "chewB" }));
+add(300, 300, (p) => T.drawMeatM(p, 1, 0.5));
+add(400, 400, (p) => T.drawChickenM(p, { ph: 0.3, flap: 1, squawk: 1 }));
+add(800, 800, (p) => T.drawVultureM(p, { flap: 0.1 }));
+add(800, 800, (p) => T.drawVultureM(p, { flap: 0.6, gag: 1, spew: 0.6 }));
+add(700, 600, (p) => T.drawBubbleM(p, "lamb", 1));
+add(700, 600, (p) => T.drawBubbleM(p, "deer", 1));
+add(300, 300, (p) => T.drawFireM(p, 0.2));
+add(500, 500, (p) => T.fxLightning(p, 3));
+add(500, 500, (p) => { T.fxSparks(p, 0.3); T.fxGlitter(p, 0.4); });
+window.done = true;
+</script></body></html>

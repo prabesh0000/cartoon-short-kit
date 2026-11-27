@@ -1,6 +1,6 @@
 # The Day It Rained Meat (English, YouTube): fact / mystery
 
-Status (2026-11-27): script final, awaiting voiceover `inbox/kentucky-meat-shower.mp3`. Length: 77 words ≈ 30 s (English ≈ 2.5 words/s; the real voice file rules).
+Status (2026-11-27): DONE, built from `inbox/meatfall.wav` → `reels/kentucky-meat-shower/out/The-Day-It-Rained-Meat.mp4`; ready to post. Saved as the standard: `example/meat-shower/`. Length: 77 words ≈ 30 s (English ≈ 2.5 words/s; the real voice file rules).
 Emotion: curiosity → disbelief → disgust-laugh → deadpan. Twist: the "meat rain" was most likely vulture vomit from a flock too high to see. Loop ending: yes, the last line "So… what would you do?" runs straight back into the opening question.
 
 **Language: English.** YouTube fact video: English script, English narrator, English on-screen text. Voice: Mr. P is moving off ElevenLabs; Kokoro (local, free) or Azure TTS are fine, timing works the same.
@@ -15,7 +15,7 @@ Emotion: curiosity → disbelief → disgust-laugh → deadpan. Twist: the "meat
 ## Hook layers (0:00)
 - **First frame:** low angle on a clear blue sky; one marbled steak tumbles toward the lens; the mascot's "?" pops in the corner. Works on mute.
 - **Spoken line:** "What would you do if chunks of meat started falling from the sky?"
-- **Overlay:** IT RAINED MEAT.
+- **Overlay:** none (removed 2026-11-27 at the user's request: the word captions say the hook).
 - **Beat overlays:** KENTUCKY, 1876 (line 2), "LAMB? DEER?" (line 3), LOOK UP (line 4, "nobody looked high enough"), BLEGH (line 5, on the first vulture)
 
 ## Narration (record exactly this)
@@ -40,7 +40,8 @@ Recording: energetic fact-video narrator. Curious and quick on the opening quest
 ## Editing specifics
 - Pace: fast explainer, a new picture or camera change every 1.5-3 s; whooshes only in the pauses.
 - Text: style A from `guides/caption-style.md` (accent words: MEAT, LOOK UP, BLEGH); inside the safe area, never blocking a face or the falling meat.
-- Subtitles: key-phrase overlays only (default).
+- Captions: **word-by-word captions** (English default since 2026-11-27, `guides/caption-style.md`) (no hook overlay). Keep only beat overlays that add something not spoken (LOOK UP, BLEGH); drop KENTUCKY, 1876 and LAMB? DEER? (the captions show them).
+- Transitions and look: follow `guides/editing-grammar.md` (whips motion-blurred via work/post.json, glow on the sky reveal).
 - Ending: loop. The last shot settles on a clear sky with a speck falling, matching frame 0.
 - Cover frame: frame 0 (steak falling from blue sky) + "IT RAINED MEAT".
 

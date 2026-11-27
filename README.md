@@ -5,8 +5,11 @@ Audio in, finished vertical cartoon short out. 2D bean-head cards in an inked, p
 - `engine/` renderer: world helpers, cards, ink pass, lens blur, grade (`main.js`), painted textures (`paint.js`),
   cast drawing (`roman.js` on top of the Pen library from mromidev/claude-animated-shorts), motion helpers (`motion.js`).
 - `example/soldier/` the worked example "The Soldier Who Never Left" (story.js shot plan + audio.py cue table).
-- `tools/` setup.sh (new project), timing.py (word timings), render.mjs (frames), sheet.py (contact sheets),
-  mix.py (level-locked mix), finish.sh (loudness + encode + QA).
+- `tools/` setup.sh (new project), timing.py (word timings), captions.py (English word captions), render.mjs (frames,
+  text layer, post layer), post.js (whip motion blur + glow from work/post.json), framediff.py (pops, unplanned whips,
+  frozen spans), sheet.py (contact sheets), mix.py (level-locked mix), finish.sh (loudness + encode + QA).
+- `engine/fx.js` sparks, glitter, lightning and glint effect cards; `engine/motion.js` also has whip(), followCam(), crowd().
+- `guides/editing-grammar.md` the pacing / transition / look rules from the reference shorts (every reel).
 - `vendor/` three.js r160 module build and toon.ts (both MIT, licenses alongside), so setup needs no network.
 
 **New here? Start with `SETUP.md`** (one-time Mac setup), then `PROMPTS.md` (what to type to Claude Code). `CLAUDE.md` is the project memory Claude Code loads every session, and `.claude/skills/make-reel/` is the reel workflow (`/make-reel`).
@@ -22,9 +25,11 @@ Pipeline (run inside the project folder setup.sh creates):
 ```
 bash <kit>/tools/setup.sh ~/shorts/my-short && cd ~/shorts/my-short
 python3 timing.py voice.mp3 script.txt --out work      # word + phrase timings
+python3 captions.py work/words.json --script work/script.txt   # English reels: word captions -> work/text.json
 # write web/story.js (shots, cameras, cast, fx) and the audio.py cue table
 node render.mjs stills/a "5,40,..." && python3 sheet.py stills/a stills/sheet_a.jpg   # look check
 node render.mjs frames "0-<N-1>"                       # RESUME=1 continues after an interruption
+python3 framediff.py frames --planned "<cuts>"         # pops, unplanned whips, frozen spans
 python3 audio.py                                       # -> music.wav + sfx.wav stems
 python3 mix.py voice.mp3 music.wav sfx.wav             # -> mix_raw.wav, music at -6.0 dB vs voice
 bash finish.sh "Title Of Short"                        # -> out/Title-Of-Short.mp4 + out/qa_sheet.jpg

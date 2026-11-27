@@ -13,7 +13,7 @@ mkdir -p "$P/web/lib" "$P/work" "$P/stills" "$P/out"
 cp "$KIT"/engine/*.js "$KIT"/engine/index.html "$P/web/"
 cp "$KIT"/example/soldier/story.js "$P/web/story.js"        # starting point: rewrite for the new story
 cp "$KIT"/example/soldier/audio.py "$P/audio.py"            # starting point: rewrite the cue table
-cp "$KIT"/tools/*.mjs "$KIT"/tools/*.py "$KIT"/tools/textlayer.js "$KIT"/tools/finish.sh "$P/"
+cp "$KIT"/tools/*.mjs "$KIT"/tools/*.py "$KIT"/tools/textlayer.js "$KIT"/tools/post.js "$KIT"/tools/finish.sh "$P/"
 # three.js r160 (module build): vendored, else npm, else a sparse git clone (works where only GitHub is reachable)
 if [ -f "$KIT/vendor/three.module.js" ]; then cp "$KIT/vendor/three.module.js" "$P/web/lib/"
 else
@@ -26,8 +26,10 @@ if [ ! -f "$TOON" ]; then rm -rf /tmp/_cas; git clone -q --depth 1 https://githu
 node -e "const m=require('node:module'),fs=require('fs');src=fs.readFileSync(process.argv[2],'utf8');let out;try{out=m.stripTypeScriptTypes(src,{mode:'transform'})}catch(e){out=m.stripTypeScriptTypes(src,{mode:'strip'})}fs.writeFileSync(process.argv[1],out)" "$P/web/toonbase.js" "$TOON" 2>/dev/null
 [ -s "$P/web/toonbase.js" ] || { echo "toonbase.js empty: type stripping failed"; exit 1; }
 python3 "$KIT/tools/patch_toon.py" "$P/web/toonbase.js"
-cat "$P/web/toonbase.js" "$P/web/roman.js" "$P/web/nepal.js" "$P/web/mascot.js" "$P/web/manjushri.js" > "$P/web/toon.js"
+cat "$P/web/toonbase.js" "$P/web/roman.js" "$P/web/nepal.js" "$P/web/mascot.js" "$P/web/manjushri.js" "$P/web/fx.js" > "$P/web/toon.js"
 # playwright: use a global install if there is one
 mkdir -p "$P/node_modules"; [ -e "$P/node_modules/playwright" ] || ln -sf "$(npm root -g)/playwright" "$P/node_modules/playwright"
 [ -e "$P/node_modules/playwright/package.json" ] || echo "WARN: playwright not found globally (npm i -g playwright && npx playwright install chromium)"
-echo "ready: $P   (after editing cast code run: cat web/toonbase.js web/roman.js web/nepal.js web/mascot.js web/manjushri.js > web/toon.js)"
+# default post: a subtle global glow (reference look); add whip blur ranges and stronger glow per shot in the plan
+[ -f "$P/work/post.json" ] || echo '{"blur": [], "glow": [{"from": 0, "to": 99999, "amount": 0.22}]}' > "$P/work/post.json"
+echo "ready: $P   (after editing cast code run: cat web/toonbase.js web/roman.js web/nepal.js web/mascot.js web/manjushri.js web/fx.js > web/toon.js)"
