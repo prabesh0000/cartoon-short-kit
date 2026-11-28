@@ -3,7 +3,7 @@
 Status: script ready; **voiceover recorded by the user, saved as "gold fall"** (look for `inbox/gold fall.*`; rename it to `inbox/gold-2-lakh.mp3` first, because spaces break the tools). Slug: `gold-2-lakh`. Check the take against the narration below with faster-whisper before building (LESSONS 2026-11-21). Length: about 77 words, roughly 38-41 s (measure the real file; it rules). Don't shorten by cutting line 4 or 5 alone (balance rule below); trim elsewhere if needed.
 Emotion: hope (cheaper gold?) → the maths → the reason it could fall → the other side (banks expect a rebound) → surprise (the experts were badly wrong) → "nobody knows" → a comment question. Twist: one big bank forecast $6,000 for this year-end, and gold is at about $3,500.
 Loop ending: no. End on the comment question.
-Follow-up to `scripts/gold.md` ("आखिर सुन किन घट्यो?", 20 Nov). Reuse its cast from `reels/gold/web/gold.js` (price board, chalk chart, globe, gold-bar character with tag and shrug, generic bank).
+Follow-up to `scripts/done/gold.md` ("आखिर सुन किन घट्यो?", 20 Nov). Reuse its cast from `reels/gold/web/gold.js` (price board, chalk chart, globe, gold-bar character with tag and shrug, generic bank).
 
 ## Rules for this reel
 - **Not financial advice, and no forecast from the channel.** The reel explains what would have to happen; it never says it will or won't. The caption says "Not financial advice".

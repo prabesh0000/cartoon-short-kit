@@ -3,7 +3,7 @@
 Status: **script final**, voiceover pending as `inbox/gold-buy-or-wait.*` (rename to `inbox/gold-buy-or-wait.mp3` first, because spaces break the tools). Slug: `gold-buy-or-wait`. Length: about 65 words ≈ 30 s (measure the real file; it rules).
 Emotion: curiosity → facts → "nobody knows". Twist: "अब यो तल्लो बिन्दु हो कि अझै घट्ने हो, त्यो पछि मात्र थाहा हुन्छ।"
 Loop ending: yes. The closing question runs straight into line 1 on replay.
-Follow-up to `scripts/gold.md` and `scripts/gold-2-lakh.md`. Reuse the cast from `reels/gold/web/gold.js` (price board, chalk chart, globe, gold-bar character, generic bank).
+Follow-up to `scripts/done/gold.md` and `scripts/done/gold-2-lakh.md`. Reuse the cast from `reels/gold/web/gold.js` (price board, chalk chart, globe, gold-bar character, generic bank).
 
 ## Rules for this reel
 - **Not financial advice, and no buy or wait recommendation.** The narration asks the viewer's own question and never answers it. The caption says "Not financial advice".

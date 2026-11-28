@@ -1,5 +1,5 @@
 // ================= "The Day It Rained Meat" (kentucky-meat-shower) cast, English; appended after fx.js (same module scope) =================
-// Rules (scripts/kentucky-meat-shower.md): cartoon meat only (pink-red chunks with a marbled fat stripe, no gore, bones or
+// Rules (scripts/done/kentucky-meat-shower.md): cartoon meat only (pink-red chunks with a marbled fat stripe, no gore, bones or
 // blood), generic 1876 farm bean-heads (Mrs. Crouch: bonnet + apron; two tasters: work shirts, braces, hats), vultures are
 // funny cartoon birds, the vomit is a cartoon "blegh" with chunks. Suffix M on every name.
 

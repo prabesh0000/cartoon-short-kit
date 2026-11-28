@@ -11,8 +11,8 @@ command -v ffmpeg >/dev/null || { echo "ffmpeg missing"; exit 1; }
 python3 -c "import numpy, PIL" 2>/dev/null || echo "WARN: python3 needs numpy + Pillow (pip install numpy pillow --break-system-packages)"
 mkdir -p "$P/web/lib" "$P/work" "$P/stills" "$P/out"
 cp "$KIT"/engine/*.js "$KIT"/engine/index.html "$P/web/"
-cp "$KIT"/example/soldier/story.js "$P/web/story.js"        # starting point: rewrite for the new story
-cp "$KIT"/example/soldier/audio.py "$P/audio.py"            # starting point: rewrite the cue table
+cp "$KIT"/example/meat-shower/web/story.js "$P/web/story.js"   # starting point (the standard): rewrite for the new story
+cp "$KIT"/example/meat-shower/audio.py "$P/audio.py"              # starting point: rewrite the cue table
 cp "$KIT"/tools/*.mjs "$KIT"/tools/*.py "$KIT"/tools/textlayer.js "$KIT"/tools/post.js "$KIT"/tools/finish.sh "$P/"
 # three.js r160 (module build): vendored, else npm, else a sparse git clone (works where only GitHub is reachable)
 if [ -f "$KIT/vendor/three.module.js" ]; then cp "$KIT/vendor/three.module.js" "$P/web/lib/"

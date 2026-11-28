@@ -4,7 +4,7 @@ Audio in, finished vertical cartoon short out. 2D bean-head cards in an inked, p
 
 - `engine/` renderer: world helpers, cards, ink pass, lens blur, grade (`main.js`), painted textures (`paint.js`),
   cast drawing (`roman.js` on top of the Pen library from mromidev/claude-animated-shorts), motion helpers (`motion.js`).
-- `example/soldier/` the worked example "The Soldier Who Never Left" (story.js shot plan + audio.py cue table).
+- `example/meat-shower/` the standard: the worked example every new reel starts from (see its README). Other examples (`manjushri`, `yalambar`, `ice-capsule`, `leash-friend`) are for specific techniques.
 - `tools/` setup.sh (new project), timing.py (word timings), captions.py (English word captions), render.mjs (frames,
   text layer, post layer), post.js (whip motion blur + glow from work/post.json), framediff.py (pops, unplanned whips,
   frozen spans), sheet.py (contact sheets), mix.py (level-locked mix), finish.sh (loudness + encode + QA).
@@ -14,7 +14,7 @@ Audio in, finished vertical cartoon short out. 2D bean-head cards in an inked, p
 
 **New here? Start with `SETUP.md`** (one-time Mac setup), then `PROMPTS.md` (what to type to Claude Code). `CLAUDE.md` is the project memory Claude Code loads every session, and `.claude/skills/make-reel/` is the reel workflow (`/make-reel`).
 
-**Read `LESSONS.md` first.** It collects what each project taught (timing, framing, sound, Nepali specifics) and gets a new entry after every short.
+**Read `LESSONS.md` first.** The distilled rules (timing, framing, sound, Nepali specifics); the full per-reel history is `docs/lessons-archive.md` (grep it, don't read it whole). Engine internals: `engine/NOTES.md`.
 
 Extras:
 - `tools/patch_toon.py` (run by setup.sh) adds optional hooks to the toon `bodyFront`: `armFn`, `behind`, `front`, `headExtra`, `back` (custom poses, props, crowns, back views).
@@ -36,7 +36,7 @@ bash finish.sh "Title Of Short"                        # -> out/Title-Of-Short.m
 ```
 
 Audio rules: the voice is never processed. `mix.py` sets the music bed to 50 % of the voice's gated RMS
-(-6 dB) and SFX to 50 % with peaks capped at 0.7x the voice peak, with no ducking or compression.
+(-6 dB) and SFX to 25 % (-12 dB) with peaks capped at 0.4x the voice peak, with no ducking or compression.
 `finish.sh` applies one linear gain to -14 LUFS (`LUFS=-16 bash finish.sh ...` to change) and a
 delay-compensated -1 dBFS limiter.
 

@@ -1,6 +1,6 @@
 # Worked example: "पट्टा लगाएको साथी" (comedy + facts, 42.77 s, 1283 frames, 16 shots)
 
-Voice: `inbox/momo.mp3` (not in git). Brief: `scripts/leash-friend.md`. Notes: `LESSONS.md`, 2026-11-22.
+Voice: `inbox/momo.mp3` (not in git). Brief: `scripts/done/leash-friend.md`. Notes: `LESSONS.md`, 2026-11-22.
 
 - `web/leash.js`: the cast. Append it after `drunk.js` when building toon.js:
   `cat toonbase.js roman.js nepal.js mascot.js manjushri.js ice.js gold.js drunk.js leash.js > toon.js`

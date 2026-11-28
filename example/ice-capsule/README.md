@@ -1,6 +1,6 @@
 # Worked example: "आइस चुरोटको बल" (health myth-buster, 36.7 s, 1100 frames, LOOP, 2026-11-18)
 
-Brief: `scripts/ice-capsule-myth.md`.
+Brief: `scripts/done/ice-capsule-myth.md`.
 
 - `web/main.js`: the Manjushri engine variant + a **top layer**: cards with `top: true` (text, phone) render after DOF, sharp and never hidden.
 - `web/story.js`: 14 shots, `screen(id, px, py, hp)` places text cards by output pixels (safe area), loop tail (f1094-1099 = macro time -6..-1).

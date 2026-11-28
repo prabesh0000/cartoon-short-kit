@@ -1,7 +1,7 @@
 # The reference standard: "The Day It Rained Meat" (2026-11-27)
 
 Mr. P: **"this is the best video till now, from now on every video needs to be created like this."**
-English YouTube fact short, 33.6 s, 16 shots, loops. Built with `guides/editing-grammar.md`. Brief: `scripts/kentucky-meat-shower.md`.
+English YouTube fact short, 33.6 s, 16 shots, loops. Built with `guides/editing-grammar.md`. Brief: `scripts/done/kentucky-meat-shower.md`.
 Lessons: the two 2026-11-27 entries for this reel in `LESSONS.md`.
 
 ## Start every new reel from here

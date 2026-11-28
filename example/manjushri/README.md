@@ -13,7 +13,7 @@ The newest and most complete reel. Use it as the starting point for legend/histo
 - Cast: `engine/manjushri.js` (now in every new project's `toon.js`).
 - `audio.py`: "god-like cinematic" score (choir "oo", drones, singing bowl, timpani rolls, brass) + soft SFX,
   a fixed voice-band EQ dip, end fades. Check it with `tools/audit.py`.
-- `PLAN.md`: timing table + shot plan. `contact_sheet.jpg`: key frames of the final cut.
+- `PLAN.md`: timing table + shot plan.
 
 To run it: `bash tools/setup.sh reels/x`, copy `web/*` and `audio.py` from here into the project, add the voice
 (`inbox/majushree.mp3` as `voice.mp3`), then `node render.mjs frames "0-965"`, `python3 audio.py`, `python3 mix.py ...`, `bash finish.sh`.

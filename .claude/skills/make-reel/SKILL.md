@@ -5,152 +5,81 @@ description: Make a vertical animated reel for The Curious Manche (stories, lege
 
 # make-reel: idea → script → voiceover → finished MP4 (local, on the user's Mac)
 
-The repo you are in **is** the kit. `CLAUDE.md` (brand, preferences, rules) is already loaded.
-**The standard is `example/meat-shower/`** (user, 2026-11-27: "every video needs to be created like this"): read its README and start every reel from its `web/` and `audio.py`.
-**Read `LESSONS.md` and `guides/editing-grammar.md` before starting**: the lessons from earlier reels, and the pacing/transition/look rules learned from the reference shorts (they apply to every reel). Never rebuild the engine from memory.
+The repo is the kit; `CLAUDE.md` (brand, preferences) is loaded. **Read `LESSONS.md` and `guides/editing-grammar.md` before starting.** **The standard is `example/meat-shower/`**: read its README and start every reel from its `web/` and `audio.py`. Never rebuild the engine from memory.
 
-The look: flat 2D bean-head characters (canvas-drawn cards with plum outlines) in a colourful 3D world with black ink
-outlines, painted textures, depth of field and gliding cameras. Output: 1080x1920, 30 fps, exactly as long as the
-voiceover. The voice is never edited. Music is synthesized at **50 % of the voice level**; SFX are soft, at **25 %** (-12 dB).
+Look: flat 2D bean-head cards (plum outlines) in a colourful 3D world with black ink outlines, painted textures, depth of field, gliding cameras. Output 1080x1920, 30 fps, exactly as long as the voiceover. The voice is never edited. Music is synthesized at 50 % of the voice level (-6 dB), SFX soft at -12 dB.
 
 ## Folders
-- `inbox/`: the user drops voiceovers (`.mp3`/`.wav`) and the final script text here.
-- `reels/<slug>/`: one project per reel, made by `bash tools/setup.sh reels/<slug>`. The final MP4 goes to `reels/<slug>/out/`.
-- `brand/`: profile photos and the transparent mascot. `engine/mascot.js` draws the host (`drawManche`, `drawQ`).
-- `example/manjushri/`: the newest finished reel (legend + science, 8 shots): world/story split, mixed lights, title card, overlays, cut-away diorama, audit-clean score. **Start new reels from its `web/main.js`.**
-- `example/yalambar/`: an earlier finished reel (11 shots, war-legend thriller score).
+`inbox/` voiceovers (`.mp3`/`.wav`) and final script text · `reels/<slug>/` one project per reel (`bash tools/setup.sh reels/<slug>`; MP4 in `out/`) · `brand/` profile photos and mascot · `example/` meat-shower (the standard), manjushri / yalambar / ice-capsule (techniques only).
 
 ## Rules
-- Original stories and shots only; never recreate another creator's video.
-- **News and facts must be verified**: at least 2 independent sources from the last few days for news, with the date in the script ("गत हप्ता…"). Say plainly if something is disputed.
-- Diegetic text must read correctly (not mirrored).
-- **Captions by language:** English reels get **word-by-word captions** (`captions.py`, see `guides/caption-style.md`, "Word captions"), even if an older brief says "key-phrase overlays only". Nepali reels keep style A key-phrase overlays only (fonts "Kohinoor Devanagari", "Devanagari Sangam MN").
+- Original stories and shots only; never recreate another creator's video. Verify news and facts: 2+ independent sources from the last few days, dated in the script ("गत हप्ता…"); say plainly if disputed. Diegetic text must not be mirrored.
 - Never edit or re-time the voice. Every visual reaction lands 0-3 frames before its word.
-- Audio: always mix with `mix.py` (music exactly -6 dB vs the voice by gated RMS; SFX -12 dB, peaks ≤ 0.4x the voice peak). No ducking or compression; one linear gain + a limiter in `finish.sh`.
-- Keep the user posted with a task list. Show a stills contact sheet before the long render.
+- Captions by language and text rules: `CLAUDE.md` and `guides/caption-style.md` (English: word captions even if an old brief says key-phrase only).
+- Audio: always mix with `mix.py` (music -6 dB vs voice by gated RMS; SFX -12 dB, peaks ≤0.4x the voice peak); no ducking or compression; one linear gain + limiter in `finish.sh`.
+- Keep the user posted with a task list; show a stills contact sheet before the long render.
 
 ## Stage 1: Intake (always first)
-Run `git pull` first: scripts planned in the claude.ai chat arrive as `scripts/<slug>.md`, and kit updates come the same way.
-**Each `scripts/<slug>.md` is the per-video brief** (format: `scripts/_TEMPLATE.md`). Read all of it: its "Rules for this reel", hook layers, visual journey, editing specifics, sound and QA list override the defaults in this skill.
-Then check `scripts/` for a ready script and `inbox/` for a new voiceover. If there is a voiceover: match it to its script (`scripts/<slug>.md` or a `.txt` next to it; ask if unclear), then go to Stage 4.
-If there is a ready script but no voiceover: show it, run the Stage 3 checklist on it, and give the recording tips.
-Otherwise ask once: **"Where are you starting from?"** Need ideas + script / Have a script, need the voiceover / Voiceover ready.
-Also ask the length if not given. **30-60 s, set by the story**: a single twist ≈ 30-40 s; a story with a doubter, a mechanism cutaway and a callback ≈ 45-60 s.
+`git pull`. **Each `scripts/<slug>.md` is the per-video brief** (format `scripts/_TEMPLATE.md`): read all of it; its rules, hook layers, visual journey, editing specifics, sound and QA list override these defaults. Check `scripts/` (pending briefs only; finished ones are in `scripts/done/`) for a ready script and `inbox/` for a voiceover. Voiceover present: match it to its script (`scripts/<slug>.md` or a `.txt` beside it; ask if unclear) and go to Stage 4. Script but no voiceover: show it, run the Stage 3 checklist, give recording tips. Otherwise ask once: **"Where are you starting from?"** (Need ideas + script / Have a script, need the voiceover / Voiceover ready). Ask the length if not given: 30-60 s by the story (single twist ≈ 30-40 s; doubter + mechanism cutaway + callback ≈ 45-60 s).
 
 ## Stage 2: 10 ideas
-Exactly 10, numbered, mixing **stories and legends, history, trending news, and surprising facts**, across eras and countries
-(Nepal and international). Each idea gets:
-- **Title** (5-8 words, curiosity-driven).
-- **Hook line** in Nepali: the first spoken sentence, a paradox stated as fact.
-- **The twist** in one line.
-- **Why it animates well**: 2-3 big visual moments, including the mechanism cutaway and one carried transition (whip / follow the object / fly-through) it allows.
-- **Length**: 30-60 s, and why.
-- **True / disputed / legend / news (date)**.
-Verify every fact with web search before offering it. Trending news: search for today's or this week's news and cite sources in the reply.
-Mark your top 3 picks. Ask for a number or "more".
+Exactly 10, numbered, mixing stories and legends, history, trending news and surprising facts across eras and countries (Nepal and international). Each: **Title** (5-8 words, curiosity-driven) · **Hook line** in Nepali (first spoken sentence, a paradox stated as fact) · **Twist** in one line · **Why it animates well** (2-3 big visual moments, incl. the mechanism cutaway and one carried transition it allows) · **Length** and why · **True / disputed / legend / news (date)**. Verify every fact by web search first; for trending news search today's/this week's and cite sources. Mark the top 3; ask for a number or "more".
 
 ## Stage 3: Script (after they pick)
-**Load the `storytelling-hooks` skill first** and follow its workflow (read its `patterns.md`). Narration only. Language by platform: **YouTube = English fact videos**, Instagram/TikTok/Facebook = **Nepali (Devanagari)**; the brief decides. Nepali TTS runs about **2 words/s** (20 s ≈ 40 words, 30 s ≈ 60); English about **2.5 words/s** (30 s ≈ 75 words).
+**Load `storytelling-hooks` first** (and its `patterns.md`). Narration only. Language by platform (brief decides). Sizes: Nepali 20 s ≈ 40 words, 30 s ≈ 60; English 30 s ≈ 75.
+1. **5 hook options**, each stacking 2-3 labelled levers (curiosity gap, emotional mirror, conflict, relatability, pattern + surprise, three-act); score on the storytelling-hooks checklist, recommend one with the reason. It must land in ~2 s and keep its question open until the payoff.
+2. **Three hook layers** for 0:00 (feeds autoplay muted): first frame (mid-action, intriguing silent; it becomes frame 0) · spoken line · text overlay of 2-5 Devanagari words carrying the *other half* of the gap (never a caption of the spoken line).
+3. **Script order** (shape from `guides/editing-grammar.md`: action + paradox → doubter → false calm → payoff → mechanism → callback): hook → setup (1-2 lines) → turning point ("तर…"/"अचम्मको कुरा…") → twist → bookend (repeat a hook word) folded into **one CTA**, usually one specific easy comment question.
+4. **Beat overlays:** 2-4 words at the turning point and the twist, for muted viewers.
 
-1. **5 hook options**, each stacking 2-3 levers (curiosity gap, emotional mirror, conflict, relatability, pattern + surprise, three-act), levers labelled. Score them on the storytelling-hooks checklist and recommend one, with the reason. The hook must land in about 2 s and keep its question open until the payoff.
-2. **Three hook layers** for 0:00 (most feeds autoplay muted):
-   - **First frame:** mid-action and intriguing with the sound off (it becomes frame 0 of the shot plan).
-   - **Spoken line:** the chosen hook.
-   - **Text overlay:** 2-5 Devanagari words carrying the *other half* of the gap (stakes, audience or number), never a caption of the spoken line.
-3. **The script** in this order (the reference shape from `guides/editing-grammar.md`: action + paradox → a doubter → false calm → payoff → mechanism → callback): hook → setup (1-2 lines) → turning point ("तर…" / "अचम्मको कुरा…") → twist → **bookend** (repeat a key word from the hook) folded into **one CTA**, usually one specific, easy comment question ("मञ्जुश्रीको यो कथा तपाईंले पहिलो पटक कसबाट सुन्नुभएको थियो?").
-4. **Beat overlays:** 2-4 words flashed at the turning point and the twist, for muted viewers.
+Storytelling rules: start from the real story and its tension, never invent facts, quotes or people · one arc, the viewer discovers, the channel guides · one concrete checkable detail beats ten general lines · one emotion built toward, no hype · one flowing story with linking words, twist planted early, question hooks about known things · plain spoken Nepali, numbers as words, no stage directions in the narration · present tense for story beats, a doubter or authority who laughs or forbids, a beat of false calm · a flowing script gets **one continuous camera journey** (whips, follow-the-object, fly-throughs; flashes/cuts only on time or place jumps).
 
-**Storytelling rules (BEATS + what the user asked for):**
-- **Begin with the real story.** Find the tension (legend vs science, power vs no post). Never invent facts, quotes or people.
-- **One arc:** setup → turning point → payoff. The viewer is the hero discovering something; the channel is the guide.
-- **Anchor in specifics:** one concrete, checkable detail beats ten general lines ("कालो, नरम माटो, सयौं मिटर बाक्लो"; "दस हजार गोली, नौ सय छयासी चरा").
-- **One emotion** (wonder, unease, pride, outrage), built toward. No hype, no trailer voice.
-- **It must read as one story, never a list of cut-off facts.** Link sentences: भनिन्छ, र, तर, जुन, अचम्मको कुरा, जाँदाजाँदै. The user rejects choppy scripts.
-- **Plant the twist early:** mention the thing that turns out to matter (the soil, the phone) before the reveal.
-- **Question hooks work** when they name something viewers already know ("के मञ्जुश्रीले साँच्चै…?").
-- **News:** every claim from 2+ sources.
-- Plain spoken Nepali, numbers as words, no stage directions in the narration.
-- **Present tense** for story beats ("he sneaks out, rolls it…"); a doubter or authority who laughs or forbids; a beat of false calm ("nothing happens") before the payoff.
-- A flowing script gets **one continuous camera journey** (follow the water, sink into the ground), carried by whips, follow-the-object moves and fly-throughs, with flashes/cuts only on time or place jumps.
+**Reply with:** hook options and the pick, the three hook layers, the script in a copyable block, word count and length, the camera journey (one row per line), and recording tips (voice per brief, natural pauses at sentence ends, export without music, file into `inbox/`; delivery dramatic news-anchor; ElevenLabs tag rules in `LESSONS.md`). Save the full brief to `scripts/<slug>.md` from `scripts/_TEMPLATE.md` (git-tracked) and a plain narration copy to `inbox/<slug>.txt`.
 
-**Reply with:** the hook options and the pick, the three hook layers, the script in a copyable block, the word count and length, the camera journey (one row per line), and recording tips:
-- Voice named in the brief (Nepali default: ElevenLabs "Ashok Pokhrel"; English: the brief's English narrator, e.g. ElevenLabs, Azure or Kokoro), natural pauses at sentence ends, export without music, file into `inbox/`.
-- Delivery the user likes: dramatic, **news-anchor** energy, not whispers. On Eleven v3/v4 use audio tags (`[dramatically]`, `[short pause]`); on Multilingual v2/Flash use `<break time="0.5s" />` (max 3 s, only a few). Tags in brackets get read aloud on the wrong model, so test one line first.
-
-Save the full per-video brief to `scripts/<slug>.md` using `scripts/_TEMPLATE.md` (script, hook layers, visual journey, editing specifics, sound, reach pack, QA, sources; git-tracked) and a plain-text copy of the narration to `inbox/<slug>.txt`.
-
-## Stage 4: Build (after the voiceover arrives). Do everything without stopping, except the stills check.
+## Stage 4: Build (after the voiceover arrives). Do everything without stopping except the stills check.
 ### 4.0 Project
-`bash tools/setup.sh reels/<slug>`, then copy `example/meat-shower/web/*` + `vendor/three.module.js` into `reels/<slug>/web/` and `example/meat-shower/audio.py` into the project (see the example's README), then copy `inbox/<voice>` to `reels/<slug>/voice.mp3` and the narration lines (from `scripts/<slug>.md` or `inbox/<slug>.txt`) to `reels/<slug>/work/script.txt`. Work inside `reels/<slug>/`.
+`bash tools/setup.sh reels/<slug>`, copy `example/meat-shower/web/*` + `vendor/three.module.js` into `reels/<slug>/web/` and `example/meat-shower/audio.py` into the project (see its README), copy `inbox/<voice>` to `reels/<slug>/voice.mp3` and the narration lines to `work/script.txt`. Work inside `reels/<slug>/`.
 
 ### 4.1 Timing
-`python3 timing.py voice.mp3 work/script.txt --out work` (uses whisper / faster-whisper if installed, else silence detection + script alignment).
-Check `work/phrases.json`: pauses should fall at sentence ends. Silence detection at `-32 dB` / `d=0.08` usually finds every comma pause in ElevenLabs Nepali, which maps the script phrase by phrase (Manjushri: exact). **Nepali:** if it misaligns, map the phrases to `ffmpeg -i voice.mp3 -af silencedetect=noise=-38dB:d=0.18 -f null -` segments by hand (short repeated words are anchors), as in `example/yalambar/phrases.json`. Total frames = round(duration × 30).
-**English reels: captions now.** `python3 captions.py work/words.json --script work/script.txt --accent "<0-4 key words>"` (or `work/whisper.json`): word captions go into `work/text.json`. Proofread the printed list against the script.
+`python3 timing.py voice.mp3 work/script.txt --out work` (whisper/faster-whisper if installed, else silence detection + script alignment). Check `work/phrases.json`: pauses fall at sentence ends. If it misaligns, follow "Timing and voice" in `LESSONS.md` (chunked whisper, `silencedetect`, hand-mapping as in `example/yalambar/phrases.json`). Total frames = round(duration × 30). **English reels: captions now:** `python3 captions.py work/words.json --script work/script.txt --accent "<0-4 key words>"` (or `work/whisper.json`); proofread the printed list against the script.
 
 ### 4.2 Shot plan (`work/PLAN.md` before code)
-Start from the brief's visual journey and editing specifics (pace, safe area for text, ending/loop, cover frame); only fill gaps yourself.
-**Apply `guides/editing-grammar.md` to the plan:** a new framing every 1.5-2.5 s; at least 3 carried transitions (whip / follow the object / fly-through / reflection pull-out) marked in the camera column; the mechanism cutaway; one hero insert with `fxGlint` + glow; diegetic screen/sign gags; a crowd shot if there is a group; light per shot following the story; an effect in most shots. Add a **post column** (whip blur ranges, glow boosts) and write `work/post.json` from it. English reels: leave y 1000-1300 clear for the captions (faces and hero props above or below).
-**All on-screen text follows `guides/caption-style.md`:** write it to `work/text.json` (the text layer places and colours it; never draw text as scene cards), mark every person and each shot's hero prop `protect: true`, and wire `engine/protect.js` into `main.js`. Text must never be blocked or block anything; colours adapt to the background automatically.
-One row per shot: frames, words, setting, light, camera move, characters / poses / expressions, effects, SFX cue.
-- **Frame 0 = the hook's first-frame layer** (the strongest, mid-action image), not a calm close-up. English reels: no hook title overlay (the captions carry the words). Put the hook overlay and the beat overlays in the plan (Devanagari, not mirrored).
-- **Hook title card** (user request, 2026-11-17): the reel's central question as a designed card in the first second (`drawHook`: gold vs ice words, icons, word-by-word reveal), e.g. **तरवार कि भूकम्प?**. Overlays use `drawOverlay` (glowing outlined text, no box). Keep them clear of the hero's face and raised props.
-- **Every line gets a picture that proves it**: cause and effect in one frame (the actor on the thing he acts on); a science line needs a science image (cut-away layers, a scientist, a seismograph), not just a pretty wide.
-- Usually one shot per phrase, and split long phrases (a new framing every 1.5-2.5 s). Illustrate every sentence literally; props carry the jokes.
-- Vary shot sizes; light for beats (day / golden / storm / dusk); a time or place jump gets a white flash.
-- The twist gets a sting (music cuts to a low drone + low hit, never dead silence; push-in with roll). The last shot's payoff lands on the final word.
-- Optional 1 s intro/outro with the host (`drawManche`) if the user wants a branded opening.
+Start from the brief's visual journey and editing specifics; fill only gaps. **Apply `guides/editing-grammar.md`:** a new framing every 1.5-2.5 s; ≥3 carried transitions marked in the camera column; the mechanism cutaway; one hero insert with `fxGlint` + glow; diegetic screen/sign gags; a crowd shot for a group; light per shot following the story; an effect in most shots. Add a **post column** (whip blur ranges, glow boosts) and write `work/post.json` from it. English: keep y 1000-1300 clear for captions.
+**All on-screen text follows `guides/caption-style.md`:** write `work/text.json`, mark every person and each shot's hero prop `protect: true`, wire `engine/protect.js` into `main.js`.
+One row per shot: frames, words, setting, light, camera move, characters/poses/expressions, effects, SFX cue.
+- **Frame 0 = the hook's first-frame layer** (strongest mid-action image). English: no hook title overlay. Nepali: the hook title card (`drawHook`, designed, word-by-word reveal; overlays via `drawOverlay`, glowing outlined text, no box) clear of the hero's face and raised props.
+- **Every line gets a picture that proves it** (cause and effect in one frame; a science line needs a science image). Usually one shot per phrase, split long phrases. Vary shot sizes; light for beats; a time or place jump gets a white flash.
+- The twist gets a sting (music to a low drone + low hit, never dead silence; push-in with roll); the payoff lands on the final word. Optional 1 s host intro/outro (`drawManche`).
 
-### 4.3 World (`web/main.js` world section, or `example/yalambar/web/world.js` as a model)
-Primitives with painted canvas textures (`paint.js`), `tbox` for constant texel density, a 2-step toon gradient, fog = the horizon colour.
-Far-apart areas for different places. Flat normals (`toNonIndexed().computeVertexNormals()`) for low-poly rocks and mountains.
-No cones on flat sand: they read as Egyptian pyramids.
+### 4.3 World (`web/main.js` world section; `example/yalambar/web/world.js` as a model)
+Primitives with painted canvas textures (`paint.js`), `tbox` for constant texel density, a 2-step toon gradient, fog = horizon colour, far-apart areas per place, flat normals for low-poly rocks/mountains.
 
-### 4.4 Cast (`web/roman.js`, `web/nepal.js`, `web/mascot.js` → `web/toon.js`)
-Rebuild after edits: `cat web/toonbase.js web/roman.js web/nepal.js web/mascot.js web/manjushri.js web/fx.js > web/toon.js` (add the reel's own cast file at the end). `fx.js` has `fxSparks`, `fxGlitter`, `fxLightning`, `fxGlint` (500 x 500 cards). When starting from an older reel's `web/`, copy `engine/fx.js` in and add it to the cat line.
-bodyFront hooks (from `tools/patch_toon.py`): `armFn` (POSES + `armBlend` in nepal.js), `behind`, `front`, `headExtra`, `back: true`.
-Give each card a facing vector and switch to the back-view drawing when the camera is behind it. Card keys hold every visual parameter, quantised with `q()`.
-Render a character test sheet before using new designs.
+### 4.4 Cast (`web/roman.js`, `nepal.js`, `mascot.js` → `web/toon.js`)
+Rebuild: `cat web/toonbase.js web/roman.js web/nepal.js web/mascot.js web/manjushri.js web/fx.js > web/toon.js` (+ the reel's own cast file last; copy `engine/fx.js` in when starting from an older reel's `web/`), then `node --check web/toon.js`. bodyFront hooks (`tools/patch_toon.py`): `armFn` (POSES + `armBlend`), `behind`, `front`, `headExtra`, `back: true`. Facing vector per card, back-view when the camera is behind. Card keys hold every visual parameter, quantised with `q()`. Render a character test sheet before using new designs.
 
 ### 4.5 Motion
-`camFromKeys` smootherstep glides; holds always creep; kicks on impacts; rolls on drama. Continuous moves over cuts, except for place or time jumps.
-New helpers in `motion.js`: `whip(f0, A, B, len)` returns camera keys + a `post.json` blur entry (always add the blur entry: an unblurred whip strobes); `followCam(posAt, f, {offset, lag, lead, half})` chases a moving object; `crowd(n, {x0, x1, z0, z1})` lays out crowds with per-member seed and phase; `M.inOut` easing.
-Characters never freeze: idle bob, blinks, anticipation → overshoot → settle, a new expression on every line. **Animate actions for real** (LESSONS 2026-11-27): eating = lift in front of the chest, mouth opens before the chomp, bite notch, crumbs, chewing cheek; tools (paddle, ladle, pen) as 3D props or cards that visibly touch what they act on, with the prop beside the actor, never hidden behind it. Something always moves; nothing is still for 0.4 s.
-Vertical frame: hfov = 2·atan(tan(vfov/2)·0.5625), about 19° at fov 36, so stage characters in depth. For an over-the-shoulder shot, put the camera on the line through both characters.
+`camFromKeys` smootherstep glides; holds always creep; kicks on impacts; rolls on drama; continuous moves over cuts except place/time jumps. `motion.js` helpers: `whip(f0, A, B, len)` (camera keys + a `post.json` blur entry: always add it, an unblurred whip strobes), `followCam(posAt, f, {offset, lag, lead, half})`, `crowd(n, {x0, x1, z0, z1})`, `M.inOut`. Characters never freeze; animate actions for real (rules in `LESSONS.md` "Staging"). Something always moves; nothing is still for 0.4 s.
 
 ### 4.6 Look check (STOP here for the user)
-`node render.mjs stills/a "<mid-frame of each shot>,..."` then `python3 sheet.py stills/a stills/sheet_a.jpg`. Read `work/text_report.json` (no `coversProtected`, no `frameWarnings`, contrast at least 4.5/3) and fix the story if anything is flagged. Look at the sheet yourself first and fix:
-the camera inside geometry, faces hidden, characters out of frame, mirrored text, boxed glows, a cause hidden behind its actor. Include one still in the middle of each whip (it should be smoothly blurred) and check the glow (no grey haze on bright skies). English: read the `CAPTIONS` line and `captions.blocked`. Then `open stills/sheet_a.jpg` for the user, with a one-line shot list, and wait for OK.
+`node render.mjs stills/a "<mid-frame of each shot>,..."` then `python3 sheet.py stills/a stills/sheet_a.jpg`. Read `work/text_report.json` (no `coversProtected`, no `frameWarnings`, contrast ≥4.5/3). Look at the sheet yourself first and fix: camera inside geometry, faces hidden, characters out of frame, mirrored text, boxed glows, a cause hidden behind its actor. Include a still mid-whip (smoothly blurred) and check the glow (no grey haze on bright skies). English: read the `CAPTIONS` line and `captions.blocked`. Then `open stills/sheet_a.jpg` with a one-line shot list and wait for OK.
 
 ### 4.7 Sound (`audio.py` → stems → `mix.py`)
-**Match the background sound (score + ambience) to the theme, place and mood of each reel; never reuse one bed for every reel.** Write it to the beats, cinematic, never a happy repetitive loop, and **never dead air**: the bed runs under the whole voice (the references have no silent gap at all). Use `example/yalambar/audio.py` as the code template, but pick the palette per reel and state it in the shot plan:
-- Devotional / festival (Chhath, Tihar, Dashain): drone, soft bansuri-like flute, tanpura, temple bells, gentle frame drum; calm swells, no war drums.
-- War / legend / myth (Yalambar): war drums, braams, brass, choir, ostinato.
-- History: strings, slow pulse, ambient pads, period-appropriate instruments where possible.
-- Trending news: modern tension, low synth pulse, ticking, clean hits.
-- Surprising facts / science: curious plucks, light percussion, airy pads, a reveal sting.
-- Mystery / horror: low drones, dissonant strings, heartbeat, near-silence.
-Ambience comes from each shot's setting and changes when the setting changes: river → water lapping; village → birds, distant voices; city → traffic hum; night → crickets; mountains → wind; battlefield → distant crowd. Keep it very low.
-For thriller-type reels, the structure: impact + braam open; war drums + ostinato for action; drone, ticking and tremolo under dialogue; a riser + reverse cymbal into hits; a near-silent drop + heartbeat before the twist; the biggest hit on the twist; choir + brass for the climax; final hit + gong.
-SFX must be **soft and soothing, never loud or distracting** (the user's rule since Chhath, 2026-11-14):
-- Fewer cues: soft whooshes on major scene changes, not every cut; one gentle accent per key action. Ambience (water, wind, birds) stays very low.
-- Gentle tone: low-pass noise-based cues at about 3-4 kHz (no 6-8 kHz hiss); attacks of 10 ms or more (no clicks, cracks or sharp pops); avoid metal, debris and harsh transients unless the story needs an impact, then keep it low and short.
-- Warm over bright: bells, soft chimes, low thuds, breathy whooshes.
-Print per-section RMS (builds louder than drops) and plot the stem levels against cut frames to check that hits land.
-`python3 mix.py voice.mp3 music.wav sfx.wav` (→ `mix_raw.wav`) → confirm music -6.0 dB vs the voice, SFX ≤ -12 dB.
-Then `python3 audit.py`: the speech-band (300 Hz-4 kHz) bed should sit about 8 dB under the voice (median), the last 50 ms must be quiet (fade the stems over the last ~0.9 s), and the SFX onsets (printed as frames) must match their picture cues within 3 frames. Fix masking in the arrangement, not with ducking: "oo" choir, a fixed music dip at 500 Hz-4 kHz, water as low rumble, chimes and birds in the comma pauses.
+Match the score and ambience to each reel's theme, place and mood; written to the beats, cinematic, never a happy loop, never dead air (the bed runs under the whole voice). Code template `example/yalambar/audio.py`; state the palette in the shot plan:
+- Devotional/festival: drone, bansuri-like flute, tanpura, temple bells, gentle frame drum, no war drums. · War/legend/myth: war drums, braams, brass, choir, ostinato. · History: strings, slow pulse, pads, period instruments. · Trending news: modern tension, low synth pulse, ticking, clean hits. · Facts/science: curious plucks, light percussion, airy pads, reveal sting. · Mystery/horror: low drones, dissonant strings, heartbeat, near-silence.
+- Ambience follows each shot's setting (river lapping, village birds/voices, city hum, night crickets, mountain wind, battlefield crowd), very low.
+- Thriller structure: impact + braam open → drums + ostinato for action → drone/ticking/tremolo under dialogue → riser + reverse cymbal into hits → near-silent drop + heartbeat before the twist → biggest hit on the twist → choir + brass climax → final hit + gong.
+- SFX and masking rules: `LESSONS.md` "Audio". Print per-section RMS (builds louder than drops).
+`python3 mix.py voice.mp3 music.wav sfx.wav` (→ `mix_raw.wav`): confirm music -6.0 dB vs voice, SFX ≤ -12 dB. Then `sfx_check.py` and `audit.py` (limits in `LESSONS.md`); fix masking in the arrangement, not with ducking.
 
 ### 4.8 Render + finish
-- `node gpucheck.mjs` once per machine: use the GL mode that names the GPU. `GL=gpu` is the default on macOS; `GL=swiftshader` is the slow fallback.
-- `node render.mjs frames "0-<N-1>"` in the background; poll with `tail` until done. `RESUME=1` continues after an interruption. Remind the user to keep the Mac awake (e.g. `caffeinate -i` in another terminal).
-- **Frame-diff scan** after every full render: `python3 framediff.py frames --planned "<cut and flash frames>"` (whip ranges from post.json count as planned). It flags spikes > 6x the median and frozen spans ≥ 0.4 s, and catches cameras inside hills and one-frame pops. An unplanned fast move: add motion blur in post.json if it is a deliberate whip, otherwise slow it down or cut on a word.
-- Run the QA list at the end of `guides/editing-grammar.md`.
-- `bash finish.sh "Title"` → MP4 + `out/qa_sheet.jpg`. No frozen spans ≥0.4 s, no black frames, loudness about -14 LUFS.
-- `open reels/<slug>/out/` and give a few lines on each shot. Offer captions, tweaks, or the next idea.
+- `node gpucheck.mjs` once per machine (`GL=gpu` default on macOS; `swiftshader` slow fallback). `node render.mjs frames "0-<N-1>"` in the background, poll with `tail`; `RESUME=1` continues. Remind the user to keep the Mac awake (`caffeinate -i`).
+- **After every full render:** `python3 framediff.py frames --planned "<cut and flash frames>"` (whip ranges from post.json count as planned). An unplanned fast move: blur in post.json if it is a deliberate whip, else slow it or cut on a word.
+- Run the QA list at the end of `guides/editing-grammar.md` and "Final QA" in `LESSONS.md`.
+- `bash finish.sh "Title"` → MP4 + `out/qa_sheet.jpg` (no frozen spans ≥0.4 s, no black frames, ~-14 LUFS). `open reels/<slug>/out/` and give a few lines per shot; offer captions, tweaks, or the next idea.
 
-## Stage 5: After every reel (the user asked for this every time)
-1. Add a dated entry at the top of `LESSONS.md`: what was new, what broke, what to do next time.
-2. Put reusable new characters or props into `engine/nepal.js` (or a new cast file) and new score instruments into the template.
-3. Offer post captions (Nepali + English, the hook in the first 125 characters, 5 hashtags, sources for news) and, for YouTube Shorts, a title via `titles-and-thumbnails`.
-4. **Git:** remind the user to say "commit and push" so the lessons reach GitHub and the claude.ai chat. Commit or push only when they say so (never force-push).
-5. After posting: if a reel underperforms, use `retention-audit` with its retention graph. Once there are 10+ reels, run `channel-formula` on the account.
+## Stage 5: After every reel
+1. Add 2-6 general bullets under "Newest" in `LESSONS.md` (new rules only, no build diary).
+2. Put reusable new characters/props in `engine/nepal.js` (or a new cast file) and new instruments in the audio template.
+3. Offer post captions (Nepali + English, hook in the first 125 characters, 5 hashtags, sources for news) and, for YouTube Shorts, a title via `titles-and-thumbnails`.
+4. Tidy: move the finished brief to `scripts/done/`, fold `LESSONS.md` "Newest" if it is long, commit no generated output. Remind the user to say "commit and push" (never force-push).
+5. If a posted reel underperforms, run `retention-audit` with its retention graph; at 10+ reels run `channel-formula`.
